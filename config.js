@@ -1,5 +1,5 @@
 window.ROADMAP_CONFIG = {
-  githubOwner: "DEIN-GITHUB-NAME",
-  githubRepo: "DEIN-REPOSITORY-NAME",
-  feedbackEmail: "DEINE-EMAIL@BEISPIEL.DE"
+  githubOwner: "CianG05",
+  githubRepo: "CianG05.github.io",
+  feedbackEmail: "Cian.G05@icloud.com"
 };
