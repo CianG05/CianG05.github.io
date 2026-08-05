@@ -1,5 +1,5 @@
 const CONFIG = {
-  feedbackEmail: "DEINE-EMAIL@BEISPIEL.DE",
+  feedbackEmail: "Cian.g05@icloud.com",
   projectName: "BaustellenHub",
 };
 
