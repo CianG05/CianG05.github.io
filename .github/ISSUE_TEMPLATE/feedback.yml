@@ -1,0 +1,34 @@
+name: Feedback oder Verbesserung
+description: Verbesserungsvorschlag für die BaustellenHub App
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Bereich
+      options:
+        - Allgemein
+        - Windows-App
+        - Tablet-App
+        - Berichte
+        - PDFs
+        - Benachrichtigungen
+        - Performance
+        - Materialverwaltung
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: Was sollte geändert oder ergänzt werden?
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Erwarteter Nutzen
+      description: Was wird dadurch einfacher oder besser?

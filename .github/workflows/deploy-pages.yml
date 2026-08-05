@@ -1,4 +1,4 @@
-name: Deploy GitHub Pages
+name: GitHub Pages veröffentlichen
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -19,21 +19,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: Repository auschecken
-        uses: actions/checkout@v4
-
-      - name: GitHub Pages konfigurieren
-        uses: actions/configure-pages@v5
-
-      - name: Website hochladen
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: "."
-
-      - name: GitHub Pages veröffentlichen
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4

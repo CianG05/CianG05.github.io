@@ -1,0 +1,119 @@
+{
+  "project": {
+    "name": "BaustellenHub",
+    "company": "JuH Burmeister",
+    "version": "0.9 Beta",
+    "updated": "05.08.2026",
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App."
+  },
+  "milestones": [
+    {
+      "id": "m1",
+      "title": "PC-Testversion bereitstellen",
+      "description": "Die Windows-Testversion soll ohne Login-Hürde stabil für den internen Test nutzbar sein.",
+      "status": "in_progress",
+      "progress": 70,
+      "target": "Aktueller Schwerpunkt"
+    },
+    {
+      "id": "m2",
+      "title": "Berichtsworkflow abschließen",
+      "description": "Tagesberichte vor der finalen PDF-Erstellung prüfen, korrigieren und anschließend verbindlich erstellen.",
+      "status": "planned",
+      "progress": 35,
+      "target": "Danach"
+    },
+    {
+      "id": "m3",
+      "title": "Ladezeiten und Stabilität verbessern",
+      "description": "Baustellen, Berichte und Dateien schneller laden sowie bei schlechter Verbindung stabil anzeigen.",
+      "status": "planned",
+      "progress": 20,
+      "target": "Nächste Ausbaustufe"
+    }
+  ],
+  "items": [
+    {
+      "id": "backup",
+      "title": "Aktuellen Projektstand vollständig sichern",
+      "description": "Quellcode, Konfigurationen und vorhandene Builds als wiederherstellbares Backup sichern.",
+      "area": "Sicherheit",
+      "priority": "high",
+      "status": "done",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "pc-test",
+      "title": "PC-Testversion ohne Anmeldung nutzbar machen",
+      "description": "Die Anmeldung ausschließlich für die Testkonfiguration deaktivieren. Die Produktivanmeldung darf nicht beschädigt werden.",
+      "area": "Windows",
+      "priority": "high",
+      "status": "in_progress",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "filename",
+      "title": "Dateinamen der Tagesberichte vereinheitlichen",
+      "description": "Dateien nach dem Schema M.Mustermann_Datum.pdf speichern und unzulässige Zeichen automatisch entfernen.",
+      "area": "Berichte",
+      "priority": "medium",
+      "status": "planned",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "notification-layout",
+      "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
+      "description": "Beim Klick auf das X darf sich die Benachrichtigung nicht vergrößern oder nach unten strecken.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "in_progress",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "report-review",
+      "title": "Kontrollansicht vor PDF-Erstellung einbauen",
+      "description": "Der Kolonnenleiter soll den vollständigen Tagesbericht vor der endgültigen Erstellung prüfen und bearbeiten können.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "planned",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "pdf-viewer",
+      "title": "PDF-Anzeige wie Bildanzeige bedienen",
+      "description": "PDFs direkt verschieben und zoomen, ohne zusätzlichen Button in der oberen Leiste.",
+      "area": "Dateien",
+      "priority": "medium",
+      "status": "planned",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "performance",
+      "title": "Baustellen und Berichte schneller laden",
+      "description": "Lokalen Cache, weniger doppelte Anfragen und eine robuste Fehlerbehandlung umsetzen.",
+      "area": "Performance",
+      "priority": "high",
+      "status": "planned",
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    }
+  ],
+  "changelog": [
+    {
+      "date": "05.08.2026",
+      "title": "Roadmap gestartet",
+      "text": "Projektübersicht, Statusdarstellung und Feedback-Prozess eingerichtet."
+    },
+    {
+      "date": "05.08.2026",
+      "title": "Backup erstellt",
+      "text": "Der aktuelle App-Stand wurde vor den nächsten Änderungen gesichert."
+    }
+  ]
+}

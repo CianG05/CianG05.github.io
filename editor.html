@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roadmap bearbeiten</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .editor-wrap { padding: 60px 0; }
+    .editor-grid { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
+    .editor-card { padding: 24px; background: white; border: 1px solid var(--line); border-radius: 14px; }
+    .editor-card textarea { width: 100%; min-height: 680px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; font-family: Consolas, monospace; font-size: .82rem; line-height: 1.5; resize: vertical; }
+    .editor-card textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(45,111,168,.12); }
+    .editor-actions { display: grid; gap: 10px; margin-top: 16px; }
+    .editor-help ol { padding-left: 20px; color: var(--muted); }
+    .editor-help code { padding: 2px 6px; border-radius: 5px; background: #f1f4f7; }
+    @media (max-width: 900px) { .editor-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">BH</span>
+        <span><strong>Roadmap bearbeiten</strong><small>BaustellenHub</small></span>
+      </a>
+      <a class="button button-secondary" href="index.html">Zurück zur Roadmap</a>
+    </div>
+  </header>
+
+  <main class="editor-wrap container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Pflegeansicht</p>
+        <h1 style="font-size:3.2rem">Roadmap-Daten bearbeiten</h1>
+      </div>
+    </div>
+
+    <div class="editor-grid">
+      <section class="editor-card">
+        <textarea id="jsonEditor" spellcheck="false"></textarea>
+        <div class="editor-actions">
+          <button class="button button-primary" id="validateButton">JSON prüfen</button>
+          <button class="button button-secondary" id="downloadButton">Aktualisierte roadmap.json herunterladen</button>
+        </div>
+      </section>
+
+      <aside class="editor-card editor-help">
+        <h3>So hältst du die Roadmap aktuell</h3>
+        <ol>
+          <li>Status ändern: <code>planned</code>, <code>in_progress</code> oder <code>done</code>.</li>
+          <li>Bei erledigten Aufgaben <code>status</code> auf <code>done</code> setzen.</li>
+          <li>Datum unter <code>updated</code> aktualisieren.</li>
+          <li>Datei herunterladen.</li>
+          <li>Die vorhandene <code>roadmap.json</code> im Repository ersetzen.</li>
+        </ol>
+        <p style="color:var(--muted);font-size:.8rem">
+          Direkt in GitHub geht es noch einfacher über den Button „Roadmap bearbeiten“ auf der Hauptseite.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const editor = document.getElementById("jsonEditor");
+
+    fetch("roadmap.json", { cache: "no-store" })
+      .then(response => response.json())
+      .then(data => editor.value = JSON.stringify(data, null, 2))
+      .catch(() => editor.value = '{\n  "Fehler": "roadmap.json konnte nicht geladen werden"\n}');
+
+    document.getElementById("validateButton").addEventListener("click", () => {
+      try {
+        JSON.parse(editor.value);
+        alert("Die Datei ist gültig.");
+      } catch (error) {
+        alert("Fehler in der JSON-Datei:\n" + error.message);
+      }
+    });
+
+    document.getElementById("downloadButton").addEventListener("click", () => {
+      try {
+        const parsed = JSON.parse(editor.value);
+        const blob = new Blob([JSON.stringify(parsed, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "roadmap.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      } catch (error) {
+        alert("Die Datei enthält noch einen Fehler:\n" + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

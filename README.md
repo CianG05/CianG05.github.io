@@ -1,74 +1,105 @@
-# BaustellenHub Roadmap
+# BaustellenHub Roadmap v2
 
-Eine eigenständige, responsive Roadmap-Website für das JuH-Burmeister-Projekt.
+Diese Version ist bewusst nicht als reine Design-Demo gebaut, sondern als pflegbare Roadmap.
 
-## Inhalt
+## Was jetzt besser ist
 
-- hochwertiges Dark-/Light-Design
-- Projektfortschritt
-- Entwicklungsphasen
-- Kanban-Aufgabenübersicht
-- bekannte Probleme
-- Feedback-Dialog
-- mobile Optimierung
-- GitHub-Pages-Workflow
+- Inhalte liegen zentral in `roadmap.json`
+- Erledigte Aufgaben werden sichtbar abgehakt und durchgestrichen
+- Status kann auf `planned`, `in_progress` oder `done` gesetzt werden
+- Fortschritt berechnet sich automatisch aus den Aufgaben
+- Feedback kann als GitHub-Issue erstellt werden
+- zusätzliches E-Mail-Feedback ist möglich
+- einfache Pflegeansicht unter `editor.html`
+- GitHub Pages Deployment ist vorbereitet
 
-## Feedback-E-Mail eintragen
+## 1. Dateien in einen Codespace bekommen
 
-Öffne `script.js` und ändere:
+Falls Drag-and-drop im Codespace nicht funktioniert:
 
-```js
-feedbackEmail: "DEINE-EMAIL@BEISPIEL.DE",
-```
+### Variante A: ZIP hochladen und entpacken
 
-zu deiner echten E-Mail-Adresse.
+1. ZIP aus ChatGPT herunterladen.
+2. In GitHub im Repository auf `Add file` → `Upload files`.
+3. ZIP-Dateien lokal entpacken.
+4. Die entpackten Dateien über die normale GitHub-Webseite hochladen.
 
-## Inhalte ändern
+### Variante B: Über das Codespace-Terminal
 
-Die Texte, Prozentwerte und Aufgaben stehen direkt in der `index.html`.
-
-Wichtige Stellen:
-
-- Gesamtfortschritt: `--progress: 68`
-- Version: `v0.9 Beta`
-- Datum: `05.08.2026`
-- Roadmap-Phasen im Abschnitt `id="roadmap"`
-- Aufgaben im Abschnitt `id="aufgaben"`
-
-## Lokal starten
-
-Die `index.html` kann direkt im Browser geöffnet werden.
-
-Sauberer ist ein lokaler Server:
+Im Codespace-Terminal:
 
 ```bash
-python -m http.server 8000
+git clone DEINE_REPOSITORY_URL .
 ```
+
+Wenn das Repository schon geöffnet ist, kopiere die Dateien lokal in den Projektordner oder lade sie über GitHub Web hoch.
 
 Danach:
 
-```text
-http://localhost:8000
+```bash
+git add .
+git commit -m "Roadmap Website hinzufügen"
+git push
 ```
 
-## GitHub Pages veröffentlichen
+## 2. Konfiguration eintragen
 
-1. Neues GitHub-Repository erstellen.
-2. Alle Dateien in das Repository hochladen.
-3. In GitHub zu `Settings` → `Pages` wechseln.
-4. Unter `Build and deployment` als Quelle `GitHub Actions` auswählen.
-5. Änderungen auf den Branch `main` pushen.
-6. Der enthaltene Workflow veröffentlicht die Seite automatisch.
+Öffne `config.js`:
 
-## Eigene Domain
+```js
+window.ROADMAP_CONFIG = {
+  githubOwner: "DEIN-GITHUB-NAME",
+  githubRepo: "DEIN-REPOSITORY-NAME",
+  feedbackEmail: "DEINE-EMAIL@BEISPIEL.DE"
+};
+```
 
-Eine eigene Domain kann später unter:
+## 3. Roadmap aktuell halten
 
-`Settings` → `Pages` → `Custom domain`
+Die komplette Roadmap wird in `roadmap.json` gepflegt.
 
-eingetragen werden.
+Statuswerte:
 
-## Sicherheit
+```json
+"status": "planned"
+```
 
-Die Seite enthält keine Datenbank und speichert keine Feedbackdaten.
-Das Feedbackformular öffnet das lokale E-Mail-Programm des Nutzers.
+```json
+"status": "in_progress"
+```
+
+```json
+"status": "done"
+```
+
+Sobald du eine Aufgabe auf `done` setzt, wird sie auf der Website sichtbar abgehakt und durchgestrichen.
+
+Zusätzlich kannst du `editor.html` öffnen, die JSON-Datei bearbeiten, prüfen und neu herunterladen.
+
+## 4. Feedback vom Chef
+
+Der Button „Feedback geben“ erstellt ein neues GitHub-Issue.
+
+Voraussetzungen:
+
+- GitHub Issues müssen im Repository aktiviert sein.
+- Dein Chef braucht für diese Variante ein GitHub-Konto.
+
+Ohne GitHub-Konto kann er den E-Mail-Link im Feedbackfenster verwenden.
+
+## 5. GitHub Pages aktivieren
+
+1. Repository öffnen.
+2. `Settings` → `Pages`.
+3. Unter `Build and deployment` die Quelle `GitHub Actions` auswählen.
+4. Auf `main` pushen.
+
+## Wichtige Grenze
+
+Eine kostenlose statische GitHub-Pages-Seite kann nicht direkt selbst Dateien im Repository ändern. Deshalb werden Änderungen entweder:
+
+- in `roadmap.json` über GitHub vorgenommen,
+- über `editor.html` vorbereitet und anschließend hochgeladen,
+- oder als GitHub-Issue vom Chef eingereicht.
+
+Für eine echte Anmeldung mit direktem Speichern im Browser wäre ein Backend wie Supabase nötig.
