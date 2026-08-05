@@ -1,206 +1,22 @@
+const C=window.ROADMAP_CONFIG||{};let D=null,F="all";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+const avg=a=>a.length?Math.round(a.reduce((s,v)=>s+Number(v||0),0)/a.length):0;
+const statusText={planned:"Geplant",in_progress:"In Arbeit",done:"Erledigt"};
 
-const config = window.ROADMAP_CONFIG || {};
-let roadmapData = null;
-let currentFilter = "all";
-
-const statusLabels = {
-  planned: "Geplant",
-  in_progress: "In Arbeit",
-  done: "Erledigt"
-};
-
-function setText(id, value) {
-  const element = document.getElementById(id);
-  if (element) element.textContent = value;
+function projectProgress(){return avg(D.items.map(x=>x.progress));}
+function milestoneProgress(m){return avg(m.taskIds.map(id=>D.items.find(x=>x.id===id)?.progress??0));}
+function render(){
+ $("summary").textContent=D.project.summary;$("version").textContent=D.project.version;$("updated").textContent=D.project.updated;$("footerDate").textContent=`Stand ${D.project.updated}`;
+ const p=projectProgress();$("overall").textContent=`${p}%`;$("overallBig").textContent=`${p}%`;$("overallBar").style.width=`${p}%`;
+ $("doneCount").textContent=D.items.filter(x=>x.status==="done").length;$("workCount").textContent=D.items.filter(x=>x.status==="in_progress").length;$("planCount").textContent=D.items.filter(x=>x.status==="planned").length;
+ $("milestones").innerHTML=D.milestones.map((m,i)=>{const p=milestoneProgress(m);return `<article class="milestone"><div class="num">${String(i+1).padStart(2,"0")}</div><div><h3>${esc(m.title)}</h3><p>${esc(m.description)}</p><small>${m.taskIds.length} zugeordnete Aufgabe${m.taskIds.length===1?"":"n"}</small></div><div class="milestone-progress"><strong>${p}%</strong><div class="bar"><i style="width:${p}%"></i></div></div></article>`}).join("");
+ renderTasks();
+ $("changelog").innerHTML=D.changelog.map(x=>`<article class="change"><div class="change-date">${esc(x.date)}</div><div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div></article>`).join("");
 }
-
-function calculateProgress(items) {
-  if (!items.length) return 0;
-  const values = items.map(item => {
-    if (item.status === "done") return 100;
-    if (item.status === "in_progress") return 50;
-    return 0;
-  });
-  return Math.round(values.reduce((sum, value) => sum + value, 0) / values.length);
-}
-
-function renderProject(data) {
-  setText("projectSummary", data.project.summary);
-  setText("projectVersion", data.project.version);
-  setText("projectUpdated", data.project.updated);
-  setText("footerUpdated", `Stand ${data.project.updated}`);
-
-  const progress = calculateProgress(data.items);
-  setText("overallProgress", `${progress}%`);
-  setText("overallProgressLarge", `${progress}%`);
-  document.getElementById("overallProgressBar").style.width = `${progress}%`;
-
-  const done = data.items.filter(item => item.status === "done").length;
-  const inProgress = data.items.filter(item => item.status === "in_progress").length;
-  const planned = data.items.filter(item => item.status === "planned").length;
-
-  setText("countDone", done);
-  setText("countProgress", inProgress);
-  setText("countPlanned", planned);
-}
-
-function renderMilestones(milestones) {
-  const container = document.getElementById("milestoneList");
-  container.innerHTML = milestones.map((item, index) => `
-    <article class="milestone">
-      <div class="milestone-number">${String(index + 1).padStart(2, "0")}</div>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="milestone-meta">${item.target} · ${statusLabels[item.status]}</div>
-      </div>
-      <div class="milestone-progress">
-        <strong>${item.progress}%</strong>
-        <div class="progress-track"><span style="width:${item.progress}%"></span></div>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderTasks() {
-  const container = document.getElementById("taskList");
-  const filtered = currentFilter === "all"
-    ? roadmapData.items
-    : roadmapData.items.filter(item => item.status === currentFilter);
-
-  container.innerHTML = filtered.map(item => `
-    <article class="task ${item.status === "done" ? "is-done" : ""}">
-      <div class="task-check">${item.status === "done" ? "✓" : ""}</div>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="task-meta">
-          <span class="meta-tag">${item.area}</span>
-          <span class="meta-tag priority-${item.priority}">${item.priority === "high" ? "Hohe Priorität" : item.priority === "medium" ? "Mittlere Priorität" : "Normale Priorität"}</span>
-          <span class="meta-tag">${item.owner}</span>
-          <span class="meta-tag">Aktualisiert ${item.updated}</span>
-        </div>
-      </div>
-      <div class="task-status">${statusLabels[item.status]}</div>
-    </article>
-  `).join("");
-}
-
-function renderChangelog(changelog) {
-  const container = document.getElementById("changelog");
-  container.innerHTML = changelog.map(item => `
-    <article class="change">
-      <div class="change-date">${item.date}</div>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.text}</p>
-      </div>
-    </article>
-  `).join("");
-}
-
-function setupFilters() {
-  document.querySelectorAll(".filter").forEach(button => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
-      currentFilter = button.dataset.filter;
-      renderTasks();
-    });
-  });
-}
-
-function openFeedbackDialog() {
-  document.getElementById("feedbackDialog").showModal();
-}
-
-function buildIssueUrl() {
-  const owner = config.githubOwner;
-  const repo = config.githubRepo;
-  const title = document.getElementById("feedbackTitle").value.trim();
-  const area = document.getElementById("feedbackArea").value;
-  const text = document.getElementById("feedbackText").value.trim();
-
-  if (!owner || !repo || owner.includes("DEIN-") || repo.includes("DEIN-")) {
-    alert("Bitte zuerst githubOwner und githubRepo in config.js eintragen.");
-    return null;
-  }
-
-  if (!title || !text) {
-    alert("Bitte Titel und Beschreibung ausfüllen.");
-    return null;
-  }
-
-  const body = [
-    "## Bereich",
-    area,
-    "",
-    "## Beschreibung",
-    text,
-    "",
-    "## Erwartete Verbesserung",
-    "_Bitte ergänzen, falls nötig._"
-  ].join("\n");
-
-  return `https://github.com/${owner}/${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=feedback`;
-}
-
-function buildEmailUrl() {
-  const email = config.feedbackEmail;
-  const title = document.getElementById("feedbackTitle").value.trim() || "Feedback zur BaustellenHub Roadmap";
-  const area = document.getElementById("feedbackArea").value;
-  const text = document.getElementById("feedbackText").value.trim();
-
-  if (!email || email.includes("BEISPIEL.DE")) {
-    alert("Bitte zuerst feedbackEmail in config.js eintragen.");
-    return null;
-  }
-
-  const body = `Bereich: ${area}\n\n${text}`;
-  return `mailto:${email}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-}
-
-async function loadRoadmap() {
-  try {
-    const response = await fetch("roadmap.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    roadmapData = await response.json();
-
-    renderProject(roadmapData);
-    renderMilestones(roadmapData.milestones);
-    renderTasks();
-    renderChangelog(roadmapData.changelog);
-  } catch (error) {
-    document.querySelector("main").innerHTML = `
-      <section class="section container">
-        <div class="error-box">
-          Die Roadmap konnte nicht geladen werden. Öffne die Seite über GitHub Pages oder einen lokalen Webserver.
-        </div>
-      </section>
-    `;
-    console.error(error);
-  }
-}
-
-document.getElementById("feedbackButton").addEventListener("click", openFeedbackDialog);
-document.getElementById("feedbackButtonBottom").addEventListener("click", openFeedbackDialog);
-
-document.getElementById("createIssueButton").addEventListener("click", () => {
-  const url = buildIssueUrl();
-  if (url) window.open(url, "_blank", "noopener");
-});
-
-document.getElementById("emailFeedbackButton").addEventListener("click", () => {
-  const url = buildEmailUrl();
-  if (url) window.location.href = url;
-});
-
-const owner = config.githubOwner;
-const repo = config.githubRepo;
-if (owner && repo && !owner.includes("DEIN-") && !repo.includes("DEIN-")) {
-  document.getElementById("editRoadmapLink").href =
-    `https://github.com/${owner}/${repo}/edit/main/roadmap.json`;
-}
-
-setupFilters();
-loadRoadmap();
+function renderTasks(){const a=F==="all"?D.items:D.items.filter(x=>x.status===F);$("taskList").innerHTML=a.map(x=>`<article class="task ${x.status==="done"?"done":""}"><div class="check">${x.status==="done"?"✓":""}</div><div><h3>${esc(x.title)}</h3><p>${esc(x.description)}</p><div class="tags"><span class="tag">${esc(x.area)}</span><span class="tag ${x.priority}">${x.priority==="high"?"Hohe":x.priority==="medium"?"Mittlere":"Normale"} Priorität</span><span class="tag">${esc(x.owner)}</span><span class="tag">${esc(statusText[x.status])}</span></div></div><div class="task-side"><strong>${Number(x.progress)}%</strong><span>Fortschritt</span></div></article>`).join("")}
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");F=b.dataset.filter;renderTasks()});
+async function load(){const r=await fetch("roadmap.json",{cache:"no-store"});D=await r.json();render()}load().catch(e=>document.querySelector("main").innerHTML=`<section class="section container"><p>Roadmap konnte nicht geladen werden.</p></section>`);
+const dialog=$("feedbackDialog");$("feedbackOpen").onclick=$("feedbackOpenBottom").onclick=()=>dialog.showModal();
+$("issueButton").onclick=()=>{if(C.githubOwner.includes("DEIN-")||C.githubRepo.includes("DEIN-"))return alert("GitHub-Daten in config.js eintragen.");const t=$("fbTitle").value.trim(),text=$("fbText").value.trim(),area=$("fbArea").value;if(!t||!text)return alert("Titel und Beschreibung ausfüllen.");const body=`## Bereich\n${area}\n\n## Beschreibung\n${text}`;window.open(`https://github.com/${C.githubOwner}/${C.githubRepo}/issues/new?title=${encodeURIComponent(t)}&body=${encodeURIComponent(body)}&labels=feedback`,"_blank","noopener")};
+$("emailButton").onclick=()=>{if(C.feedbackEmail.includes("BEISPIEL.DE"))return alert("E-Mail in config.js eintragen.");location.href=`mailto:${C.feedbackEmail}?subject=${encodeURIComponent($("fbTitle").value||"BaustellenHub Feedback")}&body=${encodeURIComponent($("fbArea").value+"\n\n"+$("fbText").value)}`};

@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BaustellenHub Roadmap">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="BaustellenHub Entwicklungs-Roadmap">
   <title>BaustellenHub – Roadmap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,172 +11,76 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="brand">
-        <span class="brand-mark">BH</span>
-        <span>
-          <strong>BaustellenHub</strong>
-          <small>JuH Burmeister</small>
-        </span>
-      </a>
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#"><span class="mark">BH</span><span><strong>BaustellenHub</strong><small>JuH Burmeister</small></span></a>
+    <nav><a href="#roadmap">Roadmap</a><a href="#tasks">Aufgaben</a><a href="#changes">Änderungen</a></nav>
+    <div class="actions"><a class="btn secondary" href="editor.html">Verwalten</a><button class="btn primary" id="feedbackOpen">Feedback</button></div>
+  </div>
+</header>
 
-      <nav class="main-nav">
-        <a href="#uebersicht">Übersicht</a>
-        <a href="#roadmap">Roadmap</a>
-        <a href="#aufgaben">Aufgaben</a>
-        <a href="#aenderungen">Änderungen</a>
-      </nav>
-
-      <div class="header-actions">
-        <a class="button button-secondary" id="editRoadmapLink" href="editor.html">Roadmap bearbeiten</a>
-        <button class="button button-primary" id="feedbackButton" type="button">Feedback geben</button>
+<main>
+  <section class="hero container">
+    <div>
+      <p class="eyebrow">Interne Projektübersicht</p>
+      <h1>BaustellenHub<br>Roadmap</h1>
+      <p class="lead" id="summary"></p>
+      <div class="meta">
+        <div><span>Version</span><strong id="version">–</strong></div>
+        <div><span>Aktualisiert</span><strong id="updated">–</strong></div>
+        <div><span>Gesamtfortschritt</span><strong id="overall">–</strong></div>
       </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero container" id="uebersicht">
-      <div class="hero-copy">
-        <p class="eyebrow">Interne Projektübersicht</p>
-        <h1>BaustellenHub Roadmap</h1>
-        <p class="lead" id="projectSummary"></p>
-        <div class="hero-meta">
-          <div>
-            <span>Version</span>
-            <strong id="projectVersion">–</strong>
-          </div>
-          <div>
-            <span>Letzte Aktualisierung</span>
-            <strong id="projectUpdated">–</strong>
-          </div>
-          <div>
-            <span>Gesamtfortschritt</span>
-            <strong id="overallProgress">–</strong>
-          </div>
-        </div>
+    <aside class="overview-card">
+      <div class="card-head"><span>Gesamtstatus</span><b>Live berechnet</b></div>
+      <div class="big-value" id="overallBig">0%</div>
+      <div class="bar"><i id="overallBar"></i></div>
+      <div class="counts">
+        <div><strong id="doneCount">0</strong><span>Erledigt</span></div>
+        <div><strong id="workCount">0</strong><span>In Arbeit</span></div>
+        <div><strong id="planCount">0</strong><span>Geplant</span></div>
       </div>
+      <p class="calculation-note">Berechnet aus den tatsächlichen Fortschrittswerten aller Aufgaben.</p>
+    </aside>
+  </section>
 
-      <aside class="status-panel">
-        <div class="status-panel-head">
-          <span>Projektstatus</span>
-          <span class="status-chip status-chip-active">In Entwicklung</span>
-        </div>
-        <div class="progress-large">
-          <div class="progress-large-value" id="overallProgressLarge">0%</div>
-          <div class="progress-track"><span id="overallProgressBar"></span></div>
-        </div>
-        <div class="status-counts">
-          <div><strong id="countDone">0</strong><span>Erledigt</span></div>
-          <div><strong id="countProgress">0</strong><span>In Arbeit</span></div>
-          <div><strong id="countPlanned">0</strong><span>Geplant</span></div>
-        </div>
-      </aside>
-    </section>
+  <section class="section container" id="roadmap">
+    <div class="section-head"><div><p class="eyebrow">Entwicklungsbereiche</p><h2>Roadmap</h2></div><p>Jeder Meilenstein wird automatisch aus seinen zugeordneten Aufgaben berechnet.</p></div>
+    <div id="milestones" class="milestones"></div>
+  </section>
 
-    <section class="section container" id="roadmap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Meilensteine</p>
-          <h2>Roadmap</h2>
-        </div>
-        <p>Die nächsten Entwicklungsschritte in klarer Reihenfolge.</p>
-      </div>
-      <div class="milestone-list" id="milestoneList"></div>
-    </section>
-
-    <section class="section container" id="aufgaben">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Arbeitsstand</p>
-          <h2>Aufgaben</h2>
-        </div>
-        <div class="filters" id="filters">
-          <button class="filter active" data-filter="all">Alle</button>
-          <button class="filter" data-filter="in_progress">In Arbeit</button>
-          <button class="filter" data-filter="planned">Geplant</button>
-          <button class="filter" data-filter="done">Erledigt</button>
-        </div>
-      </div>
-      <div class="task-list" id="taskList"></div>
-    </section>
-
-    <section class="section container" id="aenderungen">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Nachvollziehbarkeit</p>
-          <h2>Letzte Änderungen</h2>
-        </div>
-      </div>
-      <div class="changelog" id="changelog"></div>
-    </section>
-
-    <section class="feedback-callout">
-      <div class="container feedback-inner">
-        <div>
-          <p class="eyebrow light">Rückmeldung</p>
-          <h2>Fehlt etwas oder soll ein Ablauf anders gelöst werden?</h2>
-          <p>Feedback wird als GitHub-Issue erfasst und bleibt dadurch nachvollziehbar.</p>
-        </div>
-        <button class="button button-light" id="feedbackButtonBottom" type="button">Verbesserung vorschlagen</button>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>BaustellenHub · JuH Burmeister</span>
-      <span id="footerUpdated"></span>
+  <section class="section container" id="tasks">
+    <div class="section-head">
+      <div><p class="eyebrow">Arbeitsstand</p><h2>Aufgaben</h2></div>
+      <div class="filters"><button class="filter active" data-filter="all">Alle</button><button class="filter" data-filter="in_progress">In Arbeit</button><button class="filter" data-filter="planned">Geplant</button><button class="filter" data-filter="done">Erledigt</button></div>
     </div>
-  </footer>
+    <div id="taskList" class="task-list"></div>
+  </section>
 
-  <dialog id="feedbackDialog">
-    <form method="dialog" class="dialog-card" id="feedbackForm">
-      <div class="dialog-head">
-        <div>
-          <p class="eyebrow">Feedback</p>
-          <h2>Verbesserung vorschlagen</h2>
-        </div>
-        <button class="dialog-close" value="cancel" aria-label="Schließen">×</button>
-      </div>
+  <section class="section container" id="changes">
+    <div class="section-head"><div><p class="eyebrow">Nachvollziehbarkeit</p><h2>Letzte Änderungen</h2></div></div>
+    <div id="changelog" class="changelog"></div>
+  </section>
 
-      <label>
-        Titel
-        <input id="feedbackTitle" type="text" placeholder="Kurze Zusammenfassung">
-      </label>
+  <section class="feedback">
+    <div class="container feedback-inner"><div><p class="eyebrow pale">Feedback</p><h2>Verbesserungen direkt festhalten.</h2><p>Rückmeldungen können als nachvollziehbares GitHub-Issue oder per E-Mail gesendet werden.</p></div><button class="btn light" id="feedbackOpenBottom">Feedback geben</button></div>
+  </section>
+</main>
 
-      <label>
-        Bereich
-        <select id="feedbackArea">
-          <option>Allgemein</option>
-          <option>Windows-App</option>
-          <option>Tablet-App</option>
-          <option>Berichte</option>
-          <option>PDFs</option>
-          <option>Benachrichtigungen</option>
-          <option>Performance</option>
-          <option>Materialverwaltung</option>
-        </select>
-      </label>
+<footer><div class="container footer-inner"><span>BaustellenHub · JuH Burmeister</span><span id="footerDate"></span></div></footer>
 
-      <label>
-        Beschreibung
-        <textarea id="feedbackText" rows="7" placeholder="Was sollte geändert oder ergänzt werden?"></textarea>
-      </label>
+<dialog id="feedbackDialog">
+  <form method="dialog" class="dialog">
+    <div class="dialog-head"><div><p class="eyebrow">Feedback</p><h2>Verbesserung vorschlagen</h2></div><button value="cancel" class="close">×</button></div>
+    <label>Titel<input id="fbTitle"></label>
+    <label>Bereich<select id="fbArea"><option>Allgemein</option><option>Windows-App</option><option>Tablet-App</option><option>Berichte</option><option>PDFs</option><option>Benachrichtigungen</option><option>Performance</option><option>Materialverwaltung</option></select></label>
+    <label>Beschreibung<textarea id="fbText" rows="7"></textarea></label>
+    <div class="dialog-actions"><button value="cancel" class="btn secondary">Abbrechen</button><button type="button" class="btn primary" id="issueButton">GitHub-Issue öffnen</button></div>
+    <button type="button" class="email-link" id="emailButton">Stattdessen per E-Mail senden</button>
+  </form>
+</dialog>
 
-      <div class="dialog-actions">
-        <button class="button button-secondary" value="cancel">Abbrechen</button>
-        <button class="button button-primary" id="createIssueButton" type="button">Als GitHub-Issue öffnen</button>
-      </div>
-
-      <p class="dialog-note">
-        Für GitHub-Feedback ist ein GitHub-Konto erforderlich. Alternativ kann die Rückmeldung per E-Mail geöffnet werden.
-      </p>
-      <button class="text-button" id="emailFeedbackButton" type="button">Stattdessen per E-Mail senden</button>
-    </form>
-  </dialog>
-
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 name: Feedback oder Verbesserung
-description: Verbesserungsvorschlag für die BaustellenHub App
+description: Rückmeldung zur BaustellenHub App
 title: "[Feedback] "
 labels: ["feedback"]
 body:
@@ -18,17 +18,13 @@ body:
         - Materialverwaltung
     validations:
       required: true
-
   - type: textarea
     id: description
     attributes:
       label: Beschreibung
-      description: Was sollte geändert oder ergänzt werden?
     validations:
       required: true
-
   - type: textarea
     id: benefit
     attributes:
       label: Erwarteter Nutzen
-      description: Was wird dadurch einfacher oder besser?

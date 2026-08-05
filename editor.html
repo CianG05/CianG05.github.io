@@ -1,100 +1,34 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roadmap bearbeiten</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .editor-wrap { padding: 60px 0; }
-    .editor-grid { display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start; }
-    .editor-card { padding: 24px; background: white; border: 1px solid var(--line); border-radius: 14px; }
-    .editor-card textarea { width: 100%; min-height: 680px; padding: 16px; border: 1px solid var(--line); border-radius: 10px; font-family: Consolas, monospace; font-size: .82rem; line-height: 1.5; resize: vertical; }
-    .editor-card textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(45,111,168,.12); }
-    .editor-actions { display: grid; gap: 10px; margin-top: 16px; }
-    .editor-help ol { padding-left: 20px; color: var(--muted); }
-    .editor-help code { padding: 2px 6px; border-radius: 5px; background: #f1f4f7; }
-    @media (max-width: 900px) { .editor-grid { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roadmap verwalten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+<style>
+.admin{padding:55px 0 90px}.admin-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.admin-top h1{font-size:clamp(2.7rem,5vw,4.6rem)}.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.panel-head{padding:19px 21px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px}.panel-body{padding:21px}.connection{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.76rem}.dot{width:8px;height:8px;border-radius:50%;background:#98a2b3}.connected .dot{background:var(--green)}.field{display:grid;gap:7px;margin-bottom:14px;color:var(--navy);font-size:.77rem;font-weight:600}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:9px;outline:none}.field input,.field select{height:43px;padding:0 11px}.field textarea{min-height:100px;padding:11px;resize:vertical}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.wide{grid-column:1/-1}.items{display:grid;gap:11px}.edit{border:1px solid var(--line);border-radius:12px;overflow:hidden}.edit summary{cursor:pointer;list-style:none;padding:15px 17px;display:flex;justify-content:space-between;gap:14px}.edit summary::-webkit-details-marker{display:none}.edit-body{padding:17px;border-top:1px solid var(--line)}.pill{padding:5px 8px;border-radius:99px;background:#edf0f4;color:var(--muted);font-size:.65rem;font-weight:700}.pill.done{background:#eaf5ef;color:var(--green)}.pill.in_progress{background:#eaf2f8;color:var(--blue)}.row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.danger{color:var(--red);border-color:#efcccc}.notice{padding:13px;border-radius:10px;background:#fbf3e5;color:#76501a;font-size:.74rem}.message{display:none;margin-bottom:15px;padding:13px;border-radius:10px;font-size:.76rem}.message.show{display:block}.message.ok{background:#eaf5ef;color:var(--green)}.message.bad{background:#f9ecec;color:var(--red)}.savebar{position:sticky;bottom:12px;display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:22px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.97);box-shadow:0 12px 35px rgba(16,35,61,.14)}.savebar span{color:var(--muted);font-size:.75rem}.tokenrow{display:grid;grid-template-columns:1fr auto;gap:8px}.help{color:var(--muted);font-size:.78rem;padding-left:18px}.help li+li{margin-top:8px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.admin-top{flex-direction:column;align-items:flex-start}}@media(max-width:650px){.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.savebar{align-items:stretch;flex-direction:column}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">BH</span>
-        <span><strong>Roadmap bearbeiten</strong><small>BaustellenHub</small></span>
-      </a>
-      <a class="button button-secondary" href="index.html">Zurück zur Roadmap</a>
-    </div>
-  </header>
-
-  <main class="editor-wrap container">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Pflegeansicht</p>
-        <h1 style="font-size:3.2rem">Roadmap-Daten bearbeiten</h1>
-      </div>
-    </div>
-
-    <div class="editor-grid">
-      <section class="editor-card">
-        <textarea id="jsonEditor" spellcheck="false"></textarea>
-        <div class="editor-actions">
-          <button class="button button-primary" id="validateButton">JSON prüfen</button>
-          <button class="button button-secondary" id="downloadButton">Aktualisierte roadmap.json herunterladen</button>
-        </div>
-      </section>
-
-      <aside class="editor-card editor-help">
-        <h3>So hältst du die Roadmap aktuell</h3>
-        <ol>
-          <li>Status ändern: <code>planned</code>, <code>in_progress</code> oder <code>done</code>.</li>
-          <li>Bei erledigten Aufgaben <code>status</code> auf <code>done</code> setzen.</li>
-          <li>Datum unter <code>updated</code> aktualisieren.</li>
-          <li>Datei herunterladen.</li>
-          <li>Die vorhandene <code>roadmap.json</code> im Repository ersetzen.</li>
-        </ol>
-        <p style="color:var(--muted);font-size:.8rem">
-          Direkt in GitHub geht es noch einfacher über den Button „Roadmap bearbeiten“ auf der Hauptseite.
-        </p>
-      </aside>
-    </div>
-  </main>
-
-  <script>
-    const editor = document.getElementById("jsonEditor");
-
-    fetch("roadmap.json", { cache: "no-store" })
-      .then(response => response.json())
-      .then(data => editor.value = JSON.stringify(data, null, 2))
-      .catch(() => editor.value = '{\n  "Fehler": "roadmap.json konnte nicht geladen werden"\n}');
-
-    document.getElementById("validateButton").addEventListener("click", () => {
-      try {
-        JSON.parse(editor.value);
-        alert("Die Datei ist gültig.");
-      } catch (error) {
-        alert("Fehler in der JSON-Datei:\n" + error.message);
-      }
-    });
-
-    document.getElementById("downloadButton").addEventListener("click", () => {
-      try {
-        const parsed = JSON.parse(editor.value);
-        const blob = new Blob([JSON.stringify(parsed, null, 2)], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "roadmap.json";
-        link.click();
-        URL.revokeObjectURL(url);
-      } catch (error) {
-        alert("Die Datei enthält noch einen Fehler:\n" + error.message);
-      }
-    });
-  </script>
-</body>
-</html>
+<header class="header"><div class="container header-inner"><a class="brand" href="index.html"><span class="mark">BH</span><span><strong>Roadmap-Verwaltung</strong><small>BaustellenHub</small></span></a><a class="btn secondary" href="index.html">Öffentliche Ansicht</a></div></header>
+<main class="admin container">
+<div class="admin-top"><div><p class="eyebrow">Verwaltung</p><h1>Roadmap bearbeiten</h1><p class="lead">Direkt ändern, speichern und auf der Website übernehmen.</p></div><div class="connection" id="connection"><span class="dot"></span><span>Nicht verbunden</span></div></div>
+<div class="grid">
+<section class="panel"><div class="panel-head"><strong>Roadmap-Daten</strong><button class="btn secondary" id="reload">Neu laden</button></div><div class="panel-body">
+<div class="message" id="message"></div>
+<div class="form-grid"><label class="field">Version<input id="version"></label><label class="field">Aktualisiert<input id="updated"></label><label class="field wide">Beschreibung<textarea id="summary"></textarea></label></div>
+<h3>Aufgaben</h3><div class="items" id="tasks"></div><div class="row-actions"><button class="btn secondary" id="addTask">Neue Aufgabe</button></div>
+<h3 style="margin-top:30px">Meilensteine</h3><div class="items" id="milestones"></div><div class="row-actions"><button class="btn secondary" id="addMilestone">Neuer Meilenstein</button></div>
+<h3 style="margin-top:30px">Änderungsverlauf</h3><div class="items" id="changes"></div><div class="row-actions"><button class="btn secondary" id="addChange">Änderung hinzufügen</button></div>
+<div class="savebar"><span id="saveState">Keine ungespeicherten Änderungen.</span><button class="btn primary" id="save">Direkt in GitHub speichern</button></div>
+</div></section>
+<aside class="panel"><div class="panel-head"><strong>GitHub-Verbindung</strong></div><div class="panel-body">
+<label class="field">Fine-grained Token<div class="tokenrow"><input type="password" id="token" autocomplete="off" placeholder="github_pat_..."><button class="btn secondary" id="connect">Verbinden</button></div></label>
+<div class="notice">Das Token wird nur für die aktuelle Browser-Sitzung im <strong>sessionStorage</strong> gespeichert. Gib dieses Token niemals deinem Chef.</div>
+<h3 style="margin-top:23px">Benötigte Rechte</h3><ul class="help"><li>Zugriff nur auf dieses Repository</li><li><code>Contents: Read and write</code></li><li>Am besten mit Ablaufdatum</li></ul>
+<h3 style="margin-top:23px">Berechnung</h3><ul class="help"><li>Jede Aufgabe besitzt einen Fortschritt von 0–100 %.</li><li>Gesamtfortschritt = Durchschnitt aller Aufgaben.</li><li>Meilenstein = Durchschnitt der zugeordneten Aufgaben.</li><li>Status „Erledigt“ setzt automatisch 100 %.</li></ul>
+</div></aside>
+</div></main>
+<script src="config.js"></script><script src="editor.js"></script>
+</body></html>

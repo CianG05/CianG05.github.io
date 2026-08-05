@@ -8,28 +8,32 @@
   },
   "milestones": [
     {
-      "id": "m1",
-      "title": "PC-Testversion bereitstellen",
-      "description": "Die Windows-Testversion soll ohne Login-Hürde stabil für den internen Test nutzbar sein.",
-      "status": "in_progress",
-      "progress": 90,
-      "target": "Aktueller Schwerpunkt"
+      "id": "testversion",
+      "title": "PC-Testversion",
+      "description": "Windows-Testversion für den internen Praxistest bereitstellen.",
+      "taskIds": [
+        "backup",
+        "pc-test",
+        "notification-layout"
+      ]
     },
     {
-      "id": "m2",
-      "title": "Berichtsworkflow abschließen",
-      "description": "Tagesberichte vor der finalen PDF-Erstellung prüfen, korrigieren und anschließend verbindlich erstellen.",
-      "status": "planned",
-      "progress": 65,
-      "target": "Danach"
+      "id": "berichte",
+      "title": "Berichtsworkflow",
+      "description": "Tagesberichte zuverlässig prüfen, erstellen und anzeigen.",
+      "taskIds": [
+        "filename",
+        "report-review",
+        "pdf-viewer"
+      ]
     },
     {
-      "id": "m3",
-      "title": "Ladezeiten und Stabilität verbessern",
-      "description": "Baustellen, Berichte und Dateien schneller laden sowie bei schlechter Verbindung stabil anzeigen.",
-      "status": "planned",
-      "progress": 10,
-      "target": "Nächste Ausbaustufe"
+      "id": "performance",
+      "title": "Performance und Stabilität",
+      "description": "Baustellen, Berichte und Dateien schneller und stabiler laden.",
+      "taskIds": [
+        "performance"
+      ]
     }
   ],
   "items": [
@@ -40,6 +44,7 @@
       "area": "Sicherheit",
       "priority": "high",
       "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -50,6 +55,7 @@
       "area": "Windows",
       "priority": "high",
       "status": "in_progress",
+      "progress": 60,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -60,6 +66,7 @@
       "area": "Berichte",
       "priority": "medium",
       "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -70,6 +77,7 @@
       "area": "Benachrichtigungen",
       "priority": "high",
       "status": "in_progress",
+      "progress": 25,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -80,6 +88,7 @@
       "area": "Berichte",
       "priority": "high",
       "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -90,6 +99,7 @@
       "area": "Dateien",
       "priority": "medium",
       "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
@@ -100,6 +110,7 @@
       "area": "Performance",
       "priority": "high",
       "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     }
@@ -107,8 +118,8 @@
   "changelog": [
     {
       "date": "05.08.2026",
-      "title": "Roadmap gestartet",
-      "text": "Projektübersicht, Statusdarstellung und Feedback-Prozess eingerichtet."
+      "title": "Roadmap-Verwaltung eingerichtet",
+      "text": "Aufgaben, Fortschritte und Feedback werden zentral nachvollziehbar verwaltet."
     },
     {
       "date": "05.08.2026",
