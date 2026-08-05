@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BaustellenHub Entwicklungs-Roadmap für JuH Burmeister" />
+  <meta name="theme-color" content="#07111f" />
+  <title>BaustellenHub – Entwicklungs-Roadmap</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow page-glow--one"></div>
+  <div class="page-glow page-glow--two"></div>
+
+  <header class="topbar shell">
+    <a class="brand" href="#top" aria-label="Zur Startseite">
+      <div class="brand-mark">BH</div>
+      <div>
+        <strong>BaustellenHub</strong>
+        <span>JuH Burmeister</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#aufgaben">Aufgaben</a>
+      <a href="#probleme">Probleme</a>
+      <a href="#feedback">Feedback</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Farbschema wechseln">
+        <span class="theme-icon">☼</span>
+      </button>
+      <button class="button button--primary" id="openFeedbackTop" type="button">
+        Feedback geben
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          Aktive Entwicklung
+        </div>
+
+        <h1>
+          Die digitale Zukunft
+          <span>unserer Baustellen.</span>
+        </h1>
+
+        <p class="hero-text">
+          Transparente Entwicklungsübersicht für die BaustellenHub App von JuH Burmeister.
+          Fortschritt, nächste Schritte, bekannte Probleme und Feedback an einem Ort.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button--primary button--large" href="#roadmap">Roadmap ansehen</a>
+          <button class="button button--ghost button--large" id="openFeedbackHero" type="button">
+            Verbesserung vorschlagen
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span>Aktuelle Version</span>
+            <strong>v0.9 Beta</strong>
+          </div>
+          <div>
+            <span>Letztes Update</span>
+            <strong>05.08.2026</strong>
+          </div>
+          <div>
+            <span>Ziel</span>
+            <strong>Produktivtest</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="dashboard-card glass">
+          <div class="dashboard-card__header">
+            <div>
+              <span class="muted-label">Gesamtfortschritt</span>
+              <h2>BaustellenHub</h2>
+            </div>
+            <span class="badge badge--success">Im Plan</span>
+          </div>
+
+          <div class="progress-layout">
+            <div class="progress-ring" style="--progress: 68;">
+              <div class="progress-ring__inner">
+                <strong>68%</strong>
+                <span>abgeschlossen</span>
+              </div>
+            </div>
+
+            <div class="quality-list">
+              <div class="quality-row">
+                <span>Grundsystem</span>
+                <strong>100%</strong>
+              </div>
+              <div class="mini-progress"><span style="width:100%"></span></div>
+
+              <div class="quality-row">
+                <span>PDF-System</span>
+                <strong>82%</strong>
+              </div>
+              <div class="mini-progress"><span style="width:82%"></span></div>
+
+              <div class="quality-row">
+                <span>Performance</span>
+                <strong>58%</strong>
+              </div>
+              <div class="mini-progress"><span style="width:58%"></span></div>
+
+              <div class="quality-row">
+                <span>Stabilität</span>
+                <strong>71%</strong>
+              </div>
+              <div class="mini-progress"><span style="width:71%"></span></div>
+            </div>
+          </div>
+
+          <div class="dashboard-footer">
+            <span>Nächster Meilenstein</span>
+            <strong>PC-Testversion stabil bereitstellen</strong>
+          </div>
+        </div>
+
+        <div class="floating-card floating-card--one">
+          <span>✓</span>
+          Backup-Stand gesichert
+        </div>
+
+        <div class="floating-card floating-card--two">
+          <span>→</span>
+          Chef-Feedback integrieren
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics shell section">
+      <article class="metric-card reveal">
+        <span>Projektstatus</span>
+        <strong>Entwicklung läuft</strong>
+        <small class="positive">● Stabiler Fortschritt</small>
+      </article>
+      <article class="metric-card reveal">
+        <span>Offene Aufgaben</span>
+        <strong>7</strong>
+        <small>3 mit hoher Priorität</small>
+      </article>
+      <article class="metric-card reveal">
+        <span>Erledigte Bereiche</span>
+        <strong>12</strong>
+        <small>Grundsystem steht</small>
+      </article>
+      <article class="metric-card reveal">
+        <span>Nächste Abnahme</span>
+        <strong>PC-Test</strong>
+        <small>Interner Praxistest</small>
+      </article>
+    </section>
+
+    <section class="section shell" id="roadmap">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">Entwicklungsplan</span>
+          <h2>Roadmap</h2>
+        </div>
+        <p>
+          Die Roadmap zeigt, welche Bereiche bereits stehen, woran aktuell gearbeitet wird
+          und welche Erweiterungen anschließend folgen.
+        </p>
+      </div>
+
+      <div class="roadmap">
+        <article class="roadmap-item roadmap-item--done reveal">
+          <div class="roadmap-marker">✓</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 1</span>
+                <h3>Grundsystem & Projektstruktur</h3>
+              </div>
+              <span class="badge badge--success">Abgeschlossen</span>
+            </div>
+            <p>
+              Technische Basis, Rollenstruktur, Plattformaufteilung und zentrale Projektorganisation.
+            </p>
+            <div class="tag-list">
+              <span>Windows</span><span>Android</span><span>Flutter</span><span>Rollen</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item roadmap-item--done reveal">
+          <div class="roadmap-marker">✓</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 2</span>
+                <h3>OneDrive & Baustellenstruktur</h3>
+              </div>
+              <span class="badge badge--success">Abgeschlossen</span>
+            </div>
+            <p>
+              Baustellen, Ordner, Berichte und Dateien werden über die vorhandene Firmenstruktur angebunden.
+            </p>
+            <div class="tag-list">
+              <span>OneDrive</span><span>Ordnererkennung</span><span>Dateien</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item roadmap-item--active reveal">
+          <div class="roadmap-marker">03</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 3</span>
+                <h3>Berichte & PDF-System</h3>
+              </div>
+              <span class="badge badge--active">In Arbeit · 82%</span>
+            </div>
+            <p>
+              Tagesberichte, Teilaufmaße, Vorschau, Unterschriften, Dateibenennung und PDF-Darstellung.
+            </p>
+            <div class="detail-progress"><span style="width:82%"></span></div>
+            <div class="check-grid">
+              <span class="done">✓ PDF-Erstellung</span>
+              <span class="done">✓ HNE-Vorlagen</span>
+              <span class="working">→ Kontrollansicht</span>
+              <span class="working">→ PDF-Zoom & Verschieben</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item roadmap-item--active reveal">
+          <div class="roadmap-marker">04</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 4</span>
+                <h3>Performance & Stabilität</h3>
+              </div>
+              <span class="badge badge--active">In Arbeit · 58%</span>
+            </div>
+            <p>
+              Schnellere Baustellenlisten, lokaler Cache, bessere Synchronisation und stabile Fehlerbehandlung.
+            </p>
+            <div class="detail-progress"><span style="width:58%"></span></div>
+            <div class="check-grid">
+              <span class="working">→ Ladezeiten</span>
+              <span class="working">→ Offline-Cache</span>
+              <span>○ Retry-Logik</span>
+              <span>○ Synchronisation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item reveal">
+          <div class="roadmap-marker">05</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 5</span>
+                <h3>Benachrichtigungen & Freigaben</h3>
+              </div>
+              <span class="badge">Geplant</span>
+            </div>
+            <p>
+              Saubere Benachrichtigungen, Prüfung automatischer Berichte und nachvollziehbare Freigaben.
+            </p>
+            <div class="tag-list">
+              <span>Desktop</span><span>Tablet</span><span>Freigaben</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item reveal">
+          <div class="roadmap-marker">06</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 6</span>
+                <h3>Materialverwaltung & Bauhof</h3>
+              </div>
+              <span class="badge">Geplant</span>
+            </div>
+            <p>
+              Zentrale Erfassung von Bauzäunen, Gittern, Füßen, Paletten, Baken und weiterem Material.
+            </p>
+            <div class="tag-list">
+              <span>Bestand</span><span>Kontrolle</span><span>Datenbank</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="roadmap-item reveal">
+          <div class="roadmap-marker">07</div>
+          <div class="roadmap-content">
+            <div class="roadmap-header">
+              <div>
+                <span class="phase">Phase 7</span>
+                <h3>Admin-Dashboard & Auswertung</h3>
+              </div>
+              <span class="badge">Später</span>
+            </div>
+            <p>
+              Rollenverwaltung, Einladungen, Statistiken, Gerätekontrolle und zentrale Administration.
+            </p>
+            <div class="tag-list">
+              <span>Admin</span><span>Statistik</span><span>Kontrolle</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="aufgaben">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">Aktueller Fokus</span>
+          <h2>Aufgabenübersicht</h2>
+        </div>
+        <p>Die derzeit wichtigsten Punkte bis zur stabilen PC-Testversion.</p>
+      </div>
+
+      <div class="kanban">
+        <div class="kanban-column reveal">
+          <div class="kanban-title">
+            <span class="kanban-dot kanban-dot--planned"></span>
+            Geplant
+            <strong>2</strong>
+          </div>
+
+          <article class="task-card">
+            <span class="priority priority--medium">Mittel</span>
+            <h3>PDFs wie Bilder bedienen</h3>
+            <p>Zoom, Verschieben und direkte Anzeige ohne zusätzlichen Button.</p>
+            <div class="task-footer"><span>PDF-System</span><span>Phase 3</span></div>
+          </article>
+
+          <article class="task-card">
+            <span class="priority priority--low">Normal</span>
+            <h3>Dateinamen vereinheitlichen</h3>
+            <p>Format: M.Mustermann_Datum.pdf</p>
+            <div class="task-footer"><span>Berichte</span><span>Phase 3</span></div>
+          </article>
+        </div>
+
+        <div class="kanban-column reveal">
+          <div class="kanban-title">
+            <span class="kanban-dot kanban-dot--active"></span>
+            In Arbeit
+            <strong>3</strong>
+          </div>
+
+          <article class="task-card task-card--featured">
+            <span class="priority priority--high">Hoch</span>
+            <h3>PC-Testversion fertigstellen</h3>
+            <p>Testzugang ohne Anmeldung ermöglichen, ohne das Produktivsystem zu beschädigen.</p>
+            <div class="task-footer"><span>Windows</span><span>Priorität 1</span></div>
+          </article>
+
+          <article class="task-card">
+            <span class="priority priority--high">Hoch</span>
+            <h3>Ladezeiten reduzieren</h3>
+            <p>Baustellen und Berichte schneller, stabiler und gecacht laden.</p>
+            <div class="task-footer"><span>Performance</span><span>Phase 4</span></div>
+          </article>
+
+          <article class="task-card">
+            <span class="priority priority--medium">Mittel</span>
+            <h3>Kontrollansicht einbauen</h3>
+            <p>Kolonnenleiter prüft den Tagesbericht vor der finalen PDF-Erstellung.</p>
+            <div class="task-footer"><span>Workflow</span><span>Phase 3</span></div>
+          </article>
+        </div>
+
+        <div class="kanban-column reveal">
+          <div class="kanban-title">
+            <span class="kanban-dot kanban-dot--testing"></span>
+            Prüfung
+            <strong>1</strong>
+          </div>
+
+          <article class="task-card">
+            <span class="priority priority--medium">Test</span>
+            <h3>Benachrichtigungsfenster</h3>
+            <p>Fehler beim Schließen per X reproduzieren und auf mehreren Auflösungen testen.</p>
+            <div class="task-footer"><span>UI</span><span>Windows</span></div>
+          </article>
+        </div>
+
+        <div class="kanban-column reveal">
+          <div class="kanban-title">
+            <span class="kanban-dot kanban-dot--done"></span>
+            Erledigt
+            <strong>1</strong>
+          </div>
+
+          <article class="task-card">
+            <span class="priority priority--done">Erledigt</span>
+            <h3>Projekt-Backup</h3>
+            <p>Aktueller Stand vor den nächsten Änderungen vollständig gesichert.</p>
+            <div class="task-footer"><span>Sicherheit</span><span>Backup</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="probleme">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-kicker">Transparenz</span>
+          <h2>Bekannte Probleme</h2>
+        </div>
+        <p>Aktuelle technische Punkte, die vor dem Produktiveinsatz zuverlässig gelöst werden müssen.</p>
+      </div>
+
+      <div class="issue-grid">
+        <article class="issue-card reveal">
+          <div class="issue-topline">
+            <span class="issue-icon">!</span>
+            <span class="priority priority--high">Hoch</span>
+          </div>
+          <h3>Anmeldung in der PC-Testversion</h3>
+          <p>Die Testversion kann aktuell nicht genutzt werden, da der Login blockiert.</p>
+          <div class="issue-status"><span></span> In Bearbeitung</div>
+        </article>
+
+        <article class="issue-card reveal">
+          <div class="issue-topline">
+            <span class="issue-icon">↕</span>
+            <span class="priority priority--medium">Mittel</span>
+          </div>
+          <h3>Benachrichtigung verzieht sich</h3>
+          <p>Beim Klick auf das X wächst die Benachrichtigung und streckt sich nach unten.</p>
+          <div class="issue-status"><span></span> Analyse läuft</div>
+        </article>
+
+        <article class="issue-card reveal">
+          <div class="issue-topline">
+            <span class="issue-icon">⏱</span>
+            <span class="priority priority--high">Hoch</span>
+          </div>
+          <h3>Langsame Ladezeiten</h3>
+          <p>Baustellen und Berichte laden zu langsam und bei schwacher Verbindung instabil.</p>
+          <div class="issue-status"><span></span> Optimierung geplant</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="vision-card reveal">
+        <div>
+          <span class="section-kicker">Zielbild</span>
+          <h2>Eine App, die den Baustellenalltag wirklich einfacher macht.</h2>
+          <p>
+            Weniger Papier, weniger Suchaufwand, schnellere Berichte, bessere Übersicht
+            und klare Abläufe für Kolonnen, Bauleiter und Verwaltung.
+          </p>
+        </div>
+        <div class="vision-points">
+          <span>✓ Schnell und stabil</span>
+          <span>✓ Einfach auf Tablet und PC</span>
+          <span>✓ Klare Freigabeprozesse</span>
+          <span>✓ Zentrale Baustellenstruktur</span>
+          <span>✓ Nachvollziehbare Dokumentation</span>
+          <span>✓ Erweiterbar für neue Abläufe</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="feedback">
+      <div class="feedback-section reveal">
+        <div>
+          <span class="section-kicker">Direkte Rückmeldung</span>
+          <h2>Ihre Meinung fließt direkt in die Entwicklung ein.</h2>
+          <p>
+            Verbesserungswünsche, fehlende Funktionen oder Hinweise zu bestehenden Abläufen
+            können hier schnell weitergegeben werden.
+          </p>
+        </div>
+        <button class="button button--light button--large" id="openFeedbackBottom" type="button">
+          Feedback oder Idee senden
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="brand">
+      <div class="brand-mark">BH</div>
+      <div>
+        <strong>BaustellenHub</strong>
+        <span>Entwickelt für JuH Burmeister</span>
+      </div>
+    </div>
+    <p>Interne Projektübersicht · Stand 05.08.2026</p>
+  </footer>
+
+  <dialog class="feedback-modal" id="feedbackModal">
+    <form method="dialog" class="feedback-form" id="feedbackForm">
+      <div class="modal-header">
+        <div>
+          <span class="section-kicker">Feedback</span>
+          <h2>Verbesserung vorschlagen</h2>
+        </div>
+        <button class="icon-button" id="closeFeedback" value="cancel" type="submit" aria-label="Fenster schließen">×</button>
+      </div>
+
+      <label>
+        Ihr Name
+        <input type="text" id="feedbackName" placeholder="Vor- und Nachname" />
+      </label>
+
+      <label>
+        Bereich
+        <select id="feedbackArea">
+          <option>Allgemein</option>
+          <option>PC-Version</option>
+          <option>Tablet-Version</option>
+          <option>Tagesberichte</option>
+          <option>PDFs</option>
+          <option>Benachrichtigungen</option>
+          <option>Performance</option>
+          <option>Materialverwaltung</option>
+        </select>
+      </label>
+
+      <label>
+        Priorität
+        <select id="feedbackPriority">
+          <option>Niedrig</option>
+          <option selected>Mittel</option>
+          <option>Hoch</option>
+          <option>Dringend</option>
+        </select>
+      </label>
+
+      <label>
+        Feedback oder Verbesserungsvorschlag
+        <textarea id="feedbackMessage" rows="6" placeholder="Was sollte verbessert, ergänzt oder anders gelöst werden?"></textarea>
+      </label>
+
+      <div class="modal-actions">
+        <button class="button button--ghost" value="cancel" type="submit">Abbrechen</button>
+        <button class="button button--primary" id="sendFeedback" type="button">Als E-Mail senden</button>
+      </div>
+
+      <p class="form-note">
+        Die Rückmeldung wird über das E-Mail-Programm des Geräts versendet.
+      </p>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast">Feedback wird vorbereitet …</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
