@@ -2,37 +2,42 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.1",
+    "version": "0.9 Beta",
     "updated": "05.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Fokus auf Testversion, Berichtsworkflow und Performance."
   },
   "milestones": [
     {
-      "id": "testversion",
-      "title": "PC-Testversion",
-      "description": "Windows-Testversion für den internen Praxistest bereitstellen.",
+      "id": "test",
+      "title": "Testversion 0.9.2",
+      "description": "Interne Testversion",
       "taskIds": [
         "backup",
-        "pc-test",
-        "notification-layout"
+        "pc-test"
       ]
     },
     {
-      "id": "berichte",
+      "id": "workflow",
       "title": "Berichtsworkflow",
-      "description": "Tagesberichte zuverlässig prüfen, erstellen und anzeigen.",
+      "description": "Berichte",
       "taskIds": [
         "filename",
+        "notification-layout",
         "report-review",
         "pdf-viewer"
       ]
     },
     {
-      "id": "performance",
-      "title": "Performance und Stabilität",
-      "description": "Baustellen, Berichte und Dateien schneller und stabiler laden.",
+      "id": "perf",
+      "title": "Performance",
+      "description": "Caching und Stabilität",
       "taskIds": [
-        "performance"
+        "performance",
+        "dashboard-feeds",
+        "reports-loading",
+        "swr-cache",
+        "dedup",
+        "tablet-qa"
       ]
     }
   ],
@@ -51,40 +56,84 @@
     {
       "id": "pc-test",
       "title": "PC-Testversion ohne Anmeldung nutzbar machen",
-      "description": "Die Anmeldung ausschließlich für die Testkonfiguration deaktivieren. Die Produktivanmeldung darf nicht beschädigt werden.",
+      "description": "Testversion (v0.9.2) ohne Login für interne Bürotests. Finale Freigabe nach erfolgreichem Praxistest.",
       "area": "Windows",
       "priority": "high",
       "status": "in_progress",
-      "progress": 60,
+      "progress": 99,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
     {
       "id": "filename",
       "title": "Dateinamen der Tagesberichte vereinheitlichen",
-      "description": "Dateien nach dem Schema M.Mustermann_Datum.pdf speichern und unzulässige Zeichen automatisch entfernen.",
+      "description": "Dateinamen nach Schema M.Mustermann_Datum.pdf mit automatischer Erweiterung bei Kollisionen.",
       "area": "Berichte",
       "priority": "medium",
-      "status": "planned",
-      "progress": 0,
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
     {
       "id": "notification-layout",
       "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
-      "description": "Beim Klick auf das X darf sich die Benachrichtigung nicht vergrößern oder nach unten strecken.",
+      "description": "Toast-Benachrichtigungen schließen über X ohne Layoutfehler.",
       "area": "Benachrichtigungen",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 25,
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
       "updated": "05.08.2026"
     },
     {
       "id": "report-review",
       "title": "Kontrollansicht vor PDF-Erstellung einbauen",
-      "description": "Der Kolonnenleiter soll den vollständigen Tagesbericht vor der endgültigen Erstellung prüfen und bearbeiten können.",
+      "description": "Kontrollansicht vor der PDF-Erstellung umgesetzt.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "pdf-viewer",
+      "title": "PDF-Anzeige wie Bildanzeige bedienen",
+      "description": "PDF-Viewer mit Pan/Zoom wie Bilder und Tablet-Vollbild.",
+      "area": "Dateien",
+      "priority": "medium",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "performance",
+      "title": "Baustellen und Berichte schneller laden",
+      "description": "Cache-System für Baustellen- und Dateilisten als Fallback implementiert. Weitere Performance-Themen offen.",
+      "area": "Performance",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 70,
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "dashboard-feeds",
+      "title": "Dashboard-Feeds reparieren",
+      "description": "Letzte Berichte, Aktivitäten und Benachrichtigungen laden.",
+      "area": "Dashboard",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "reports-loading",
+      "title": "Berichte in Prüfung stabil laden",
+      "description": "Ladehänger beseitigen.",
       "area": "Berichte",
       "priority": "high",
       "status": "planned",
@@ -93,10 +142,10 @@
       "updated": "05.08.2026"
     },
     {
-      "id": "pdf-viewer",
-      "title": "PDF-Anzeige wie Bildanzeige bedienen",
-      "description": "PDFs direkt verschieben und zoomen, ohne zusätzlichen Button in der oberen Leiste.",
-      "area": "Dateien",
+      "id": "swr-cache",
+      "title": "Stale-While-Revalidate Cache",
+      "description": "Cache sofort anzeigen, Hintergrund-Sync.",
+      "area": "Performance",
       "priority": "medium",
       "status": "planned",
       "progress": 0,
@@ -104,10 +153,21 @@
       "updated": "05.08.2026"
     },
     {
-      "id": "performance",
-      "title": "Baustellen und Berichte schneller laden",
-      "description": "Lokalen Cache, weniger doppelte Anfragen und eine robuste Fehlerbehandlung umsetzen.",
+      "id": "dedup",
+      "title": "OneDrive Request-Deduplizierung",
+      "description": "Doppelte API-Aufrufe reduzieren.",
       "area": "Performance",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "05.08.2026"
+    },
+    {
+      "id": "tablet-qa",
+      "title": "Feldtest auf Tablet",
+      "description": "Kompletter Workflow auf echtem Tablet.",
+      "area": "QA",
       "priority": "high",
       "status": "planned",
       "progress": 0,
@@ -116,6 +176,11 @@
     }
   ],
   "changelog": [
+    {
+      "date": "05.08.2026",
+      "title": "Version 0.9.2 Test",
+      "text": "Testversion ohne Login, neue Dateinamen, Toast-Fix, Review vor PDF, neuer PDF-Viewer und Cache-System."
+    },
     {
       "date": "05.08.2026",
       "title": "Roadmap-Verwaltung eingerichtet",
