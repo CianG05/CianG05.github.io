@@ -12,7 +12,7 @@
       "title": "PC-Testversion bereitstellen",
       "description": "Die Windows-Testversion soll ohne Login-Hürde stabil für den internen Test nutzbar sein.",
       "status": "in_progress",
-      "progress": 70,
+      "progress": 90,
       "target": "Aktueller Schwerpunkt"
     },
     {
@@ -20,7 +20,7 @@
       "title": "Berichtsworkflow abschließen",
       "description": "Tagesberichte vor der finalen PDF-Erstellung prüfen, korrigieren und anschließend verbindlich erstellen.",
       "status": "planned",
-      "progress": 35,
+      "progress": 65,
       "target": "Danach"
     },
     {
@@ -28,7 +28,7 @@
       "title": "Ladezeiten und Stabilität verbessern",
       "description": "Baustellen, Berichte und Dateien schneller laden sowie bei schlechter Verbindung stabil anzeigen.",
       "status": "planned",
-      "progress": 20,
+      "progress": 10,
       "target": "Nächste Ausbaustufe"
     }
   ],
