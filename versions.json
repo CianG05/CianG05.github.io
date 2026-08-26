@@ -1,0 +1,48 @@
+{
+  "versions": [
+    {
+      "version": "0.9.2",
+      "title": "Büro- & Tablet-Testpaket",
+      "date": "26.08.2026",
+      "status": "testing",
+      "statusLabel": "Aktuelle Testversion",
+      "current": true,
+      "description": "Aktueller interner Teststand der BaustellenHub App. Die Testkonfiguration ermöglicht den Büro-/Tablet-Test ohne reguläre Login-Oberfläche; der Produktiv-OAuth bleibt davon unberührt.",
+      "downloads": [
+        {
+          "name": "Komplettpaket",
+          "format": "RAR",
+          "file": "downloads/v0.9.2/JuH Baustellen Hub Release 0.9.2.rar",
+          "primary": true
+        }
+      ],
+      "changes": [
+        "Testversion v0.9.2 für interne Büro- und Tablet-Tests",
+        "Kontrollansicht vor der endgültigen PDF-Erstellung",
+        "PDF-Viewer mit Pan/Zoom wie bei Bildern und Tablet-Vollbild",
+        "Toast-Nachrichten schließen ohne Layout-Expansion",
+        "Dateinamensschema M.Mustermann_Datum.pdf mit _2, _3 usw. bei Kollisionen",
+        "Lokaler Cache für Baustellen- und Dateilisten als Fallback bei Netzfehlern"
+      ],
+      "notice": "Interne Testversion – noch nicht als produktive Version freigegeben."
+    },
+    {
+      "version": "0.9.1",
+      "title": "Büro-Modul Phase 1",
+      "date": "05.07.2026",
+      "status": "outdated",
+      "statusLabel": "Vorheriger Entwicklungsstand",
+      "current": false,
+      "description": "Früherer Entwicklungsstand mit Büro-Dashboard, Navigation, Projektverwaltung, Baustellen-Tabs, Fluent Desktop-Theme und rollenbasiertem Login.",
+      "downloads": [],
+      "changes": [
+        "Büro-Dashboard und Navigation",
+        "Projektverwaltung und Baustellen-Tabs",
+        "Fluent Desktop-Theme",
+        "Favoriten und rollenbasiertes Login",
+        "21 Unit-Tests erfolgreich"
+      ],
+      "notice": "Für diesen Stand ist auf der Roadmap aktuell kein Download hinterlegt."
+    }
+  ]
+}

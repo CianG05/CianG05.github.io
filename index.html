@@ -14,7 +14,7 @@
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="#"><span class="mark">BH</span><span><strong>BaustellenHub</strong><small>JuH Burmeister</small></span></a>
-    <nav><a href="#roadmap">Roadmap</a><a href="#tasks">Aufgaben</a><a href="#changes">Änderungen</a></nav>
+    <nav><a href="#roadmap">Roadmap</a><a href="#tasks">Aufgaben</a><a href="#versions">Testversionen</a><a href="#changes">Änderungen</a></nav>
     <div class="actions"><a class="btn secondary" href="editor.html">Verwalten</a><button class="btn primary" id="feedbackOpen">Feedback</button></div>
   </div>
 </header>
@@ -55,6 +55,20 @@
       <div class="filters"><button class="filter active" data-filter="all">Alle</button><button class="filter" data-filter="in_progress">In Arbeit</button><button class="filter" data-filter="planned">Geplant</button><button class="filter" data-filter="done">Erledigt</button></div>
     </div>
     <div id="taskList" class="task-list"></div>
+  </section>
+
+
+  <section class="section container" id="versions">
+    <div class="section-head">
+      <div><p class="eyebrow">Builds & Downloads</p><h2>Testversionen</h2></div>
+      <p>Die aktuelle Testversion steht direkt zum Download bereit. Frühere Entwicklungsstände bleiben darunter nachvollziehbar.</p>
+    </div>
+    <div id="currentVersion"></div>
+    <div class="version-history-head">
+      <h3>Versionsverlauf</h3>
+      <span id="versionCount">–</span>
+    </div>
+    <div id="versionHistory" class="version-history"></div>
   </section>
 
   <section class="section container" id="changes">

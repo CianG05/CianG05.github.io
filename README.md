@@ -63,3 +63,18 @@ Damit gibt es keine frei erfundene Gesamtzahl.
 Der Chef benutzt nur die öffentliche Seite und den Feedback-Button. Er benötigt keinen Zugriff auf den Editor und darf dein Token nicht erhalten.
 
 Für GitHub-Issues braucht er ein GitHub-Konto. Alternativ kann er Feedback per E-Mail senden.
+
+
+## Testversionen / Downloads
+
+Die öffentliche Roadmap lädt die Versionshistorie aus `versions.json`.
+
+Für v0.9.2 muss das RAR-Archiv hier liegen:
+
+`downloads/v0.9.2/JuH Baustellen Hub Release 0.9.2.rar`
+
+Neue Teststände:
+1. neuen Ordner unter `downloads/vX.Y.Z/` anlegen,
+2. Build/Archiv hochladen,
+3. neuen Eintrag in `versions.json` ergänzen,
+4. `current: true` nur bei der neuesten Testversion setzen.
