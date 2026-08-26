@@ -105,3 +105,12 @@ Pro Version werden deshalb zwei getrennte Downloads verwendet:
 
 Das RAR enthält den vollständigen Windows-Build inklusive EXE und aller benötigten DLLs.
 Der Editor erzeugt für neue Testversionen automatisch genau diese beiden Pfade.
+
+
+## Stand 26.08.2026
+
+- v0.9.2 bleibt im Versionsverlauf als getesteter vorheriger Teststand.
+- v0.9.3 ist die aktuelle **Unstable Testversion**.
+- Windows wird als vollständiges RAR-Paket inklusive EXE und DLLs angeboten.
+- Android wird separat als APK angeboten.
+- Für v0.9.3 müssen die beiden Build-Dateien unter `downloads/v0.9.3/` hochgeladen werden.

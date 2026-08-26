@@ -2,9 +2,9 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.2 Test",
+    "version": "0.9.3 Unstable",
     "updated": "26.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Fokus auf Testversion, Berichtsworkflow und Performance."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktuell liegt der Fokus auf Feldtests, Performance, stabilen Berichten und der Überarbeitung der Benachrichtigungen."
   },
   "milestones": [
     {
@@ -53,6 +53,51 @@
         "shrubs-combine",
         "first-use-onboarding"
       ]
+    },
+    {
+      "id": "testversion",
+      "title": "Testversionen & Geräteprüfung",
+      "description": "Windows- und Tablet-Teststände bereitstellen und im realen Einsatz verifizieren.",
+      "taskIds": [
+        "pc-test",
+        "tablet-field-test",
+        "masterdata-complete",
+        "file-sorting"
+      ]
+    },
+    {
+      "id": "berichte",
+      "title": "Berichtsworkflow",
+      "description": "Tagesberichte vollständig, nachvollziehbar und stabil erfassen, prüfen und ausgeben.",
+      "taskIds": [
+        "filename",
+        "report-review",
+        "pdf-viewer",
+        "assembly-waiting-details",
+        "shrubs-combine",
+        "reports-review-stability"
+      ]
+    },
+    {
+      "id": "performance",
+      "title": "Performance & Datenstabilität",
+      "description": "Ladezeiten massiv reduzieren und Datenabrufe stabil sowie effizient gestalten.",
+      "taskIds": [
+        "performance",
+        "performance-speed-v2",
+        "dashboard-feeds",
+        "stale-while-revalidate",
+        "onedrive-dedup"
+      ]
+    },
+    {
+      "id": "ux",
+      "title": "Bedienung & Benachrichtigungen",
+      "description": "Benachrichtigungen neu aufsetzen und den Einstieg in die App vereinfachen.",
+      "taskIds": [
+        "notifications-redesign",
+        "first-use-onboarding"
+      ]
     }
   ],
   "items": [
@@ -65,18 +110,18 @@
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "pc-test",
       "title": "PC-Testversion ohne Anmeldung nutzbar machen",
-      "description": "Testversion (v0.9.2) ohne Login für interne Bürotests. Finale Freigabe nach erfolgreichem Praxistest.",
+      "description": "Testversion v0.9.2 ohne reguläre Login-Oberfläche. Windows-Testbuild läuft und ist öffnungsfähig; Produktiv-OAuth bleibt unverändert.",
       "area": "Windows",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 99,
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "filename",
@@ -87,7 +132,7 @@
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "notification-layout",
@@ -98,7 +143,7 @@
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "report-review",
@@ -109,7 +154,7 @@
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "pdf-viewer",
@@ -120,29 +165,29 @@
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "performance",
       "title": "Baustellen und Berichte schneller laden",
-      "description": "Cache-System für Baustellen- und Dateilisten als Fallback implementiert. Weitere Performance-Themen offen.",
+      "description": "Ladezeiten für Baustellen und Berichte deutlich reduzieren. Bestehendes Cache-System und Datenabrufe weiter optimieren.",
       "area": "Performance",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 70,
+      "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "dashboard-feeds",
       "title": "Dashboard-Feeds reparieren",
-      "description": "Letzte Berichte, Aktivitäten und Benachrichtigungen laden.",
+      "description": "Letzte Berichte, letzte Aufmaße, letzte Aktivitäten und Benachrichtigungs-Feeds wieder zuverlässig und vollständig anzeigen.",
       "area": "Dashboard",
       "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
-      "updated": "05.08.2026"
+      "updated": "26.08.2026"
     },
     {
       "id": "reports-loading",
@@ -191,7 +236,7 @@
     {
       "id": "performance-speed-v2",
       "title": "Ladezeiten deutlich reduzieren",
-      "description": "Baustellen, Berichte, Dateien und weitere App-Inhalte müssen spürbar schneller laden. Bestehendes Cache-System weiter optimieren und verbleibende Performance-Themen abarbeiten.",
+      "description": "Gesamte App-Performance weiter optimieren. Ziel ist ein deutlich schnelleres Laden von Baustellen, Berichten, Dateien und Stammdaten.",
       "area": "Performance",
       "priority": "high",
       "status": "planned",
@@ -202,7 +247,7 @@
     {
       "id": "notifications-redesign",
       "title": "Benachrichtigungen grundlegend überarbeiten",
-      "description": "Darstellung, Bedienung und Zuverlässigkeit der Benachrichtigungen verbessern. Die aktuelle Umsetzung soll durch eine saubere, kompakte und stabile Lösung ersetzt werden.",
+      "description": "Benachrichtigungen optisch, funktional und technisch überarbeiten. Fokus auf kompakte Darstellung, stabile Bedienung und sinnvolle Inhalte.",
       "area": "Benachrichtigungen",
       "priority": "high",
       "status": "planned",
@@ -213,19 +258,74 @@
     {
       "id": "masterdata-complete",
       "title": "Stammdaten vollständig laden",
-      "description": "Fehler beheben, durch die Stammdaten nicht vollständig geladen werden. Insbesondere die Speicher-Daten müssen zuverlässig und vollständig verfügbar sein.",
+      "description": "Stammdaten werden unter Windows vollständig geladen. Tablet-Verhalten ist noch nicht abschließend verifiziert.",
       "area": "Stammdaten",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 85,
       "owner": "Jeremy",
       "updated": "26.08.2026"
     },
     {
       "id": "file-sorting",
       "title": "Dateisortierung korrigieren",
-      "description": "Dateien müssen zuverlässig, nachvollziehbar und konsistent in der vorgesehenen Reihenfolge angezeigt werden.",
+      "description": "Dateisortierung ist in der Windows-Version korrigiert und fertig. Verhalten auf dem Tablet ist noch nicht abschließend verifiziert.",
       "area": "Dateien",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "assembly-waiting-details",
+      "title": "Montagehilfe und Wartezeit erweitern",
+      "description": "Bei Montagehilfe und Wartezeit werden zusätzlich Anzahl der betroffenen Personen und der jeweilige Grund erfasst.",
+      "area": "Berichte",
+      "priority": "medium",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "shrubs-combine",
+      "title": "Sträucher und Büsche als gemeinsame Position führen",
+      "description": "Sträucher und Büsche werden als gemeinsame Position behandelt und nicht mehr getrennt geführt.",
+      "area": "Berichte",
+      "priority": "medium",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "first-use-onboarding",
+      "title": "Einführungskurs für die erste Benutzung",
+      "description": "Beim ersten Start einen kurzen Einführungskurs mit den wichtigsten Funktionen und Arbeitsabläufen anbieten.",
+      "area": "Bedienung",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "tablet-field-test",
+      "title": "Feldtest auf Tablet",
+      "description": "APK auf echtem Tablet testen und zentrale Abläufe inklusive Anmeldung/Testsession, Baustellen, Dateien und Berichte verifizieren.",
+      "area": "Tablet",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 45,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "reports-review-stability",
+      "title": "Berichte in Prüfung stabil laden",
+      "description": "Dauerhaftes Laden bzw. Hängen bei Berichten in Prüfung analysieren und zuverlässig beheben.",
+      "area": "Berichte",
       "priority": "high",
       "status": "planned",
       "progress": 0,
@@ -233,33 +333,22 @@
       "updated": "26.08.2026"
     },
     {
-      "id": "assembly-waiting-details",
-      "title": "Montagehilfe und Wartezeit erweitern",
-      "description": "Bei Montagehilfe und Wartezeit zusätzlich erfassen, wie viele Personen betroffen waren und aus welchem Grund die Zeit angefallen ist.",
-      "area": "Berichte",
-      "priority": "medium",
+      "id": "stale-while-revalidate",
+      "title": "Stale-While-Revalidate Cache",
+      "description": "Vorhandene Baustellen- und Dateilisten sofort aus lokalem Cache anzeigen und anschließend im Hintergrund aktualisieren.",
+      "area": "Performance",
+      "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
       "updated": "26.08.2026"
     },
     {
-      "id": "shrubs-combine",
-      "title": "Sträucher und Büsche als gemeinsame Position führen",
-      "description": "Sträucher und Büsche nicht länger als getrennte Positionen behandeln, sondern als eine gemeinsame Position erfassen und ausgeben.",
-      "area": "Berichte",
-      "priority": "medium",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "first-use-onboarding",
-      "title": "Einführungskurs für die erste Benutzung",
-      "description": "Beim ersten Start einen kurzen, verständlichen Einführungskurs anbieten, der die wichtigsten Funktionen und Arbeitsabläufe der App erklärt.",
-      "area": "Bedienung",
-      "priority": "medium",
+      "id": "onedrive-dedup",
+      "title": "OneDrive Request-Deduplizierung",
+      "description": "Doppelte bzw. parallele OneDrive-Abfragen reduzieren und identische Ladevorgänge zusammenführen.",
+      "area": "OneDrive",
+      "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
@@ -267,6 +356,11 @@
     }
   ],
   "changelog": [
+    {
+      "date": "26.08.2026",
+      "title": "v0.9.3 Unstable – Feldtests und nächste Optimierungsrunde",
+      "text": "v0.9.2 ist als Windows-/APK-Teststand öffnungsfähig. v0.9.3 steht als neuer Unstable-Teststand bereit. PC-Testversion ohne regulären Login, Montagehilfe/Wartezeit und Sträucher/Büsche sind abgeschlossen. Stammdaten und Dateisortierung funktionieren unter Windows, müssen auf dem Tablet aber noch verifiziert werden. Als Nächstes folgen Feldtest, schnellere Ladezeiten, Dashboard-Feeds, stabile Berichte in Prüfung, Stale-While-Revalidate, OneDrive-Deduplizierung, neue Benachrichtigungen und der Einführungskurs."
+    },
     {
       "date": "26.08.2026",
       "title": "Nächste Optimierungsrunde gestartet",
