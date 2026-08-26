@@ -10,10 +10,16 @@
       "description": "Aktueller interner Teststand der BaustellenHub App. Die Testkonfiguration ermöglicht den Büro-/Tablet-Test ohne reguläre Login-Oberfläche; der Produktiv-OAuth bleibt davon unberührt.",
       "downloads": [
         {
-          "name": "Komplettpaket",
-          "format": "RAR",
-          "file": "downloads/v0.9.2/JuH Baustellen Hub Release 0.9.2.rar",
+          "name": "Windows",
+          "format": "EXE",
+          "file": "downloads/v0.9.2/JuH-BaustellenHub-v0.9.2.exe",
           "primary": true
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.2/JuH-BaustellenHub-v0.9.2.apk",
+          "primary": false
         }
       ],
       "changes": [

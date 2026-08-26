@@ -78,3 +78,17 @@ Neue Teststände:
 2. Build/Archiv hochladen,
 3. neuen Eintrag in `versions.json` ergänzen,
 4. `current: true` nur bei der neuesten Testversion setzen.
+
+
+## Neue Testversion anlegen
+
+Im `editor.html` gibt es jetzt den Bereich **Testversionen & Builds**.
+
+1. `Neue aktuelle Testversion` anklicken.
+2. Versionsnummer eingeben, z. B. `0.9.3`.
+3. Roadmap speichern.
+4. In GitHub den automatisch angezeigten Ordner `downloads/v0.9.3/` anlegen.
+5. EXE und APK mit den vorgeschlagenen Dateinamen hochladen.
+
+Die bisherige aktuelle Version wird automatisch zum vorherigen Entwicklungsstand.
+EXE und APK werden auf der öffentlichen Roadmap getrennt zum Download angeboten.

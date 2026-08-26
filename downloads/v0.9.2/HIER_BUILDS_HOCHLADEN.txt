@@ -1,0 +1,6 @@
+Lege hier die beiden Dateien exakt unter diesen Namen ab:
+
+JuH-BaustellenHub-v0.9.2.exe
+JuH-BaustellenHub-v0.9.2.apk
+
+Danach funktionieren die getrennten Download-Buttons automatisch.

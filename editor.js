@@ -29,3 +29,251 @@ $("connect").onclick=async()=>{const t=$("token").value.trim();if(!t)return msg(
 $("reload").onclick=()=>{if(!dirty||confirm("Ungespeicherte Änderungen verwerfen?"))load(Boolean(token()))};
 $("save").onclick=async()=>{if(!token())return msg("Zuerst mit GitHub verbinden.",false);syncProject();try{$("save").disabled=true;$("save").textContent="Speichert …";const fresh=await fetch(`${api()}&_=${Date.now()}`,{headers:headers(),cache:"no-store"});if(!fresh.ok)throw new Error("Aktuelle Dateiversion konnte nicht geladen werden.");const meta=await fresh.json();const body={message:`roadmap: Stand ${D.project.updated} aktualisieren`,content:utf8ToBase64(JSON.stringify(D,null,2)),sha:meta.sha,branch:C.githubBranch||"main"};const r=await fetch(`https://api.github.com/repos/${C.githubOwner}/${C.githubRepo}/contents/${C.roadmapPath||"roadmap.json"}`,{method:"PUT",headers:{...headers(),"Content-Type":"application/json"},body:JSON.stringify(body)});if(!r.ok)throw new Error(`${r.status}: ${await r.text()}`);const j=await r.json();SHA=j.content.sha;dirty=false;$("saveState").textContent="Gespeichert. GitHub Pages aktualisiert sich automatisch.";msg("Roadmap wurde erfolgreich direkt in GitHub gespeichert.")}catch(e){msg("Speichern fehlgeschlagen: "+e.message,false)}finally{$("save").disabled=false;$("save").textContent="Direkt in GitHub speichern"}};
 window.addEventListener("beforeunload",e=>{if(dirty){e.preventDefault();e.returnValue=""}});load(false);
+
+// =========================================================
+// TESTVERSIONEN / BUILDS
+// =========================================================
+let VERSIONS = {versions: []};
+
+const versionsApi = () =>
+  `https://api.github.com/repos/${C.githubOwner}/${C.githubRepo}/contents/versions.json?ref=${C.githubBranch||"main"}`;
+
+function buildPath(version, ext) {
+  return `downloads/v${version}/JuH-BaustellenHub-v${version}.${ext}`;
+}
+
+function renderVersionsEditor() {
+  const box = $("versionsEditor");
+  if (!box) return;
+
+  box.innerHTML = VERSIONS.versions.map((v, i) => {
+    const exe = (v.downloads || []).find(d => d.format === "EXE");
+    const apk = (v.downloads || []).find(d => d.format === "APK");
+    return `<details class="edit" ${v.current ? "open" : ""}>
+      <summary>
+        <strong>v${esc(v.version)} · ${esc(v.title || "Testversion")}</strong>
+        <span class="pill ${v.current ? "in_progress" : ""}">${v.current ? "Aktuell" : esc(v.statusLabel || "Vorheriger Stand")}</span>
+      </summary>
+      <div class="edit-body">
+        <div class="form-grid">
+          <label class="field">Version
+            <input value="${esc(v.version)}" onchange="changeVersionNumber(${i},this.value)">
+          </label>
+          <label class="field">Datum
+            <input value="${esc(v.date || "")}" oninput="VERSIONS.versions[${i}].date=this.value;mark()">
+          </label>
+          <label class="field wide">Titel
+            <input value="${esc(v.title || "")}" oninput="VERSIONS.versions[${i}].title=this.value;mark()">
+          </label>
+          <label class="field wide">Beschreibung
+            <textarea oninput="VERSIONS.versions[${i}].description=this.value;mark()">${esc(v.description || "")}</textarea>
+          </label>
+          <label class="field">Status
+            <select onchange="VERSIONS.versions[${i}].status=this.value;mark()">
+              <option value="testing" ${v.status==="testing"?"selected":""}>Testphase</option>
+              <option value="ready_for_test" ${v.status==="ready_for_test"?"selected":""}>Bereit zum Test</option>
+              <option value="stable" ${v.status==="stable"?"selected":""}>Freigegeben</option>
+              <option value="outdated" ${v.status==="outdated"?"selected":""}>Veraltet</option>
+            </select>
+          </label>
+          <label class="field">Anzeige
+            <input value="${esc(v.statusLabel || "")}" oninput="VERSIONS.versions[${i}].statusLabel=this.value;mark()">
+          </label>
+          <label class="field wide">EXE-Pfad
+            <input value="${esc(exe?.file || buildPath(v.version,'exe'))}" oninput="setBuildFile(${i},'EXE',this.value)">
+          </label>
+          <label class="field wide">APK-Pfad
+            <input value="${esc(apk?.file || buildPath(v.version,'apk'))}" oninput="setBuildFile(${i},'APK',this.value)">
+          </label>
+          <label class="field wide">Hinweis
+            <input value="${esc(v.notice || "")}" oninput="VERSIONS.versions[${i}].notice=this.value;mark()">
+          </label>
+        </div>
+        <div class="notice">
+          GitHub-Ordner für diesen Build: <code>downloads/v${esc(v.version)}/</code><br>
+          Erwartete Dateien: <code>JuH-BaustellenHub-v${esc(v.version)}.exe</code> und <code>JuH-BaustellenHub-v${esc(v.version)}.apk</code>
+        </div>
+        <div class="row-actions">
+          ${v.current ? "" : `<button class="btn secondary" onclick="makeCurrentVersion(${i})">Als aktuelle Testversion setzen</button>`}
+          <button class="btn secondary danger" onclick="removeVersion(${i})">Version löschen</button>
+        </div>
+      </div>
+    </details>`;
+  }).join("");
+}
+
+function ensureBuildDownloads(v) {
+  v.downloads = Array.isArray(v.downloads) ? v.downloads : [];
+  if (!v.downloads.find(d => d.format === "EXE"))
+    v.downloads.push({name:"Windows",format:"EXE",file:buildPath(v.version,"exe"),primary:true});
+  if (!v.downloads.find(d => d.format === "APK"))
+    v.downloads.push({name:"Android",format:"APK",file:buildPath(v.version,"apk"),primary:false});
+}
+
+function setBuildFile(i, format, value) {
+  ensureBuildDownloads(VERSIONS.versions[i]);
+  const d = VERSIONS.versions[i].downloads.find(x => x.format === format);
+  d.file = value;
+  mark();
+}
+
+function changeVersionNumber(i, value) {
+  const v = VERSIONS.versions[i];
+  const old = v.version;
+  v.version = value.trim();
+  ensureBuildDownloads(v);
+  v.downloads.forEach(d => {
+    if (d.format === "EXE" && (!d.file || d.file.includes(`v${old}`)))
+      d.file = buildPath(v.version, "exe");
+    if (d.format === "APK" && (!d.file || d.file.includes(`v${old}`)))
+      d.file = buildPath(v.version, "apk");
+  });
+  renderVersionsEditor();
+  mark();
+}
+
+function makeCurrentVersion(i) {
+  VERSIONS.versions.forEach((v, idx) => {
+    v.current = idx === i;
+    if (idx === i) {
+      v.status = v.status === "outdated" ? "testing" : v.status;
+      v.statusLabel = "Aktuelle Testversion";
+    } else if (v.statusLabel === "Aktuelle Testversion") {
+      v.statusLabel = "Vorheriger Entwicklungsstand";
+      if (v.status === "testing") v.status = "outdated";
+    }
+  });
+  const selected = VERSIONS.versions.splice(i, 1)[0];
+  VERSIONS.versions.unshift(selected);
+  renderVersionsEditor();
+  mark();
+}
+
+function removeVersion(i) {
+  if (!confirm(`Version v${VERSIONS.versions[i].version} wirklich aus der Versionsliste löschen? Die Build-Dateien in GitHub werden dadurch nicht gelöscht.`)) return;
+  const wasCurrent = VERSIONS.versions[i].current;
+  VERSIONS.versions.splice(i, 1);
+  if (wasCurrent && VERSIONS.versions.length) {
+    VERSIONS.versions[0].current = true;
+    VERSIONS.versions[0].statusLabel = "Aktuelle Testversion";
+  }
+  renderVersionsEditor();
+  mark();
+}
+
+$("addVersion").onclick = () => {
+  const current = VERSIONS.versions.find(v => v.current);
+  const suggested = prompt("Neue Versionsnummer, z. B. 0.9.3:", current ? current.version : "0.9.3");
+  if (!suggested || !suggested.trim()) return;
+
+  VERSIONS.versions.forEach(v => {
+    v.current = false;
+    if (v.statusLabel === "Aktuelle Testversion") v.statusLabel = "Vorheriger Entwicklungsstand";
+    if (v.status === "testing") v.status = "outdated";
+  });
+
+  const version = suggested.trim().replace(/^v/i, "");
+  const v = {
+    version,
+    title: "Büro- & Tablet-Testpaket",
+    date: D?.project?.updated || new Date().toLocaleDateString("de-DE"),
+    status: "testing",
+    statusLabel: "Aktuelle Testversion",
+    current: true,
+    description: "Aktueller interner Teststand der BaustellenHub App.",
+    downloads: [
+      {name:"Windows",format:"EXE",file:buildPath(version,"exe"),primary:true},
+      {name:"Android",format:"APK",file:buildPath(version,"apk"),primary:false}
+    ],
+    changes: [],
+    notice: "Interne Testversion – noch nicht als produktive Version freigegeben."
+  };
+  VERSIONS.versions.unshift(v);
+  renderVersionsEditor();
+  mark();
+};
+
+async function loadVersionsForEditor() {
+  try {
+    if (token()) {
+      const r = await fetch(`${versionsApi()}&_=${Date.now()}`, {headers:headers(),cache:"no-store"});
+      if (!r.ok) throw new Error(`${r.status}`);
+      const j = await r.json();
+      VERSIONS = JSON.parse(base64ToUtf8(j.content));
+    } else {
+      const r = await fetch(`versions.json?v=${Date.now()}`, {cache:"no-store"});
+      VERSIONS = await r.json();
+    }
+    VERSIONS.versions.forEach(ensureBuildDownloads);
+    renderVersionsEditor();
+  } catch (e) {
+    msg("Versionsliste konnte nicht geladen werden: " + e.message, false);
+  }
+}
+
+async function saveGithubJson(path, data, commitMessage) {
+  const url = `https://api.github.com/repos/${C.githubOwner}/${C.githubRepo}/contents/${path}`;
+  const metaUrl = `${url}?ref=${C.githubBranch||"main"}&_=${Date.now()}`;
+  const fresh = await fetch(metaUrl,{headers:headers(),cache:"no-store"});
+  let sha = null;
+  if (fresh.ok) {
+    const meta = await fresh.json();
+    sha = meta.sha;
+  } else if (fresh.status !== 404) {
+    throw new Error(`${path}: aktuelle Dateiversion konnte nicht geladen werden (${fresh.status}).`);
+  }
+
+  const body = {
+    message: commitMessage,
+    content: utf8ToBase64(JSON.stringify(data,null,2)),
+    branch: C.githubBranch||"main"
+  };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(url,{
+    method:"PUT",
+    headers:{...headers(),"Content-Type":"application/json"},
+    body:JSON.stringify(body)
+  });
+  if (!r.ok) throw new Error(`${path}: ${r.status}: ${await r.text()}`);
+  return r.json();
+}
+
+// Override save button: roadmap + versions in one action.
+$("save").onclick = async () => {
+  if (!token()) return msg("Zuerst mit GitHub verbinden.",false);
+  syncProject();
+  try {
+    $("save").disabled=true;
+    $("save").textContent="Speichert …";
+
+    await saveGithubJson(
+      C.roadmapPath||"roadmap.json",
+      D,
+      `roadmap: Stand ${D.project.updated} aktualisieren`
+    );
+
+    await saveGithubJson(
+      "versions.json",
+      VERSIONS,
+      `builds: Versionsliste aktualisieren`
+    );
+
+    dirty=false;
+    $("saveState").textContent="Roadmap und Versionsliste gespeichert. GitHub Pages aktualisiert sich automatisch.";
+    msg("Roadmap und Testversionen wurden erfolgreich direkt in GitHub gespeichert.");
+  } catch(e) {
+    msg("Speichern fehlgeschlagen: "+e.message,false);
+  } finally {
+    $("save").disabled=false;
+    $("save").textContent="Direkt in GitHub speichern";
+  }
+};
+
+const originalConnect = $("connect").onclick;
+$("connect").onclick = async () => {
+  await originalConnect();
+  if (token()) await loadVersionsForEditor();
+};
+
+loadVersionsForEditor();
