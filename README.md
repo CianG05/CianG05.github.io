@@ -92,3 +92,16 @@ Im `editor.html` gibt es jetzt den Bereich **Testversionen & Builds**.
 
 Die bisherige aktuelle Version wird automatisch zum vorherigen Entwicklungsstand.
 EXE und APK werden auf der öffentlichen Roadmap getrennt zum Download angeboten.
+
+
+## Windows-Builds ab v5
+
+Windows wird nicht als einzelne EXE veröffentlicht, weil der Desktop-Build zusätzliche DLLs benötigt.
+
+Pro Version werden deshalb zwei getrennte Downloads verwendet:
+
+- Windows: `downloads/vX.Y.Z/JuH Baustellen Hub Release X.Y.Z.rar`
+- Android: `downloads/vX.Y.Z/JuH-BaustellenHub-vX.Y.Z.apk`
+
+Das RAR enthält den vollständigen Windows-Build inklusive EXE und aller benötigten DLLs.
+Der Editor erzeugt für neue Testversionen automatisch genau diese beiden Pfade.

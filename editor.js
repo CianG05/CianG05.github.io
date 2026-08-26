@@ -39,6 +39,7 @@ const versionsApi = () =>
   `https://api.github.com/repos/${C.githubOwner}/${C.githubRepo}/contents/versions.json?ref=${C.githubBranch||"main"}`;
 
 function buildPath(version, ext) {
+  if (ext === "rar") return `downloads/v${version}/JuH Baustellen Hub Release ${version}.rar`;
   return `downloads/v${version}/JuH-BaustellenHub-v${version}.${ext}`;
 }
 
@@ -47,7 +48,7 @@ function renderVersionsEditor() {
   if (!box) return;
 
   box.innerHTML = VERSIONS.versions.map((v, i) => {
-    const exe = (v.downloads || []).find(d => d.format === "EXE");
+    const win = (v.downloads || []).find(d => d.format === "RAR");
     const apk = (v.downloads || []).find(d => d.format === "APK");
     return `<details class="edit" ${v.current ? "open" : ""}>
       <summary>
@@ -79,8 +80,8 @@ function renderVersionsEditor() {
           <label class="field">Anzeige
             <input value="${esc(v.statusLabel || "")}" oninput="VERSIONS.versions[${i}].statusLabel=this.value;mark()">
           </label>
-          <label class="field wide">EXE-Pfad
-            <input value="${esc(exe?.file || buildPath(v.version,'exe'))}" oninput="setBuildFile(${i},'EXE',this.value)">
+          <label class="field wide">Windows-Paket (.RAR)
+            <input value="${esc(win?.file || buildPath(v.version,'rar'))}" oninput="setBuildFile(${i},'RAR',this.value)">
           </label>
           <label class="field wide">APK-Pfad
             <input value="${esc(apk?.file || buildPath(v.version,'apk'))}" oninput="setBuildFile(${i},'APK',this.value)">
@@ -91,7 +92,7 @@ function renderVersionsEditor() {
         </div>
         <div class="notice">
           GitHub-Ordner für diesen Build: <code>downloads/v${esc(v.version)}/</code><br>
-          Erwartete Dateien: <code>JuH-BaustellenHub-v${esc(v.version)}.exe</code> und <code>JuH-BaustellenHub-v${esc(v.version)}.apk</code>
+          Erwartete Dateien: <code>JuH Baustellen Hub Release ${esc(v.version)}.rar</code> und <code>JuH-BaustellenHub-v${esc(v.version)}.apk</code>
         </div>
         <div class="row-actions">
           ${v.current ? "" : `<button class="btn secondary" onclick="makeCurrentVersion(${i})">Als aktuelle Testversion setzen</button>`}
@@ -103,9 +104,9 @@ function renderVersionsEditor() {
 }
 
 function ensureBuildDownloads(v) {
-  v.downloads = Array.isArray(v.downloads) ? v.downloads : [];
-  if (!v.downloads.find(d => d.format === "EXE"))
-    v.downloads.push({name:"Windows",format:"EXE",file:buildPath(v.version,"exe"),primary:true});
+  v.downloads = Array.isArray(v.downloads) ? v.downloads.filter(d => d.format !== "EXE") : [];
+  if (!v.downloads.find(d => d.format === "RAR"))
+    v.downloads.push({name:"Windows-Paket",format:"RAR",file:buildPath(v.version,"rar"),primary:true,description:"Komplettes Windows-Programmpaket inklusive benötigter DLLs"});
   if (!v.downloads.find(d => d.format === "APK"))
     v.downloads.push({name:"Android",format:"APK",file:buildPath(v.version,"apk"),primary:false});
 }
@@ -123,8 +124,8 @@ function changeVersionNumber(i, value) {
   v.version = value.trim();
   ensureBuildDownloads(v);
   v.downloads.forEach(d => {
-    if (d.format === "EXE" && (!d.file || d.file.includes(`v${old}`)))
-      d.file = buildPath(v.version, "exe");
+    if (d.format === "RAR" && (!d.file || d.file.includes(`${old}`)))
+      d.file = buildPath(v.version, "rar");
     if (d.format === "APK" && (!d.file || d.file.includes(`v${old}`)))
       d.file = buildPath(v.version, "apk");
   });
@@ -182,7 +183,7 @@ $("addVersion").onclick = () => {
     current: true,
     description: "Aktueller interner Teststand der BaustellenHub App.",
     downloads: [
-      {name:"Windows",format:"EXE",file:buildPath(version,"exe"),primary:true},
+      {name:"Windows-Paket",format:"RAR",file:buildPath(version,"rar"),primary:true,description:"Komplettes Windows-Programmpaket inklusive benötigter DLLs"},
       {name:"Android",format:"APK",file:buildPath(version,"apk"),primary:false}
     ],
     changes: [],
