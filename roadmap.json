@@ -3,7 +3,7 @@
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
     "version": "0.9.3 Unstable",
-    "updated": "26.08.2026",
+    "updated": "27.08.2026",
     "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktuell liegt der Fokus auf Feldtests, Performance, stabilen Berichten und der Überarbeitung der Benachrichtigungen."
   },
   "milestones": [
@@ -97,6 +97,14 @@
       "taskIds": [
         "notifications-redesign",
         "first-use-onboarding"
+      ]
+    },
+    {
+      "id": "network-stability",
+      "title": "Netzwerk- & Backend-Stabilität",
+      "description": "Backend-Zugriff in unterschiedlichen Netzwerken und auf verschiedenen Windows-Geräten zuverlässig absichern.",
+      "taskIds": [
+        "office-network-backend"
       ]
     }
   ],
@@ -353,9 +361,25 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "26.08.2026"
+    },
+    {
+      "id": "office-network-backend",
+      "title": "Backend-Erreichbarkeit im Büronetz prüfen",
+      "description": "Ab v0.9.1 meldet die Windows-App im Büronetz teilweise 'Keine Verbindung zum Server'. Kontrolltest mit demselben Laptop über Handy-Hotspot erfolgreich: DNS-Auflösung, HTTPS/TLS und Zugriff auf juh-baustellenhub-backend.onrender.com funktionieren. Render/NestJS antwortet auf GET / mit HTTP 404 ('Cannot GET /'), womit die externe Erreichbarkeit bestätigt ist. Als Nächstes denselben nslookup-/curl-Test im Büronetz durchführen und die Ergebnisse vergleichen.",
+      "area": "Backend / Netzwerk",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 50,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "27.08.2026",
+      "title": "Backend-Verbindung außerhalb des Heimnetzes untersucht",
+      "text": "Der Kontrolltest mit demselben Windows-Laptop über einen Handy-Hotspot war erfolgreich. DNS, HTTPS/TLS und die Verbindung zum Render/NestJS-Backend funktionieren. Der HTTP-404 auf GET / bestätigt die Erreichbarkeit und ist kein Verbindungsfehler. Offen ist der direkte Vergleich mit dem Büronetz, in dem die App weiterhin keine Serververbindung meldet."
+    },
     {
       "date": "26.08.2026",
       "title": "v0.9.3 Unstable – Feldtests und nächste Optimierungsrunde",

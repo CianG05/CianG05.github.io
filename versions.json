@@ -30,9 +30,10 @@
         "Dateisortierung unter Windows korrigiert",
         "Montagehilfe und Wartezeit um Personenanzahl und Grund erweitert",
         "Sträucher und Büsche als gemeinsame Position",
-        "Vorbereitung weiterer Feld- und Tablet-Tests"
+        "Vorbereitung weiterer Feld- und Tablet-Tests",
+        "Netzwerkproblem im Büronetz wird untersucht; Hotspot-Zugriff auf das Render-Backend erfolgreich verifiziert"
       ],
-      "notice": "Unstable Testversion – noch nicht vollständig auf allen Geräten verifiziert."
+      "notice": "Unstable Testversion – noch nicht vollständig auf allen Geräten und Netzwerken verifiziert. Die Backend-Erreichbarkeit im Büronetz befindet sich aktuell in Prüfung."
     },
     {
       "version": "0.9.2",
