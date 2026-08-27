@@ -114,3 +114,20 @@ Der Editor erzeugt für neue Testversionen automatisch genau diese beiden Pfade.
 - Windows wird als vollständiges RAR-Paket inklusive EXE und DLLs angeboten.
 - Android wird separat als APK angeboten.
 - Für v0.9.3 müssen die beiden Build-Dateien unter `downloads/v0.9.3/` hochgeladen werden.
+
+
+## Testversionen – Stand 27.08.2026
+
+- **v0.9.3.1 Unstable** ist die neueste und aktuelle Testversion.
+- **v0.9.3 Unstable** bleibt im Versionsverlauf sichtbar und herunterladbar.
+- Beide Versionen bleiben `testing` / `Unstable`, bis die realen Geräte- und Feldtests erfolgreich abgeschlossen sind.
+
+Build-Dateien pro Version:
+
+- Windows: `downloads/vX.Y.Z/JuH Baustellen Hub Release X.Y.Z.rar`
+- Android: `downloads/vX.Y.Z/JuH-BaustellenHub-vX.Y.Z.apk`
+
+Für v0.9.3.1 also:
+
+- `downloads/v0.9.3.1/JuH Baustellen Hub Release 0.9.3.1.rar`
+- `downloads/v0.9.3.1/JuH-BaustellenHub-v0.9.3.1.apk`
