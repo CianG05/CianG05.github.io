@@ -4,13 +4,13 @@
     "company": "JuH Burmeister",
     "version": "0.9.3.2 Unstable",
     "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.2 Unstable enthält den neuen Einführungskurs auf Windows und Tablet, weitere Bugfixes und Performance-Verbesserungen. Der Code ist auf main, das Testpaket muss für den vollständigen Feldtest noch neu gebaut werden."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.2 Unstable bündelt Stabilitäts-, Inbox-, OneDrive-, Performance- und Onboarding-Verbesserungen. Der Windows-First-Run-Fix ist implementiert; finaler Geräte-/Feldtest und ein aktualisierter Dist-Build stehen noch aus."
   },
   "milestones": [
     {
-      "id": "v0932-release",
-      "title": "v0.9.3.2 – Onboarding, Bugfixes & Performance",
-      "description": "Einführungskurs integrieren, aktuelle Fehler korrigieren und die Ladezeiten weiter verbessern. Danach kompletter Geräte- und Feldtest.",
+      "id": "v0932-current",
+      "title": "v0.9.3.2 – Aktueller Teststand",
+      "description": "Einführungskurs, Bugfixes und Performance abschließen, neu bauen und vollständig testen.",
       "taskIds": [
         "first-use-onboarding",
         "bugfix-round-0932",
@@ -20,49 +20,31 @@
       ]
     },
     {
-      "id": "v0931-stability",
-      "title": "v0.9.3.1 – Stabilität & Daten",
-      "description": "Berichte und Dashboard-Datenflüsse stabilisieren und anschließend auf realen Geräten verifizieren.",
+      "id": "data-stability",
+      "title": "Datenflüsse & Stabilität",
+      "description": "Berichte, Dashboard-Feeds, Stammdaten und Dateilisten zuverlässig verifizieren.",
       "taskIds": [
         "reports-review-stability",
         "dashboard-feeds",
+        "masterdata-complete",
+        "file-sorting",
         "device-field-qa"
       ]
     },
     {
-      "id": "v0931-notifications",
-      "title": "v0.9.3.1 – Benachrichtigungen",
-      "description": "Inbox, Badge, Deduplizierung und Zustände vereinheitlichen und testen.",
+      "id": "notifications-onedrive",
+      "title": "Inbox, Benachrichtigungen & OneDrive",
+      "description": "Inbox vereinheitlichen, doppelte Requests verhindern und Verhalten im Feldtest prüfen.",
       "taskIds": [
         "notifications-redesign",
-        "device-field-qa"
-      ]
-    },
-    {
-      "id": "v0931-performance",
-      "title": "v0.9.3.1 – Performance",
-      "description": "OneDrive-Requests reduzieren, Prefetch optimieren und Ladezeiten weiter senken.",
-      "taskIds": [
         "onedrive-dedup",
-        "performance-speed",
-        "stale-while-revalidate",
-        "device-field-qa"
-      ]
-    },
-    {
-      "id": "v0931-onboarding",
-      "title": "v0.9.3.1 – Einführung & Testfreigabe",
-      "description": "Einführungskurs umsetzen und den kompletten Stand auf Laptop/PC und Tablet testen.",
-      "taskIds": [
-        "first-use-onboarding",
-        "build-package-0931",
         "device-field-qa"
       ]
     },
     {
       "id": "completed-foundation",
-      "title": "Bereits abgeschlossene Grundlagen",
-      "description": "Bereits abgeschlossene Funktionen aus den vorherigen Testständen.",
+      "title": "Abgeschlossene Grundlagen",
+      "description": "Fertige Funktionen aus den vorherigen Testständen.",
       "taskIds": [
         "backup",
         "pc-test",
@@ -71,19 +53,52 @@
         "report-review",
         "pdf-viewer",
         "assembly-waiting-details",
-        "shrubs-combine"
+        "shrubs-combine",
+        "build-package-0931"
+      ]
+    },
+    {
+      "id": "next-polish",
+      "title": "Nächster Feinschliff",
+      "description": "Nach dem Gerätetest folgen Startzeit-, Cache- und Toast-Optimierungen.",
+      "taskIds": [
+        "toast-polish",
+        "startup-performance",
+        "stale-while-revalidate"
       ]
     },
     {
       "id": "deferred",
       "title": "Zurückgestellt",
-      "description": "Dokumentierte Themen, die aktuell bewusst nicht bearbeitet werden.",
+      "description": "Bekannte Themen, die aktuell bewusst nicht im Fokus stehen.",
       "taskIds": [
         "office-network-backend"
       ]
     }
   ],
   "items": [
+    {
+      "id": "backup",
+      "title": "Aktuellen Projektstand vollständig sichern",
+      "description": "Quellcode, Konfigurationen und vorhandene Builds als wiederherstellbares Backup sichern.",
+      "area": "Sicherheit",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "pc-test",
+      "title": "PC-Testversion ohne Anmeldung nutzbar machen",
+      "description": "Testversion v0.9.2 ohne reguläre Login-Oberfläche. Windows-Testbuild läuft und ist öffnungsfähig; Produktiv-OAuth bleibt unverändert.",
+      "area": "Windows",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
     {
       "id": "filename",
       "title": "Dateinamen der Tagesberichte vereinheitlichen",
@@ -96,9 +111,53 @@
       "updated": "26.08.2026"
     },
     {
+      "id": "notification-layout",
+      "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
+      "description": "Toast-Benachrichtigungen schließen über X ohne Layoutfehler.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "report-review",
+      "title": "Kontrollansicht vor PDF-Erstellung einbauen",
+      "description": "Kontrollansicht vor der PDF-Erstellung umgesetzt.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "pdf-viewer",
+      "title": "PDF-Anzeige wie Bildanzeige bedienen",
+      "description": "PDF-Viewer mit Pan/Zoom wie Bilder und Tablet-Vollbild.",
+      "area": "Dateien",
+      "priority": "medium",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
       "id": "assembly-waiting-details",
       "title": "Montagehilfe und Wartezeit erweitern",
       "description": "Bei Montagehilfe und Wartezeit werden zusätzlich Anzahl der betroffenen Personen und der jeweilige Grund erfasst.",
+      "area": "Berichte",
+      "priority": "medium",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "shrubs-combine",
+      "title": "Sträucher und Büsche als gemeinsame Position führen",
+      "description": "Sträucher und Büsche werden als gemeinsame Position behandelt und nicht mehr getrennt geführt.",
       "area": "Berichte",
       "priority": "medium",
       "status": "done",
@@ -125,72 +184,6 @@
       "priority": "high",
       "status": "in_progress",
       "progress": 85,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "backup",
-      "title": "Aktuellen Projektstand vollständig sichern",
-      "description": "Quellcode, Konfigurationen und vorhandene Builds als wiederherstellbares Backup sichern.",
-      "area": "Sicherheit",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "notification-layout",
-      "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
-      "description": "Toast-Benachrichtigungen schließen über X ohne Layoutfehler.",
-      "area": "Benachrichtigungen",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "pc-test",
-      "title": "PC-Testversion ohne Anmeldung nutzbar machen",
-      "description": "Testversion v0.9.2 ohne reguläre Login-Oberfläche. Windows-Testbuild läuft und ist öffnungsfähig; Produktiv-OAuth bleibt unverändert.",
-      "area": "Windows",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "shrubs-combine",
-      "title": "Sträucher und Büsche als gemeinsame Position führen",
-      "description": "Sträucher und Büsche werden als gemeinsame Position behandelt und nicht mehr getrennt geführt.",
-      "area": "Berichte",
-      "priority": "medium",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "pdf-viewer",
-      "title": "PDF-Anzeige wie Bildanzeige bedienen",
-      "description": "PDF-Viewer mit Pan/Zoom wie Bilder und Tablet-Vollbild.",
-      "area": "Dateien",
-      "priority": "medium",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "report-review",
-      "title": "Kontrollansicht vor PDF-Erstellung einbauen",
-      "description": "Kontrollansicht vor der PDF-Erstellung umgesetzt.",
-      "area": "Berichte",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
       "owner": "Jeremy",
       "updated": "26.08.2026"
     },
@@ -263,9 +256,9 @@
     {
       "id": "first-use-onboarding",
       "title": "Einführungskurs für die erste Benutzung",
-      "description": "In v0.9.3.2 umgesetzt und auf main: Einführungskurs läuft beim ersten Start auf Windows und Tablet. Abschluss/Überspringen wird über das Prefs-Flag 'intro_course_completed' gespeichert; der Kurs kann später erneut über Hilfe geöffnet werden. Feature-Commit 3a0637d, Merge auf main als 16cca05. Vollständiger Feldtest auf realen Geräten steht noch aus.",
+      "description": "v0.9.3.2: Einführungskurs für Windows und Tablet mit Prefs-Flag 'intro_course_completed', Skip/Fertig und erneutem Öffnen über Hilfe. Windows-Auto-Intro-Fix ist implementiert: Ursache war ein Splash-Remount mit verlorenem BuildContext; Splash läuft nun als Overlay, das Intro wartet auf Splash-Ende und nutzt den Root-Navigator. Fix aktuell noch uncommitted; First-Run-QA steht aus.",
       "area": "Bedienung",
-      "priority": "medium",
+      "priority": "high",
       "status": "in_progress",
       "progress": 95,
       "owner": "Jeremy",
@@ -273,8 +266,8 @@
     },
     {
       "id": "device-field-qa",
-      "title": "Weitere Geräte- und Feldtests",
-      "description": "Nach dem neuen v0.9.3.2-Build auf Laptop/PC und anschließend auf dem echten Tablet testen. Einführungskurs, Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten, Bugfixes und Ladezeiten vollständig prüfen.",
+      "title": "First-Run-, Geräte- und Feldtest v0.9.3.2",
+      "description": "Nach Commit/Push und neuem Build: First-Run unter Windows inkl. Prefs-Reset prüfen, danach Laptop/PC und Tablet vollständig testen. Dashboard, Prüfungs-Queue, Inbox, OneDrive, Stammdaten, Dateien, Bugfixes und Ladezeiten verifizieren.",
       "area": "QA",
       "priority": "high",
       "status": "planned",
@@ -296,9 +289,9 @@
     {
       "id": "office-network-backend",
       "title": "Backend-Erreichbarkeit im Büronetz prüfen",
-      "description": "Bekanntes Problem ausschließlich im Büronetz. Externe Verbindung/Handy-Hotspot funktioniert. Bewusst zurückgestellt und nicht Bestandteil der aktuellen v0.9.3.1-Testfreigabe.",
+      "description": "Bekanntes Problem ausschließlich im Büronetz. Externe Verbindung und Handy-Hotspot funktionieren. Bewusst zurückgestellt.",
       "area": "Backend / Netzwerk",
-      "priority": "medium",
+      "priority": "low",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
@@ -307,22 +300,44 @@
     {
       "id": "bugfix-round-0932",
       "title": "Bugfix-Runde v0.9.3.2",
-      "description": "Mehrere Fehler aus dem aktuellen Teststand wurden in v0.9.3.2 behoben. Die Korrekturen sind im Build enthalten, müssen aber noch im Geräte- und Feldtest bestätigt werden.",
+      "description": "Weitere Fehler im v0.9.3.2-Teststand behoben, inklusive Windows-First-Run-Intro-Fix. Finale Geräteprüfung steht noch aus.",
       "area": "Stabilität",
       "priority": "high",
       "status": "in_progress",
-      "progress": 85,
+      "progress": 90,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
     {
       "id": "build-package-0932",
-      "title": "v0.9.3.2 Testpaket bereitstellen",
-      "description": "Windows- und Android-Testpakete für v0.9.3.2 sind vorhanden, enthalten aber noch den vorherigen Dist-Stand. Nach dem Einführungskurs-Merge auf main muss v0.9.3.2 für den Feldtest erneut als Windows-Paket und APK gebaut werden.",
+      "title": "v0.9.3.2 Testpaket aktualisieren",
+      "description": "v0.9.3.2-Builds existieren, müssen nach dem finalen Windows-Intro-Fix erneut als Windows-Paket und APK gebaut und im Downloadbereich ersetzt werden.",
       "area": "Build",
       "priority": "high",
       "status": "in_progress",
       "progress": 90,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "toast-polish",
+      "title": "Toasts weiter verfeinern",
+      "description": "Benachrichtigungs-Toasts nach dem Feldtest optisch und funktional weiter verfeinern.",
+      "area": "Benachrichtigungen",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "startup-performance",
+      "title": "Startzeiten weiter optimieren",
+      "description": "App-Start und First-Load nach dem v0.9.3.2-Feldtest messen und gezielt weiter beschleunigen.",
+      "area": "Performance",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     }
@@ -330,58 +345,33 @@
   "changelog": [
     {
       "date": "27.08.2026",
-      "title": "Einführungskurs auf Windows und Tablet integriert",
-      "text": "Der Einführungskurs läuft jetzt beim ersten Start auf Desktop und Tablet. Skip/Fertig werden über das Prefs-Flag intro_course_completed gespeichert; über Hilfe kann der Kurs erneut geöffnet werden. Feature-Commit 3a0637d wurde als 16cca05 auf main gemergt und gepusht. Der reale Feldtest steht noch aus."
+      "title": "v0.9.3.2 Unstable – Windows-First-Run-Intro korrigiert",
+      "text": "Ursache für das nicht automatisch öffnende Windows-Intro war ein Splash-Remount mit ungültigem BuildContext. Splash wurde als Overlay umgebaut; das Intro wartet auf dessen Ende und nutzt den Root-Navigator. Fix ist implementiert, aktuell aber noch uncommitted und muss per First-Run-QA verifiziert werden."
     },
     {
       "date": "27.08.2026",
-      "title": "v0.9.3.2 Dist muss nach Onboarding-Merge neu gebaut werden",
-      "text": "Der Quellcode auf main enthält den neuen Einführungskurs, die bereits vorhandenen v0.9.3.2-Downloads stammen jedoch noch vom vorherigen Dist-Stand. Vor dem Feldtest müssen Windows-Paket und APK erneut gebaut und ersetzt werden."
+      "title": "v0.9.3.2 Unstable – Einführungskurs integriert",
+      "text": "Einführungskurs für Windows und Tablet mit Prefs-Flag intro_course_completed, Skip/Fertig und erneutem Öffnen über Hilfe integriert."
     },
     {
       "date": "27.08.2026",
-      "title": "v0.9.3.2 Unstable – Einführungskurs, Bugfixes und Performance",
-      "text": "v0.9.3.2 ist als neuer Unstable-Teststand verfügbar. Der Einführungskurs für die erste Benutzung wurde integriert, weitere Fehler wurden behoben und die Performance wurde erneut verbessert. Windows-Paket und APK stehen bereits im GitHub-Downloadbereich. Die Version bleibt Unstable, bis die Änderungen auf Laptop/PC und Tablet vollständig getestet wurden."
+      "title": "v0.9.3.2 Unstable – Bugfixes und Performance verbessert",
+      "text": "Weitere Fehler korrigiert und Prefetch, Batches, Request-Verhalten sowie Cache-Fallbacks weiter optimiert. Vor einer Stable-Bewertung sind reale Geräte- und Feldtests erforderlich."
     },
     {
       "date": "27.08.2026",
-      "title": "v0.9.3.1 Unstable – Stabilität, Inbox und Performance umgesetzt",
-      "text": "Berichte in Prüfung laden stabiler; fehlerhaftes JSON-Parsing und der N×Site-Scan wurden adressiert. Dashboard-Feeds laufen parallel und entkoppelt, sodass Fehler pro Karte behandelt werden. Die Benachrichtigungen nutzen eine gemeinsame Inbox-Quelle für Badge und Liste, inklusive ID-Deduplizierung sowie klareren Filtern und Empty-States. OneDrive-Requests werden dedupliziert, Prefetch läuft parallel und Cache-Fallbacks beschleunigen Baustellen- und Dateilisten. Geräte- und Feldtests stehen noch aus."
-    },
-    {
-      "date": "27.08.2026",
-      "title": "v0.9.3.1 Testpaket erstellt",
-      "text": "Windows- und Android-Testpaket für v0.9.3.1 wurde unter dist/JuH Baustellen Hub Release 0.9.3.1/ bereitgestellt. Die Version bleibt Unstable, bis Laptop-/PC- und Tablet-Tests erfolgreich abgeschlossen sind."
-    },
-    {
-      "date": "27.08.2026",
-      "title": "Bewusst offen / zurückgestellt",
-      "text": "Büro-Netzwerk ↔ Render bleibt zurückgestellt. Der Einführungskurs ist noch offen und gehört weiterhin zur v0.9.3.1-Runde. Weitere Geräte- und Feld-QA ist ebenfalls offen."
+      "title": "v0.9.3.1 Unstable – Datenflüsse, Inbox und OneDrive überarbeitet",
+      "text": "Prüfungs-Queue gegen Endlos-Spinner stabilisiert, Dashboard-Feeds parallel und entkoppelt, gemeinsame Inbox-Quelle mit ID-Deduplizierung eingeführt und identische OneDrive-Requests dedupliziert."
     },
     {
       "date": "26.08.2026",
-      "title": "v0.9.3 Unstable – Feldtests und nächste Optimierungsrunde",
-      "text": "v0.9.2 ist als Windows-/APK-Teststand öffnungsfähig. v0.9.3 steht als neuer Unstable-Teststand bereit. PC-Testversion ohne regulären Login, Montagehilfe/Wartezeit und Sträucher/Büsche sind abgeschlossen. Stammdaten und Dateisortierung funktionieren unter Windows, müssen auf dem Tablet aber noch verifiziert werden. Als Nächstes folgen Feldtest, schnellere Ladezeiten, Dashboard-Feeds, stabile Berichte in Prüfung, Stale-While-Revalidate, OneDrive-Deduplizierung, neue Benachrichtigungen und der Einführungskurs."
-    },
-    {
-      "date": "26.08.2026",
-      "title": "Nächste Optimierungsrunde gestartet",
-      "text": "Heute stehen schnellere Ladezeiten, überarbeitete Benachrichtigungen, vollständige Stammdaten, korrekte Dateisortierung, erweiterte Angaben für Montagehilfe und Wartezeit, die Zusammenführung von Sträuchern/Büschen sowie ein Einführungskurs für die erste Benutzung auf der Agenda."
+      "title": "v0.9.3 Unstable – Berichtsfunktionen und Windows-Teststand erweitert",
+      "text": "Testmodus ohne reguläre Anmeldung, Dateinamen/Sortierung, Review vor PDF, PDF-Pan/Zoom, Montagehilfe/Wartezeit und gemeinsame Position für Sträucher/Büsche umgesetzt bzw. vorbereitet."
     },
     {
       "date": "05.08.2026",
-      "title": "Version 0.9.2 Beta",
-      "text": "Testversion ohne Login, neue Dateinamen, Toast-Fix, Review vor PDF, neuer PDF-Viewer und Cache-System."
-    },
-    {
-      "date": "05.08.2026",
-      "title": "Roadmap-Verwaltung eingerichtet",
-      "text": "Aufgaben, Fortschritte und Feedback werden zentral nachvollziehbar verwaltet."
-    },
-    {
-      "date": "05.08.2026",
-      "title": "Backup erstellt",
-      "text": "Der aktuelle App-Stand wurde vor den nächsten Änderungen gesichert."
+      "title": "v0.9.2 – erster interner Teststand",
+      "text": "Erster interner Windows-/Tablet-Teststand mit grundlegender Berichts- und Dateifunktionalität sowie lokalem Cache-Fallback."
     }
   ]
 }
