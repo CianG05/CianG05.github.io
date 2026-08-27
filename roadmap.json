@@ -2,11 +2,23 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.3.1 Unstable",
+    "version": "0.9.3.2 Unstable",
     "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.1 Unstable enthält die aktuelle Stabilitäts-, Benachrichtigungs- und Performance-Runde. Reale Geräte- und Feldtests sowie der Einführungskurs stehen noch aus."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktuelle Testversion ist v0.9.3.2 Unstable mit Einführungskurs, weiterer Bugfix-Runde und zusätzlichen Performance-Verbesserungen. Geräte- und Feldtests stehen weiterhin aus."
   },
   "milestones": [
+    {
+      "id": "v0932-release",
+      "title": "v0.9.3.2 – Onboarding, Bugfixes & Performance",
+      "description": "Einführungskurs integrieren, aktuelle Fehler korrigieren und die Ladezeiten weiter verbessern. Danach kompletter Geräte- und Feldtest.",
+      "taskIds": [
+        "first-use-onboarding",
+        "bugfix-round-0932",
+        "performance-speed",
+        "build-package-0932",
+        "device-field-qa"
+      ]
+    },
     {
       "id": "v0931-stability",
       "title": "v0.9.3.1 – Stabilität & Daten",
@@ -229,11 +241,11 @@
     {
       "id": "performance-speed",
       "title": "Ladezeiten deutlich reduzieren",
-      "description": "In v0.9.3.1 umgesetzt: Prefetch läuft parallel, Requests werden gebündelt und Cache-Fallbacks für Baustellen und Dateien werden genutzt. Reale Ladezeiten auf Laptop/PC und Tablet müssen noch verifiziert werden.",
+      "description": "In v0.9.3.1 begonnen und in v0.9.3.2 weiter verbessert: Prefetch, Batches, Request-Verhalten und Cache-Fallbacks wurden weiter optimiert. Reale Ladezeiten müssen noch auf Laptop/PC und Tablet verifiziert werden.",
       "area": "Performance",
       "priority": "high",
       "status": "in_progress",
-      "progress": 80,
+      "progress": 90,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
@@ -251,18 +263,18 @@
     {
       "id": "first-use-onboarding",
       "title": "Einführungskurs für die erste Benutzung",
-      "description": "Hauptbestandteil der v0.9.3.1-Runde, aber noch nicht umgesetzt. Beim ersten Start sollen die wichtigsten Bereiche und Arbeitsabläufe verständlich erklärt werden.",
+      "description": "In v0.9.3.2 umgesetzt: Einführungskurs für die erste Benutzung wurde integriert. Der Ablauf muss noch auf realen Geräten und aus Sicht eines Erstnutzers vollständig getestet werden.",
       "area": "Bedienung",
       "priority": "medium",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 90,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
     {
       "id": "device-field-qa",
       "title": "Weitere Geräte- und Feldtests",
-      "description": "v0.9.3.1 auf Laptop/PC und anschließend auf dem echten Tablet testen. Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten und Ladezeiten prüfen.",
+      "description": "v0.9.3.2 auf Laptop/PC und anschließend auf dem echten Tablet testen. Einführungskurs, Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten, Bugfixes und Ladezeiten vollständig prüfen.",
       "area": "QA",
       "priority": "high",
       "status": "planned",
@@ -291,9 +303,36 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "27.08.2026"
+    },
+    {
+      "id": "bugfix-round-0932",
+      "title": "Bugfix-Runde v0.9.3.2",
+      "description": "Mehrere Fehler aus dem aktuellen Teststand wurden in v0.9.3.2 behoben. Die Korrekturen sind im Build enthalten, müssen aber noch im Geräte- und Feldtest bestätigt werden.",
+      "area": "Stabilität",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "build-package-0932",
+      "title": "v0.9.3.2 Testpaket bereitstellen",
+      "description": "Windows-Paket und Android-APK für v0.9.3.2 sind im GitHub-Downloadbereich vorhanden und stehen für den nächsten Gerätetest bereit.",
+      "area": "Build",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "27.08.2026",
+      "title": "v0.9.3.2 Unstable – Einführungskurs, Bugfixes und Performance",
+      "text": "v0.9.3.2 ist als neuer Unstable-Teststand verfügbar. Der Einführungskurs für die erste Benutzung wurde integriert, weitere Fehler wurden behoben und die Performance wurde erneut verbessert. Windows-Paket und APK stehen bereits im GitHub-Downloadbereich. Die Version bleibt Unstable, bis die Änderungen auf Laptop/PC und Tablet vollständig getestet wurden."
+    },
     {
       "date": "27.08.2026",
       "title": "v0.9.3.1 Unstable – Stabilität, Inbox und Performance umgesetzt",

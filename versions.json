@@ -1,12 +1,44 @@
 {
   "versions": [
     {
-      "version": "0.9.3.1",
-      "title": "Unstable – Stabilität & Performance",
+      "version": "0.9.3.2",
+      "title": "Unstable – Onboarding, Bugfixes & Performance",
       "date": "27.08.2026",
       "status": "testing",
       "statusLabel": "Aktuelle Unstable Testversion",
       "current": true,
+      "description": "Neuester interner Teststand mit integriertem Einführungskurs, weiterer Bugfix-Runde und zusätzlichen Performance-Verbesserungen. Noch nicht vollständig auf Laptop/PC und Tablet verifiziert.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.3.2/JuH Baustellen Hub Release 0.9.3.2.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.3.2/JuH-BaustellenHub-v0.9.3.2.apk",
+          "primary": false,
+          "description": "Android-Testbuild v0.9.3.2"
+        }
+      ],
+      "changes": [
+        "Einführungskurs für die erste Benutzung integriert",
+        "Weitere Bugfix-Runde durchgeführt",
+        "Performance und Ladeverhalten weiter verbessert",
+        "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
+      ],
+      "notice": "Unstable – Windows-/Laptop- und Tablet-/Feldtests stehen noch aus. Erst nach erfolgreicher Prüfung als stabil bewerten."
+    },
+    {
+      "version": "0.9.3.1",
+      "title": "Unstable – Stabilität & Performance",
+      "date": "27.08.2026",
+      "status": "testing",
+      "statusLabel": "Vorherige Unstable Testversion",
+      "current": false,
       "description": "Aktueller interner Teststand mit stabilisierter Prüfungs-Queue und Dashboard-Feeds, gemeinsamer Inbox-Quelle, OneDrive-Request-Deduplizierung, parallelem Prefetch und Cache-Fallbacks. Geräte-/Feldtests und Einführungskurs stehen noch aus.",
       "downloads": [
         {
@@ -33,7 +65,7 @@
         "Prefetch/Batches und Cache-Fallbacks für Baustellen und Dateien",
         "Testpaket für Windows und Android bereitgestellt"
       ],
-      "notice": "Unstable – Laptop-/PC- und Tablet-/Feldtests stehen noch aus. Der Einführungskurs ist ebenfalls noch offen."
+      "notice": "Unstable Testversion – weiterhin im Versionsverlauf verfügbar."
     },
     {
       "version": "0.9.3",
