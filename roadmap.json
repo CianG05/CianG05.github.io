@@ -4,7 +4,7 @@
     "company": "JuH Burmeister",
     "version": "0.9.3.2 Unstable",
     "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktuelle Testversion ist v0.9.3.2 Unstable mit Einführungskurs, weiterer Bugfix-Runde und zusätzlichen Performance-Verbesserungen. Geräte- und Feldtests stehen weiterhin aus."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.2 Unstable enthält den neuen Einführungskurs auf Windows und Tablet, weitere Bugfixes und Performance-Verbesserungen. Der Code ist auf main, das Testpaket muss für den vollständigen Feldtest noch neu gebaut werden."
   },
   "milestones": [
     {
@@ -263,18 +263,18 @@
     {
       "id": "first-use-onboarding",
       "title": "Einführungskurs für die erste Benutzung",
-      "description": "In v0.9.3.2 umgesetzt: Einführungskurs für die erste Benutzung wurde integriert. Der Ablauf muss noch auf realen Geräten und aus Sicht eines Erstnutzers vollständig getestet werden.",
+      "description": "In v0.9.3.2 umgesetzt und auf main: Einführungskurs läuft beim ersten Start auf Windows und Tablet. Abschluss/Überspringen wird über das Prefs-Flag 'intro_course_completed' gespeichert; der Kurs kann später erneut über Hilfe geöffnet werden. Feature-Commit 3a0637d, Merge auf main als 16cca05. Vollständiger Feldtest auf realen Geräten steht noch aus.",
       "area": "Bedienung",
       "priority": "medium",
       "status": "in_progress",
-      "progress": 90,
+      "progress": 95,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
     {
       "id": "device-field-qa",
       "title": "Weitere Geräte- und Feldtests",
-      "description": "v0.9.3.2 auf Laptop/PC und anschließend auf dem echten Tablet testen. Einführungskurs, Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten, Bugfixes und Ladezeiten vollständig prüfen.",
+      "description": "Nach dem neuen v0.9.3.2-Build auf Laptop/PC und anschließend auf dem echten Tablet testen. Einführungskurs, Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten, Bugfixes und Ladezeiten vollständig prüfen.",
       "area": "QA",
       "priority": "high",
       "status": "planned",
@@ -318,16 +318,26 @@
     {
       "id": "build-package-0932",
       "title": "v0.9.3.2 Testpaket bereitstellen",
-      "description": "Windows-Paket und Android-APK für v0.9.3.2 sind im GitHub-Downloadbereich vorhanden und stehen für den nächsten Gerätetest bereit.",
+      "description": "Windows- und Android-Testpakete für v0.9.3.2 sind vorhanden, enthalten aber noch den vorherigen Dist-Stand. Nach dem Einführungskurs-Merge auf main muss v0.9.3.2 für den Feldtest erneut als Windows-Paket und APK gebaut werden.",
       "area": "Build",
       "priority": "high",
-      "status": "done",
-      "progress": 100,
+      "status": "in_progress",
+      "progress": 90,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "27.08.2026",
+      "title": "Einführungskurs auf Windows und Tablet integriert",
+      "text": "Der Einführungskurs läuft jetzt beim ersten Start auf Desktop und Tablet. Skip/Fertig werden über das Prefs-Flag intro_course_completed gespeichert; über Hilfe kann der Kurs erneut geöffnet werden. Feature-Commit 3a0637d wurde als 16cca05 auf main gemergt und gepusht. Der reale Feldtest steht noch aus."
+    },
+    {
+      "date": "27.08.2026",
+      "title": "v0.9.3.2 Dist muss nach Onboarding-Merge neu gebaut werden",
+      "text": "Der Quellcode auf main enthält den neuen Einführungskurs, die bereits vorhandenen v0.9.3.2-Downloads stammen jedoch noch vom vorherigen Dist-Stand. Vor dem Feldtest müssen Windows-Paket und APK erneut gebaut und ersetzt werden."
+    },
     {
       "date": "27.08.2026",
       "title": "v0.9.3.2 Unstable – Einführungskurs, Bugfixes und Performance",

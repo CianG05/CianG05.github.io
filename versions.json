@@ -7,7 +7,7 @@
       "status": "testing",
       "statusLabel": "Aktuelle Unstable Testversion",
       "current": true,
-      "description": "Neuester interner Teststand mit integriertem Einführungskurs, weiterer Bugfix-Runde und zusätzlichen Performance-Verbesserungen. Noch nicht vollständig auf Laptop/PC und Tablet verifiziert.",
+      "description": "Neuester interner Teststand mit Einführungskurs auf Windows und Tablet, weiteren Bugfixes und zusätzlichen Performance-Verbesserungen. Der aktuelle Code liegt auf main; die veröffentlichten Testpakete müssen nach dem Onboarding-Merge noch neu gebaut werden.",
       "downloads": [
         {
           "name": "Windows-Paket",
@@ -25,12 +25,13 @@
         }
       ],
       "changes": [
+        "Einführungskurs auf Windows und Tablet mit Prefs-Flag und erneutem Öffnen über Hilfe",
         "Einführungskurs für die erste Benutzung integriert",
         "Weitere Bugfix-Runde durchgeführt",
         "Performance und Ladeverhalten weiter verbessert",
         "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
       ],
-      "notice": "Unstable – Windows-/Laptop- und Tablet-/Feldtests stehen noch aus. Erst nach erfolgreicher Prüfung als stabil bewerten."
+      "notice": "Unstable – Code auf main ist aktueller als der derzeitige Dist-Build. Vor dem Feldtest Windows-Paket und APK neu bauen; danach Geräte-/Feldtests durchführen."
     },
     {
       "version": "0.9.3.1",
