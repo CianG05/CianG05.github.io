@@ -33,7 +33,7 @@
         "Vorbereitung weiterer Feld- und Tablet-Tests",
         "Netzwerkproblem im Büronetz wird untersucht; Hotspot-Zugriff auf das Render-Backend erfolgreich verifiziert"
       ],
-      "notice": "Unstable Testversion – noch nicht vollständig auf allen Geräten und Netzwerken verifiziert. Die Backend-Erreichbarkeit im Büronetz befindet sich aktuell in Prüfung."
+      "notice": "Unstable Testversion – aktueller Entwicklungsfokus liegt auf Datenstabilität, Benachrichtigungen, OneDrive-Optimierung und Performance."
     },
     {
       "version": "0.9.2",

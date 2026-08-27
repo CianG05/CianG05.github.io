@@ -4,9 +4,23 @@
     "company": "JuH Burmeister",
     "version": "0.9.3 Unstable",
     "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktuell liegt der Fokus auf Feldtests, Performance, stabilen Berichten und der Überarbeitung der Benachrichtigungen."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktueller Fokus: stabile Datenflüsse, Benachrichtigungen, OneDrive-Optimierung und deutlich schnellere Ladezeiten."
   },
   "milestones": [
+    {
+      "id": "today-focus-2026-08-27",
+      "title": "Heutiger Fokus – Stabilität & Performance",
+      "description": "Datenflüsse stabilisieren, Benachrichtigungen neu aufsetzen, doppelte OneDrive-Requests vermeiden und die Ladezeiten der gesamten App spürbar reduzieren. Onboarding folgt im Anschluss.",
+      "taskIds": [
+        "reports-review-stability",
+        "dashboard-feeds",
+        "notifications-redesign",
+        "onedrive-dedup",
+        "performance",
+        "performance-speed-v2",
+        "first-use-onboarding"
+      ]
+    },
     {
       "id": "test",
       "title": "Testversion 0.9.2",
@@ -178,24 +192,24 @@
     {
       "id": "performance",
       "title": "Baustellen und Berichte schneller laden",
-      "description": "Ladezeiten für Baustellen und Berichte deutlich reduzieren. Bestehendes Cache-System und Datenabrufe weiter optimieren.",
+      "description": "Baustellen und Berichte schneller laden. Caching, Request-Verhalten und Datenabrufe weiter optimieren.",
       "area": "Performance",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "dashboard-feeds",
       "title": "Dashboard-Feeds reparieren",
-      "description": "Letzte Berichte, letzte Aufmaße, letzte Aktivitäten und Benachrichtigungs-Feeds wieder zuverlässig und vollständig anzeigen.",
+      "description": "Dashboard-Feeds reparieren. Letzte Berichte, letzte Aufmaße, letzte Aktivitäten und Benachrichtigungen wieder zuverlässig anzeigen. Heute aktiver Fokus.",
       "area": "Dashboard",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "reports-loading",
@@ -244,24 +258,24 @@
     {
       "id": "performance-speed-v2",
       "title": "Ladezeiten deutlich reduzieren",
-      "description": "Gesamte App-Performance weiter optimieren. Ziel ist ein deutlich schnelleres Laden von Baustellen, Berichten, Dateien und Stammdaten.",
+      "description": "Ladezeiten für Baustellen, Berichte, Dateien und Stammdaten deutlich reduzieren. Heute aktiver Fokus.",
       "area": "Performance",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "notifications-redesign",
       "title": "Benachrichtigungen grundlegend überarbeiten",
-      "description": "Benachrichtigungen optisch, funktional und technisch überarbeiten. Fokus auf kompakte Darstellung, stabile Bedienung und sinnvolle Inhalte.",
+      "description": "Benachrichtigungssystem grundlegend überarbeiten: stabile Darstellung, klare Zustände, keine Duplikate und saubere Bedienung auf Windows und Tablet.",
       "area": "Benachrichtigungen",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "masterdata-complete",
@@ -310,13 +324,13 @@
     {
       "id": "first-use-onboarding",
       "title": "Einführungskurs für die erste Benutzung",
-      "description": "Beim ersten Start einen kurzen Einführungskurs mit den wichtigsten Funktionen und Arbeitsabläufen anbieten.",
+      "description": "Einführungskurs für die erste Benutzung vorbereiten und nach den technischen Kernpunkten umsetzen.",
       "area": "Bedienung",
       "priority": "medium",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 5,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "tablet-field-test",
@@ -332,13 +346,13 @@
     {
       "id": "reports-review-stability",
       "title": "Berichte in Prüfung stabil laden",
-      "description": "Dauerhaftes Laden bzw. Hängen bei Berichten in Prüfung analysieren und zuverlässig beheben.",
+      "description": "Berichte in Prüfung stabil laden. Dauerhaftes Laden bzw. Hängen analysieren und zuverlässig beheben. Heute aktiver Fokus.",
       "area": "Berichte",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "stale-while-revalidate",
@@ -354,27 +368,32 @@
     {
       "id": "onedrive-dedup",
       "title": "OneDrive Request-Deduplizierung",
-      "description": "Doppelte bzw. parallele OneDrive-Abfragen reduzieren und identische Ladevorgänge zusammenführen.",
+      "description": "Doppelte und parallele OneDrive-Requests verhindern und identische Ladevorgänge zusammenführen. Heute aktiver Fokus.",
       "area": "OneDrive",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 10,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
       "id": "office-network-backend",
       "title": "Backend-Erreichbarkeit im Büronetz prüfen",
-      "description": "Ab v0.9.1 meldet die Windows-App im Büronetz teilweise 'Keine Verbindung zum Server'. Kontrolltest mit demselben Laptop über Handy-Hotspot erfolgreich: DNS-Auflösung, HTTPS/TLS und Zugriff auf juh-baustellenhub-backend.onrender.com funktionieren. Render/NestJS antwortet auf GET / mit HTTP 404 ('Cannot GET /'), womit die externe Erreichbarkeit bestätigt ist. Als Nächstes denselben nslookup-/curl-Test im Büronetz durchführen und die Ergebnisse vergleichen.",
+      "description": "Fehler tritt nur im Büronetz auf. Hotspot-/externe Verbindung funktioniert. Thema bleibt dokumentiert, wird heute aber bewusst nicht weiterverfolgt.",
       "area": "Backend / Netzwerk",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 50,
+      "status": "planned",
+      "progress": 0,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "27.08.2026",
+      "title": "Heutige Arbeitsrunde gestartet",
+      "text": "Heute werden Berichte in Prüfung und Dashboard-Feeds stabilisiert, das Benachrichtigungssystem grundlegend überarbeitet, OneDrive-Requests dedupliziert und die Ladezeiten für Baustellen, Berichte, Dateien und Stammdaten deutlich reduziert. Der Einführungskurs ist ebenfalls in Arbeit und folgt nach den technischen Kernpunkten. Das bekannte Büronetz-Problem bleibt dokumentiert, wird heute aber bewusst zurückgestellt."
+    },
     {
       "date": "27.08.2026",
       "title": "Backend-Verbindung außerhalb des Heimnetzes untersucht",
