@@ -1,12 +1,47 @@
 {
   "versions": [
     {
+      "version": "0.9.3.1",
+      "title": "Unstable – Stabilität & Performance",
+      "date": "27.08.2026",
+      "status": "testing",
+      "statusLabel": "Aktuelle Unstable Testversion",
+      "current": true,
+      "description": "Aktueller interner Teststand mit stabilisierter Prüfungs-Queue und Dashboard-Feeds, gemeinsamer Inbox-Quelle, OneDrive-Request-Deduplizierung, parallelem Prefetch und Cache-Fallbacks. Geräte-/Feldtests und Einführungskurs stehen noch aus.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.3.1/JuH Baustellen Hub Release 0.9.3.1.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.3.1/JuH-BaustellenHub-v0.9.3.1.apk",
+          "primary": false,
+          "description": "Android-Testbuild"
+        }
+      ],
+      "changes": [
+        "Berichte in Prüfung: kein Endlos-Spinner mehr durch problematisches JSON-Parsing / N×Site-Scan",
+        "Dashboard-Feeds parallel und entkoppelt; Fehler pro Karte",
+        "Inbox: Badge und Liste aus derselben Quelle",
+        "Benachrichtigungen mit ID-Deduplizierung sowie klareren Filtern und Empty-States",
+        "OneDrive: identische Requests werden nicht mehr parallel doppelt ausgeführt",
+        "Prefetch/Batches und Cache-Fallbacks für Baustellen und Dateien",
+        "Testpaket für Windows und Android bereitgestellt"
+      ],
+      "notice": "Unstable – Laptop-/PC- und Tablet-/Feldtests stehen noch aus. Der Einführungskurs ist ebenfalls noch offen."
+    },
+    {
       "version": "0.9.3",
       "title": "Unstable Büro- & Tablet-Teststand",
       "date": "26.08.2026",
       "status": "testing",
-      "statusLabel": "Aktuelle Unstable Testversion",
-      "current": true,
+      "statusLabel": "Vorherige Unstable Testversion",
+      "current": false,
       "description": "Neuer interner Unstable-Teststand. Windows- und Android-Build sind vorgesehen; der Stand läuft grundsätzlich, ist aber noch nicht vollständig verifiziert.",
       "downloads": [
         {
@@ -14,14 +49,14 @@
           "format": "RAR",
           "file": "downloads/v0.9.3/JuH Baustellen Hub Release 0.9.3.rar",
           "primary": true,
-          "description": "Komplettes Windows-Paket inklusive EXE und DLLs"
+          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
         },
         {
           "name": "Android",
           "format": "APK",
           "file": "downloads/v0.9.3/JuH-BaustellenHub-v0.9.3.apk",
           "primary": false,
-          "description": "Android Unstable-Testbuild"
+          "description": "Android-Testbuild"
         }
       ],
       "changes": [
@@ -33,7 +68,7 @@
         "Vorbereitung weiterer Feld- und Tablet-Tests",
         "Netzwerkproblem im Büronetz wird untersucht; Hotspot-Zugriff auf das Render-Backend erfolgreich verifiziert"
       ],
-      "notice": "Unstable Testversion – aktueller Entwicklungsfokus liegt auf Datenstabilität, Benachrichtigungen, OneDrive-Optimierung und Performance."
+      "notice": "Unstable Testversion – nicht als produktive Version freigegeben."
     },
     {
       "version": "0.9.2",

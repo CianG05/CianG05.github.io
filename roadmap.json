@@ -2,149 +2,76 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.3 Unstable",
+    "version": "0.9.3.1 Unstable",
     "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. Aktueller Fokus: stabile Datenflüsse, Benachrichtigungen, OneDrive-Optimierung und deutlich schnellere Ladezeiten."
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.1 Unstable enthält die aktuelle Stabilitäts-, Benachrichtigungs- und Performance-Runde. Reale Geräte- und Feldtests sowie der Einführungskurs stehen noch aus."
   },
   "milestones": [
     {
-      "id": "today-focus-2026-08-27",
-      "title": "Heutiger Fokus – Stabilität & Performance",
-      "description": "Datenflüsse stabilisieren, Benachrichtigungen neu aufsetzen, doppelte OneDrive-Requests vermeiden und die Ladezeiten der gesamten App spürbar reduzieren. Onboarding folgt im Anschluss.",
+      "id": "v0931-stability",
+      "title": "v0.9.3.1 – Stabilität & Daten",
+      "description": "Berichte und Dashboard-Datenflüsse stabilisieren und anschließend auf realen Geräten verifizieren.",
       "taskIds": [
         "reports-review-stability",
         "dashboard-feeds",
-        "notifications-redesign",
-        "onedrive-dedup",
-        "performance",
-        "performance-speed-v2",
-        "first-use-onboarding"
+        "device-field-qa"
       ]
     },
     {
-      "id": "test",
-      "title": "Testversion 0.9.2",
-      "description": "Interne Testversion",
+      "id": "v0931-notifications",
+      "title": "v0.9.3.1 – Benachrichtigungen",
+      "description": "Inbox, Badge, Deduplizierung und Zustände vereinheitlichen und testen.",
+      "taskIds": [
+        "notifications-redesign",
+        "device-field-qa"
+      ]
+    },
+    {
+      "id": "v0931-performance",
+      "title": "v0.9.3.1 – Performance",
+      "description": "OneDrive-Requests reduzieren, Prefetch optimieren und Ladezeiten weiter senken.",
+      "taskIds": [
+        "onedrive-dedup",
+        "performance-speed",
+        "stale-while-revalidate",
+        "device-field-qa"
+      ]
+    },
+    {
+      "id": "v0931-onboarding",
+      "title": "v0.9.3.1 – Einführung & Testfreigabe",
+      "description": "Einführungskurs umsetzen und den kompletten Stand auf Laptop/PC und Tablet testen.",
+      "taskIds": [
+        "first-use-onboarding",
+        "build-package-0931",
+        "device-field-qa"
+      ]
+    },
+    {
+      "id": "completed-foundation",
+      "title": "Bereits abgeschlossene Grundlagen",
+      "description": "Bereits abgeschlossene Funktionen aus den vorherigen Testständen.",
       "taskIds": [
         "backup",
-        "pc-test"
-      ]
-    },
-    {
-      "id": "workflow",
-      "title": "Berichtsworkflow",
-      "description": "Berichte",
-      "taskIds": [
+        "pc-test",
         "filename",
         "notification-layout",
         "report-review",
-        "pdf-viewer"
-      ]
-    },
-    {
-      "id": "perf",
-      "title": "Performance",
-      "description": "Caching und Stabilität",
-      "taskIds": [
-        "performance",
-        "dashboard-feeds",
-        "reports-loading",
-        "swr-cache",
-        "dedup",
-        "tablet-qa"
-      ]
-    },
-    {
-      "id": "optimization-round-2026-08-26",
-      "title": "Nächste Optimierungsrunde",
-      "description": "Performance, Datenzuverlässigkeit und Bedienung im Arbeitsalltag weiter verbessern.",
-      "taskIds": [
-        "performance-speed-v2",
-        "notifications-redesign",
-        "masterdata-complete",
-        "file-sorting",
-        "assembly-waiting-details",
-        "shrubs-combine",
-        "first-use-onboarding"
-      ]
-    },
-    {
-      "id": "testversion",
-      "title": "Testversionen & Geräteprüfung",
-      "description": "Windows- und Tablet-Teststände bereitstellen und im realen Einsatz verifizieren.",
-      "taskIds": [
-        "pc-test",
-        "tablet-field-test",
-        "masterdata-complete",
-        "file-sorting"
-      ]
-    },
-    {
-      "id": "berichte",
-      "title": "Berichtsworkflow",
-      "description": "Tagesberichte vollständig, nachvollziehbar und stabil erfassen, prüfen und ausgeben.",
-      "taskIds": [
-        "filename",
-        "report-review",
         "pdf-viewer",
         "assembly-waiting-details",
-        "shrubs-combine",
-        "reports-review-stability"
+        "shrubs-combine"
       ]
     },
     {
-      "id": "performance",
-      "title": "Performance & Datenstabilität",
-      "description": "Ladezeiten massiv reduzieren und Datenabrufe stabil sowie effizient gestalten.",
-      "taskIds": [
-        "performance",
-        "performance-speed-v2",
-        "dashboard-feeds",
-        "stale-while-revalidate",
-        "onedrive-dedup"
-      ]
-    },
-    {
-      "id": "ux",
-      "title": "Bedienung & Benachrichtigungen",
-      "description": "Benachrichtigungen neu aufsetzen und den Einstieg in die App vereinfachen.",
-      "taskIds": [
-        "notifications-redesign",
-        "first-use-onboarding"
-      ]
-    },
-    {
-      "id": "network-stability",
-      "title": "Netzwerk- & Backend-Stabilität",
-      "description": "Backend-Zugriff in unterschiedlichen Netzwerken und auf verschiedenen Windows-Geräten zuverlässig absichern.",
+      "id": "deferred",
+      "title": "Zurückgestellt",
+      "description": "Dokumentierte Themen, die aktuell bewusst nicht bearbeitet werden.",
       "taskIds": [
         "office-network-backend"
       ]
     }
   ],
   "items": [
-    {
-      "id": "backup",
-      "title": "Aktuellen Projektstand vollständig sichern",
-      "description": "Quellcode, Konfigurationen und vorhandene Builds als wiederherstellbares Backup sichern.",
-      "area": "Sicherheit",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "pc-test",
-      "title": "PC-Testversion ohne Anmeldung nutzbar machen",
-      "description": "Testversion v0.9.2 ohne reguläre Login-Oberfläche. Windows-Testbuild läuft und ist öffnungsfähig; Produktiv-OAuth bleibt unverändert.",
-      "area": "Windows",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
     {
       "id": "filename",
       "title": "Dateinamen der Tagesberichte vereinheitlichen",
@@ -157,125 +84,15 @@
       "updated": "26.08.2026"
     },
     {
-      "id": "notification-layout",
-      "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
-      "description": "Toast-Benachrichtigungen schließen über X ohne Layoutfehler.",
-      "area": "Benachrichtigungen",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "report-review",
-      "title": "Kontrollansicht vor PDF-Erstellung einbauen",
-      "description": "Kontrollansicht vor der PDF-Erstellung umgesetzt.",
+      "id": "assembly-waiting-details",
+      "title": "Montagehilfe und Wartezeit erweitern",
+      "description": "Bei Montagehilfe und Wartezeit werden zusätzlich Anzahl der betroffenen Personen und der jeweilige Grund erfasst.",
       "area": "Berichte",
-      "priority": "high",
-      "status": "done",
-      "progress": 100,
-      "owner": "Jeremy",
-      "updated": "26.08.2026"
-    },
-    {
-      "id": "pdf-viewer",
-      "title": "PDF-Anzeige wie Bildanzeige bedienen",
-      "description": "PDF-Viewer mit Pan/Zoom wie Bilder und Tablet-Vollbild.",
-      "area": "Dateien",
       "priority": "medium",
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
       "updated": "26.08.2026"
-    },
-    {
-      "id": "performance",
-      "title": "Baustellen und Berichte schneller laden",
-      "description": "Baustellen und Berichte schneller laden. Caching, Request-Verhalten und Datenabrufe weiter optimieren.",
-      "area": "Performance",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 10,
-      "owner": "Jeremy",
-      "updated": "27.08.2026"
-    },
-    {
-      "id": "dashboard-feeds",
-      "title": "Dashboard-Feeds reparieren",
-      "description": "Dashboard-Feeds reparieren. Letzte Berichte, letzte Aufmaße, letzte Aktivitäten und Benachrichtigungen wieder zuverlässig anzeigen. Heute aktiver Fokus.",
-      "area": "Dashboard",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 10,
-      "owner": "Jeremy",
-      "updated": "27.08.2026"
-    },
-    {
-      "id": "reports-loading",
-      "title": "Berichte in Prüfung stabil laden",
-      "description": "Ladehänger beseitigen.",
-      "area": "Berichte",
-      "priority": "high",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "05.08.2026"
-    },
-    {
-      "id": "swr-cache",
-      "title": "Stale-While-Revalidate Cache",
-      "description": "Cache sofort anzeigen, Hintergrund-Sync.",
-      "area": "Performance",
-      "priority": "medium",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "05.08.2026"
-    },
-    {
-      "id": "dedup",
-      "title": "OneDrive Request-Deduplizierung",
-      "description": "Doppelte API-Aufrufe reduzieren.",
-      "area": "Performance",
-      "priority": "medium",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "05.08.2026"
-    },
-    {
-      "id": "tablet-qa",
-      "title": "Feldtest auf Tablet",
-      "description": "Kompletter Workflow auf echtem Tablet.",
-      "area": "QA",
-      "priority": "high",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "05.08.2026"
-    },
-    {
-      "id": "performance-speed-v2",
-      "title": "Ladezeiten deutlich reduzieren",
-      "description": "Ladezeiten für Baustellen, Berichte, Dateien und Stammdaten deutlich reduzieren. Heute aktiver Fokus.",
-      "area": "Performance",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 10,
-      "owner": "Jeremy",
-      "updated": "27.08.2026"
-    },
-    {
-      "id": "notifications-redesign",
-      "title": "Benachrichtigungen grundlegend überarbeiten",
-      "description": "Benachrichtigungssystem grundlegend überarbeiten: stabile Darstellung, klare Zustände, keine Duplikate und saubere Bedienung auf Windows und Tablet.",
-      "area": "Benachrichtigungen",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 10,
-      "owner": "Jeremy",
-      "updated": "27.08.2026"
     },
     {
       "id": "masterdata-complete",
@@ -300,11 +117,33 @@
       "updated": "26.08.2026"
     },
     {
-      "id": "assembly-waiting-details",
-      "title": "Montagehilfe und Wartezeit erweitern",
-      "description": "Bei Montagehilfe und Wartezeit werden zusätzlich Anzahl der betroffenen Personen und der jeweilige Grund erfasst.",
-      "area": "Berichte",
-      "priority": "medium",
+      "id": "backup",
+      "title": "Aktuellen Projektstand vollständig sichern",
+      "description": "Quellcode, Konfigurationen und vorhandene Builds als wiederherstellbares Backup sichern.",
+      "area": "Sicherheit",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "notification-layout",
+      "title": "Layoutfehler beim Schließen von Benachrichtigungen beheben",
+      "description": "Toast-Benachrichtigungen schließen über X ohne Layoutfehler.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "26.08.2026"
+    },
+    {
+      "id": "pc-test",
+      "title": "PC-Testversion ohne Anmeldung nutzbar machen",
+      "description": "Testversion v0.9.2 ohne reguläre Login-Oberfläche. Windows-Testbuild läuft und ist öffnungsfähig; Produktiv-OAuth bleibt unverändert.",
+      "area": "Windows",
+      "priority": "high",
       "status": "done",
       "progress": 100,
       "owner": "Jeremy",
@@ -322,66 +161,132 @@
       "updated": "26.08.2026"
     },
     {
-      "id": "first-use-onboarding",
-      "title": "Einführungskurs für die erste Benutzung",
-      "description": "Einführungskurs für die erste Benutzung vorbereiten und nach den technischen Kernpunkten umsetzen.",
-      "area": "Bedienung",
+      "id": "pdf-viewer",
+      "title": "PDF-Anzeige wie Bildanzeige bedienen",
+      "description": "PDF-Viewer mit Pan/Zoom wie Bilder und Tablet-Vollbild.",
+      "area": "Dateien",
       "priority": "medium",
-      "status": "in_progress",
-      "progress": 5,
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
-      "updated": "27.08.2026"
+      "updated": "26.08.2026"
     },
     {
-      "id": "tablet-field-test",
-      "title": "Feldtest auf Tablet",
-      "description": "APK auf echtem Tablet testen und zentrale Abläufe inklusive Anmeldung/Testsession, Baustellen, Dateien und Berichte verifizieren.",
-      "area": "Tablet",
+      "id": "report-review",
+      "title": "Kontrollansicht vor PDF-Erstellung einbauen",
+      "description": "Kontrollansicht vor der PDF-Erstellung umgesetzt.",
+      "area": "Berichte",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 45,
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
       "updated": "26.08.2026"
     },
     {
       "id": "reports-review-stability",
       "title": "Berichte in Prüfung stabil laden",
-      "description": "Berichte in Prüfung stabil laden. Dauerhaftes Laden bzw. Hängen analysieren und zuverlässig beheben. Heute aktiver Fokus.",
+      "description": "In v0.9.3.1 umgesetzt: kaputtes JSON-Parsing und der N×Site-Scan wurden entschärft. Die Prüfungs-Queue lädt stabiler und bleibt nicht mehr in einem Endlos-Spinner hängen. Laptop-/PC- und weitere Gerätetests stehen noch aus.",
       "area": "Berichte",
       "priority": "high",
       "status": "in_progress",
-      "progress": 10,
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "dashboard-feeds",
+      "title": "Dashboard-Feeds reparieren",
+      "description": "In v0.9.3.1 umgesetzt: Dashboard-Feeds laden parallel und entkoppelt. Fehler werden pro Karte behandelt, statt das komplette Dashboard zu blockieren. Praxistest steht noch aus.",
+      "area": "Dashboard",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "notifications-redesign",
+      "title": "Benachrichtigungen grundlegend überarbeiten",
+      "description": "In v0.9.3.1 umgesetzt: Badge und Liste verwenden dieselbe Inbox-Quelle, Benachrichtigungen werden per ID dedupliziert und Filter sowie Empty-States wurden klarer. Gerätetest und Feinschliff stehen noch aus.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "onedrive-dedup",
+      "title": "OneDrive Request-Deduplizierung",
+      "description": "In v0.9.3.1 umgesetzt: gleiche OneDrive-Requests laufen nicht mehr parallel doppelt. Die Änderung ist implementiert, muss aber noch unter realen Last- und Gerätesituationen geprüft werden.",
+      "area": "OneDrive",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "performance-speed",
+      "title": "Ladezeiten deutlich reduzieren",
+      "description": "In v0.9.3.1 umgesetzt: Prefetch läuft parallel, Requests werden gebündelt und Cache-Fallbacks für Baustellen und Dateien werden genutzt. Reale Ladezeiten auf Laptop/PC und Tablet müssen noch verifiziert werden.",
+      "area": "Performance",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 80,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
     {
       "id": "stale-while-revalidate",
       "title": "Stale-While-Revalidate Cache",
-      "description": "Vorhandene Baustellen- und Dateilisten sofort aus lokalem Cache anzeigen und anschließend im Hintergrund aktualisieren.",
+      "description": "Cache sofort anzeigen und Daten anschließend im Hintergrund aktualisieren. Bleibt als weiterer Performance-Schritt offen.",
       "area": "Performance",
       "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
-      "updated": "26.08.2026"
+      "updated": "27.08.2026"
     },
     {
-      "id": "onedrive-dedup",
-      "title": "OneDrive Request-Deduplizierung",
-      "description": "Doppelte und parallele OneDrive-Requests verhindern und identische Ladevorgänge zusammenführen. Heute aktiver Fokus.",
-      "area": "OneDrive",
+      "id": "first-use-onboarding",
+      "title": "Einführungskurs für die erste Benutzung",
+      "description": "Hauptbestandteil der v0.9.3.1-Runde, aber noch nicht umgesetzt. Beim ersten Start sollen die wichtigsten Bereiche und Arbeitsabläufe verständlich erklärt werden.",
+      "area": "Bedienung",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "device-field-qa",
+      "title": "Weitere Geräte- und Feldtests",
+      "description": "v0.9.3.1 auf Laptop/PC und anschließend auf dem echten Tablet testen. Berichte, Dashboard, Inbox, OneDrive-Verhalten, Dateilisten und Ladezeiten prüfen.",
+      "area": "QA",
       "priority": "high",
-      "status": "in_progress",
-      "progress": 10,
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "27.08.2026"
+    },
+    {
+      "id": "build-package-0931",
+      "title": "v0.9.3.1 Testpaket bereitstellen",
+      "description": "Testpaket unter dist/JuH Baustellen Hub Release 0.9.3.1/ erstellt; Windows-Paket und APK stehen für den Gerätetest bereit.",
+      "area": "Build",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
       "owner": "Jeremy",
       "updated": "27.08.2026"
     },
     {
       "id": "office-network-backend",
       "title": "Backend-Erreichbarkeit im Büronetz prüfen",
-      "description": "Fehler tritt nur im Büronetz auf. Hotspot-/externe Verbindung funktioniert. Thema bleibt dokumentiert, wird heute aber bewusst nicht weiterverfolgt.",
+      "description": "Bekanntes Problem ausschließlich im Büronetz. Externe Verbindung/Handy-Hotspot funktioniert. Bewusst zurückgestellt und nicht Bestandteil der aktuellen v0.9.3.1-Testfreigabe.",
       "area": "Backend / Netzwerk",
-      "priority": "high",
+      "priority": "medium",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
@@ -391,13 +296,18 @@
   "changelog": [
     {
       "date": "27.08.2026",
-      "title": "Heutige Arbeitsrunde gestartet",
-      "text": "Heute werden Berichte in Prüfung und Dashboard-Feeds stabilisiert, das Benachrichtigungssystem grundlegend überarbeitet, OneDrive-Requests dedupliziert und die Ladezeiten für Baustellen, Berichte, Dateien und Stammdaten deutlich reduziert. Der Einführungskurs ist ebenfalls in Arbeit und folgt nach den technischen Kernpunkten. Das bekannte Büronetz-Problem bleibt dokumentiert, wird heute aber bewusst zurückgestellt."
+      "title": "v0.9.3.1 Unstable – Stabilität, Inbox und Performance umgesetzt",
+      "text": "Berichte in Prüfung laden stabiler; fehlerhaftes JSON-Parsing und der N×Site-Scan wurden adressiert. Dashboard-Feeds laufen parallel und entkoppelt, sodass Fehler pro Karte behandelt werden. Die Benachrichtigungen nutzen eine gemeinsame Inbox-Quelle für Badge und Liste, inklusive ID-Deduplizierung sowie klareren Filtern und Empty-States. OneDrive-Requests werden dedupliziert, Prefetch läuft parallel und Cache-Fallbacks beschleunigen Baustellen- und Dateilisten. Geräte- und Feldtests stehen noch aus."
     },
     {
       "date": "27.08.2026",
-      "title": "Backend-Verbindung außerhalb des Heimnetzes untersucht",
-      "text": "Der Kontrolltest mit demselben Windows-Laptop über einen Handy-Hotspot war erfolgreich. DNS, HTTPS/TLS und die Verbindung zum Render/NestJS-Backend funktionieren. Der HTTP-404 auf GET / bestätigt die Erreichbarkeit und ist kein Verbindungsfehler. Offen ist der direkte Vergleich mit dem Büronetz, in dem die App weiterhin keine Serververbindung meldet."
+      "title": "v0.9.3.1 Testpaket erstellt",
+      "text": "Windows- und Android-Testpaket für v0.9.3.1 wurde unter dist/JuH Baustellen Hub Release 0.9.3.1/ bereitgestellt. Die Version bleibt Unstable, bis Laptop-/PC- und Tablet-Tests erfolgreich abgeschlossen sind."
+    },
+    {
+      "date": "27.08.2026",
+      "title": "Bewusst offen / zurückgestellt",
+      "text": "Büro-Netzwerk ↔ Render bleibt zurückgestellt. Der Einführungskurs ist noch offen und gehört weiterhin zur v0.9.3.1-Runde. Weitere Geräte- und Feld-QA ist ebenfalls offen."
     },
     {
       "date": "26.08.2026",
