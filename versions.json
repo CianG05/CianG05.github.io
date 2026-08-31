@@ -1,12 +1,33 @@
 {
   "versions": [
     {
+      "version": "0.9.4",
+      "date": "31.08.2026",
+      "status": "unstable",
+      "statusLabel": "Aktuelle Unstable Testversion",
+      "current": true,
+      "title": "Berichtsworkflow V2 & neue Kernfunktionen",
+      "description": "Großer interner Teststand auf main (9221fbb) und unter dist. Vollständig ungetestet.",
+      "changes": [
+        "NEUE Baustellenberichte als Grundlage",
+        "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
+        "Korrektur-/Prüfcenter, Autosave, Queue-APIs",
+        "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
+        "Windows-Intro abgesichert + Dist/Migrationen"
+      ],
+      "downloads": {
+        "windows": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
+        "android": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk"
+      },
+      "notice": "UNGETESTET / UNSTABLE – manueller Windows-/Tablet-/Feldtest steht vollständig aus."
+    },
+    {
       "version": "0.9.3.2",
       "title": "Unstable – Stabilität, Intro-Fix & Performance",
       "date": "31.08.2026",
       "status": "testing",
       "statusLabel": "Aktuelle Unstable Testversion",
-      "current": true,
+      "current": false,
       "description": "Aktueller interner v0.9.3.2-Teststand. Der bereits zuvor umgesetzte Windows-First-Run-Introfix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
       "downloads": [
         {
