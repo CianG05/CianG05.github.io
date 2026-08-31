@@ -2,12 +2,12 @@
   "versions": [
     {
       "version": "0.9.3.2",
-      "title": "Unstable – Onboarding, Bugfixes & Performance",
-      "date": "27.08.2026",
+      "title": "Unstable – Stabilität, Intro-Fix & Performance",
+      "date": "31.08.2026",
       "status": "testing",
       "statusLabel": "Aktuelle Unstable Testversion",
       "current": true,
-      "description": "Neuester interner Teststand mit Einführungskurs auf Windows und Tablet, weiteren Bugfixes und zusätzlichen Performance-Verbesserungen. Der aktuelle Code liegt auf main; die veröffentlichten Testpakete müssen nach dem Onboarding-Merge noch neu gebaut werden.",
+      "description": "Aktueller interner v0.9.3.2-Teststand. Der Windows-First-Run-Introfehler wurde technisch behoben; der Fix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
       "downloads": [
         {
           "name": "Windows-Paket",
@@ -25,13 +25,12 @@
         }
       ],
       "changes": [
-        "Einführungskurs auf Windows und Tablet mit Prefs-Flag und erneutem Öffnen über Hilfe",
-        "Einführungskurs für die erste Benutzung integriert",
-        "Weitere Bugfix-Runde durchgeführt",
-        "Performance und Ladeverhalten weiter verbessert",
+        "Windows-First-Run-Introfehler technisch behoben: Splash-Overlay, Warten auf Splash-Ende und Root-Navigator",
+        "Weitere Bugfixes und Performance-Verbesserungen aus dem aktuellen v0.9.3.2-Stand",
+        "Roadmap, Changelog und To-dos bereinigt und neu strukturiert",
         "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
       ],
-      "notice": "Unstable – Code auf main ist aktueller als der derzeitige Dist-Build. Vor dem Feldtest Windows-Paket und APK neu bauen; danach Geräte-/Feldtests durchführen."
+      "notice": "Unstable – First-Run-QA und vollständige Geräte-/Feldtests stehen noch aus. Windows-Paket und APK nach dem finalen Fix bei Bedarf neu bauen. Geplante V2-/KI-/Hilfe-Funktionen sind noch nicht Bestandteil dieses Builds."
     },
     {
       "version": "0.9.3.1",

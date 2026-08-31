@@ -3,16 +3,15 @@
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
     "version": "0.9.3.2 Unstable",
-    "updated": "27.08.2026",
-    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.2 Unstable bündelt Stabilitäts-, Inbox-, OneDrive-, Performance- und Onboarding-Verbesserungen. Der Windows-First-Run-Fix ist implementiert; finaler Geräte-/Feldtest und ein aktualisierter Dist-Build stehen noch aus."
+    "updated": "31.08.2026",
+    "summary": "Interne Entwicklungsübersicht für die BaustellenHub App. v0.9.3.2 bleibt Unstable. Der Windows-First-Run-Introfehler wurde technisch behoben, das bisherige Einführungskonzept wird jedoch nicht weitergeführt und durch ein umfassendes Hilfe- & Lernsystem ersetzt. Parallel werden der Baustellenbericht-Workflow V2, ein sprachgeführter Berichtsassistent und weitere Kernfunktionen vorbereitet."
   },
   "milestones": [
     {
-      "id": "v0932-current",
-      "title": "v0.9.3.2 – Aktueller Teststand",
-      "description": "Einführungskurs, Bugfixes und Performance abschließen, neu bauen und vollständig testen.",
+      "id": "v0932-finish",
+      "title": "v0.9.3.2 – Stabilisieren & testen",
+      "description": "Aktuellen Teststand sauber abschließen, bevor größere neue Berichtsfunktionen integriert werden.",
       "taskIds": [
-        "first-use-onboarding",
         "bugfix-round-0932",
         "performance-speed",
         "build-package-0932",
@@ -20,31 +19,48 @@
       ]
     },
     {
-      "id": "data-stability",
-      "title": "Datenflüsse & Stabilität",
-      "description": "Berichte, Dashboard-Feeds, Stammdaten und Dateilisten zuverlässig verifizieren.",
+      "id": "report-foundation",
+      "title": "Baustellenberichte – nächste Grundlage",
+      "description": "Berichtsvariante festlegen und anschließend Workflow, Korrekturen und Nachvollziehbarkeit auf einer gemeinsamen Grundlage entwickeln.",
       "taskIds": [
-        "reports-review-stability",
-        "dashboard-feeds",
-        "masterdata-complete",
-        "file-sorting",
-        "device-field-qa"
+        "report-architecture-decision",
+        "report-approval-v2",
+        "crew-correction-center",
+        "site-manager-review-center",
+        "report-status-notifications",
+        "audit-history",
+        "report-autosave"
       ]
     },
     {
-      "id": "notifications-onedrive",
-      "title": "Inbox, Benachrichtigungen & OneDrive",
-      "description": "Inbox vereinheitlichen, doppelte Requests verhindern und Verhalten im Feldtest prüfen.",
+      "id": "smart-features",
+      "title": "Neue Kernfunktionen",
+      "description": "Hilfe, Suche, Sprachassistent und Support als neue hochwertige Funktionsbereiche.",
       "taskIds": [
+        "help-learning-system",
+        "global-search",
+        "voice-report-assistant",
+        "diagnostics-support",
+        "crew-open-tasks"
+      ]
+    },
+    {
+      "id": "existing-verification",
+      "title": "Bestehende Funktionen – Feldverifikation",
+      "description": "Bereits implementierte Stabilitäts- und Datenverbesserungen auf realen Geräten verifizieren.",
+      "taskIds": [
+        "reports-review-stability",
+        "dashboard-feeds",
         "notifications-redesign",
         "onedrive-dedup",
-        "device-field-qa"
+        "masterdata-complete",
+        "file-sorting"
       ]
     },
     {
       "id": "completed-foundation",
       "title": "Abgeschlossene Grundlagen",
-      "description": "Fertige Funktionen aus den vorherigen Testständen.",
+      "description": "Bereits fertiggestellte Funktionen aus den vorherigen Testständen.",
       "taskIds": [
         "backup",
         "pc-test",
@@ -58,9 +74,9 @@
       ]
     },
     {
-      "id": "next-polish",
-      "title": "Nächster Feinschliff",
-      "description": "Nach dem Gerätetest folgen Startzeit-, Cache- und Toast-Optimierungen.",
+      "id": "later-polish",
+      "title": "Späterer Feinschliff",
+      "description": "Optimierungen nach dem aktuellen QA- und Architekturblock.",
       "taskIds": [
         "toast-polish",
         "startup-performance",
@@ -254,26 +270,15 @@
       "updated": "27.08.2026"
     },
     {
-      "id": "first-use-onboarding",
-      "title": "Einführungskurs für die erste Benutzung",
-      "description": "v0.9.3.2: Einführungskurs für Windows und Tablet mit Prefs-Flag 'intro_course_completed', Skip/Fertig und erneutem Öffnen über Hilfe. Windows-Auto-Intro-Fix ist implementiert: Ursache war ein Splash-Remount mit verlorenem BuildContext; Splash läuft nun als Overlay, das Intro wartet auf Splash-Ende und nutzt den Root-Navigator. Fix aktuell noch uncommitted; First-Run-QA steht aus.",
-      "area": "Bedienung",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 95,
-      "owner": "Jeremy",
-      "updated": "27.08.2026"
-    },
-    {
       "id": "device-field-qa",
       "title": "First-Run-, Geräte- und Feldtest v0.9.3.2",
-      "description": "Nach Commit/Push und neuem Build: First-Run unter Windows inkl. Prefs-Reset prüfen, danach Laptop/PC und Tablet vollständig testen. Dashboard, Prüfungs-Queue, Inbox, OneDrive, Stammdaten, Dateien, Bugfixes und Ladezeiten verifizieren.",
+      "description": "First-Run unter Windows inklusive Prefs-Reset prüfen. Danach Laptop/PC und Tablet mit Dashboard, Prüfungs-Queue, Inbox, OneDrive, Stammdaten, Dateien und Ladezeiten testen.",
       "area": "QA",
       "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
-      "updated": "27.08.2026"
+      "updated": "31.08.2026"
     },
     {
       "id": "build-package-0931",
@@ -300,24 +305,24 @@
     {
       "id": "bugfix-round-0932",
       "title": "Bugfix-Runde v0.9.3.2",
-      "description": "Weitere Fehler im v0.9.3.2-Teststand behoben, inklusive Windows-First-Run-Intro-Fix. Finale Geräteprüfung steht noch aus.",
+      "description": "Weitere Fehler im v0.9.3.2-Teststand wurden korrigiert. Der Windows-Auto-Introfehler durch den Splash-Remount wurde technisch behoben (Splash als Overlay, Warten auf Splash-Ende, Root-Navigator). Der Fix muss noch per First-Run-QA verifiziert werden.",
       "area": "Stabilität",
       "priority": "high",
       "status": "in_progress",
       "progress": 90,
       "owner": "Jeremy",
-      "updated": "27.08.2026"
+      "updated": "31.08.2026"
     },
     {
       "id": "build-package-0932",
       "title": "v0.9.3.2 Testpaket aktualisieren",
-      "description": "v0.9.3.2-Builds existieren, müssen nach dem finalen Windows-Intro-Fix erneut als Windows-Paket und APK gebaut und im Downloadbereich ersetzt werden.",
+      "description": "Vorhandene v0.9.3.2-Testpakete müssen nach dem finalen Windows-Introfix bei Bedarf erneut als Windows-RAR und Android-APK gebaut und ersetzt werden.",
       "area": "Build",
       "priority": "high",
       "status": "in_progress",
       "progress": 90,
       "owner": "Jeremy",
-      "updated": "27.08.2026"
+      "updated": "31.08.2026"
     },
     {
       "id": "toast-polish",
@@ -340,18 +345,150 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "27.08.2026"
+    },
+    {
+      "id": "report-architecture-decision",
+      "title": "Baustellenbericht-Grundlage final festlegen",
+      "description": "Alte und neue Baustellenbericht-Implementierung systematisch vergleichen. Funktionsumfang, Datenmodell, PDF-Erzeugung, Validierung, Review/Freigabe, OneDrive-Ablage, Tablet-Bedienung und Wartbarkeit bewerten. Erst danach eine Variante als verbindliche Grundlage für die weitere Entwicklung festlegen.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "help-learning-system",
+      "title": "Hilfe- & Lernsystem",
+      "description": "Das bisherige Intro-Konzept wird ersetzt. Geplant sind rollenabhängige geführte Touren in der echten Oberfläche, dauerhaftes Hilfe-Center, Volltext-/Keyword-Suche, Hilfeartikel, kontextbezogene Hilfe, Problemlösungen und gezieltes Nachschlagen. Der vorhandene Intro-Code kann als technische Grundlage wiederverwendet werden.",
+      "area": "Hilfe",
+      "priority": "high",
+      "status": "planned",
+      "progress": 5,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "voice-report-assistant",
+      "title": "Sprach-Berichtsassistent – Beta",
+      "description": "Exklusives experimentelles Feature als laufendes Sprachgespräch statt einfacher Diktierfunktion. Die App führt natürlich durch die Berichtserstellung, erkennt ausschließlich abrechnungsrelevante Angaben und ignoriert Smalltalk bzw. nicht abrechnungsrelevante Inhalte. Bei fehlenden, widersprüchlichen oder unsicheren abrechnungsrelevanten Angaben fragt sie gezielt nach. Vor Übernahme erfolgt immer eine strukturierte Kontrolle durch den Nutzer.",
+      "area": "Berichte / Sprache",
+      "priority": "high",
+      "status": "planned",
+      "progress": 5,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "report-approval-v2",
+      "title": "Berichtsfreigabe V2",
+      "description": "Freigabeprozess mit klaren Zuständen: Entwurf → Eingereicht → In Prüfung → Korrektur erforderlich → Erneut eingereicht → Freigegeben. Bauleiter können feldbezogene Vermerke hinterlegen. Keine Chat- oder Diskussionsfunktion. Statuswechsel erzeugen nur dann Benachrichtigungen, wenn daraus eine sinnvolle Information oder konkrete Aktion für Bauleiter bzw. Kolonne entsteht.",
+      "area": "Berichte / Freigabe",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "crew-correction-center",
+      "title": "Kolonnen-Korrekturcenter",
+      "description": "Eigener Bereich für nicht abgenommene bzw. zurückgegebene Baustellenberichte. Alle offenen Vermerke auf einen Blick, direkte Navigation zum betroffenen Feld, sichtbarer Korrekturfortschritt und erneutes Einreichen nach vollständiger Bearbeitung.",
+      "area": "Kolonne / Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "site-manager-review-center",
+      "title": "Bauleiter-Prüfcenter",
+      "description": "Zentrale Prüfqueue für neue, in Prüfung befindliche, zur Korrektur zurückgegebene, erneut eingereichte und freigegebene Berichte. Bei erneut eingereichten Berichten sollen die korrigierten Punkte schnell erkennbar sein.",
+      "area": "Bauleitung / Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "report-status-notifications",
+      "title": "Statusbezogene Berichts-Benachrichtigungen",
+      "description": "Benachrichtigungen gezielt an sinnvolle Statusaktionen koppeln: Eingereicht → Bauleiter, Korrektur erforderlich → Kolonne, erneut eingereicht → Bauleiter, Freigegeben → Kolonne. Keine unnötigen Push-Nachrichten bei rein technischen Zwischenzuständen. Benachrichtigungen sollen direkt zur passenden Aktion bzw. zum Bericht führen.",
+      "area": "Benachrichtigungen / Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "audit-history",
+      "title": "Änderungshistorie / Audit-Trail",
+      "description": "Nachvollziehbare Historie pro Bericht: Erstellung, Einreichung, Prüfung, Vermerke, Korrekturen, erneute Einreichung und Freigabe inklusive Zeitpunkt und verantwortlichem Nutzer. Später optional Feldänderungen Alt → Neu.",
+      "area": "Berichte / Nachvollziehbarkeit",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "global-search",
+      "title": "Globale Suche",
+      "description": "Zentrale Suche über Baustellen, Berichte, Dateien, Mitarbeiter und Hilfe-Inhalte. Ergebnisse nach Typ gruppieren und direkt zum passenden Inhalt navigieren.",
+      "area": "Navigation",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "report-autosave",
+      "title": "Entwürfe automatisch speichern",
+      "description": "Baustellenberichte während der Bearbeitung automatisch und robust als Entwurf sichern, damit bei App-Abbruch, Geräteproblem oder Verbindungsverlust keine Eingaben verloren gehen.",
+      "area": "Berichte / Offline",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "diagnostics-support",
+      "title": "Diagnose- & Supportmodus",
+      "description": "Integrierte Problemhilfe mit App-Version, Plattform, Sync-/Verbindungsstatus und relevanten technischen Diagnosedaten. Nutzer sollen Probleme strukturiert melden können, ohne technische Informationen selbst zusammensuchen zu müssen.",
+      "area": "Support",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
+    },
+    {
+      "id": "crew-open-tasks",
+      "title": "Offene Aufgaben für Kolonnen",
+      "description": "Zentraler Überblick über aktuell notwendige Aktionen wie zurückgegebene Berichte, offene Korrekturen und noch nicht fertiggestellte Entwürfe mit direktem Einstieg.",
+      "area": "Kolonne / Dashboard",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "31.08.2026"
     }
   ],
   "changelog": [
     {
-      "date": "27.08.2026",
-      "title": "v0.9.3.2 Unstable – Windows-First-Run-Intro korrigiert",
-      "text": "Ursache für das nicht automatisch öffnende Windows-Intro war ein Splash-Remount mit ungültigem BuildContext. Splash wurde als Overlay umgebaut; das Intro wartet auf dessen Ende und nutzt den Root-Navigator. Fix ist implementiert, aktuell aber noch uncommitted und muss per First-Run-QA verifiziert werden."
+      "date": "31.08.2026",
+      "title": "v0.9.3.2 Unstable – Windows-Introfehler technisch behoben",
+      "text": "Die Ursache des nicht automatisch öffnenden Windows-Intros wurde auf den Splash-Remount und einen dadurch ungültigen BuildContext zurückgeführt. Der Splash wurde als Overlay umgesetzt; das Intro wartet auf das Splash-Ende und verwendet den Root-Navigator. First-Run-QA steht noch aus."
     },
     {
-      "date": "27.08.2026",
-      "title": "v0.9.3.2 Unstable – Einführungskurs integriert",
-      "text": "Einführungskurs für Windows und Tablet mit Prefs-Flag intro_course_completed, Skip/Fertig und erneutem Öffnen über Hilfe integriert."
+      "date": "31.08.2026",
+      "title": "Roadmap, Changelog und To-dos neu strukturiert",
+      "text": "Doppelte und widersprüchliche Punkte wurden zusammengeführt. Das bisherige Einführungskonzept wird nicht als Endlösung weitergeführt; stattdessen ist ein umfassendes Hilfe- & Lernsystem vorgesehen."
     },
     {
       "date": "27.08.2026",
