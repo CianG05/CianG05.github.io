@@ -7,7 +7,7 @@
       "status": "testing",
       "statusLabel": "Aktuelle Unstable Testversion",
       "current": true,
-      "description": "Aktueller interner v0.9.3.2-Teststand. Der Windows-First-Run-Introfehler wurde technisch behoben; der Fix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
+      "description": "Aktueller interner v0.9.3.2-Teststand. Der bereits zuvor umgesetzte Windows-First-Run-Introfix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
       "downloads": [
         {
           "name": "Windows-Paket",
@@ -25,9 +25,9 @@
         }
       ],
       "changes": [
-        "Windows-First-Run-Introfehler technisch behoben: Splash-Overlay, Warten auf Splash-Ende und Root-Navigator",
+        "Windows-First-Run-Introfix aus dem vorherigen Entwicklungsstand: Splash-Overlay, Warten auf Splash-Ende und Root-Navigator",
         "Weitere Bugfixes und Performance-Verbesserungen aus dem aktuellen v0.9.3.2-Stand",
-        "Roadmap, Changelog und To-dos bereinigt und neu strukturiert",
+        "Roadmap, Changelog und To-dos am 31.08.2026 bereinigt und neu strukturiert",
         "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
       ],
       "notice": "Unstable – First-Run-QA und vollständige Geräte-/Feldtests stehen noch aus. Windows-Paket und APK nach dem finalen Fix bei Bedarf neu bauen. Geplante V2-/KI-/Hilfe-Funktionen sind noch nicht Bestandteil dieses Builds."

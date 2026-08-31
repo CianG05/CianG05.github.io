@@ -482,13 +482,13 @@
   "changelog": [
     {
       "date": "31.08.2026",
-      "title": "v0.9.3.2 Unstable – Windows-Introfehler technisch behoben",
-      "text": "Die Ursache des nicht automatisch öffnenden Windows-Intros wurde auf den Splash-Remount und einen dadurch ungültigen BuildContext zurückgeführt. Der Splash wurde als Overlay umgesetzt; das Intro wartet auf das Splash-Ende und verwendet den Root-Navigator. First-Run-QA steht noch aus."
+      "title": "Roadmap, Changelog und To-dos neu strukturiert",
+      "text": "Roadmap, Changelog und To-dos wurden bereinigt und widersprüchliche bzw. doppelte Punkte zusammengeführt. Neue geplante Funktionen wie Hilfe- & Lernsystem, Berichtsworkflow V2, globale Suche, Autosave, Diagnose-/Supportmodus und Sprach-Berichtsassistent wurden als zukünftige To-dos eingeordnet und nicht als bereits entwickelte Funktionen dargestellt."
     },
     {
-      "date": "31.08.2026",
-      "title": "Roadmap, Changelog und To-dos neu strukturiert",
-      "text": "Doppelte und widersprüchliche Punkte wurden zusammengeführt. Das bisherige Einführungskonzept wird nicht als Endlösung weitergeführt; stattdessen ist ein umfassendes Hilfe- & Lernsystem vorgesehen."
+      "date": "27.08.2026",
+      "title": "v0.9.3.2 Unstable – Windows-Introfehler technisch behoben",
+      "text": "Die Ursache des nicht automatisch öffnenden Windows-Intros wurde auf den Splash-Remount und einen dadurch ungültigen BuildContext zurückgeführt. Der Splash wurde als Overlay umgesetzt; das Intro wartet auf das Splash-Ende und verwendet den Root-Navigator. Die technische Änderung stammt aus dem Entwicklungsstand vom 27.08.2026."
     },
     {
       "date": "27.08.2026",
