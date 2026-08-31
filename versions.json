@@ -8,6 +8,22 @@
       "current": true,
       "title": "Berichtsworkflow V2 & neue Kernfunktionen",
       "description": "Großer interner Teststand auf main (9221fbb) und unter dist. Vollständig ungetestet.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.apk",
+          "primary": false,
+          "description": "Android-Testbuild v0.9.4"
+        }
+      ],
       "changes": [
         "NEUE Baustellenberichte als Grundlage",
         "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
@@ -15,10 +31,6 @@
         "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
         "Windows-Intro abgesichert + Dist/Migrationen"
       ],
-      "downloads": {
-        "windows": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.rar",
-        "android": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.apk"
-      },
       "notice": "UNGETESTET / UNSTABLE – manueller Windows-/Tablet-/Feldtest steht vollständig aus."
     },
     {
