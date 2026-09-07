@@ -57,7 +57,7 @@
       "version": "0.9.3.1",
       "title": "Unstable – Stabilität & Performance",
       "date": "27.08.2026",
-      "status": "testing",
+      "status": "outdated",
       "statusLabel": "Vorherige Unstable Testversion",
       "current": false,
       "description": "Aktueller interner Teststand mit stabilisierter Prüfungs-Queue und Dashboard-Feeds, gemeinsamer Inbox-Quelle, OneDrive-Request-Deduplizierung, parallelem Prefetch und Cache-Fallbacks. Geräte-/Feldtests und Einführungskurs stehen noch aus.",
