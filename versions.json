@@ -1,44 +1,67 @@
 {
   "versions": [
     {
-  "version": "0.9.4",
-  "title": "Berichtsworkflow V2 & neue Kernfunktionen",
-  "date": "07.09.2026",
-  "status": "testing",
-  "statusLabel": "Aktuelle Testversion – Stable-Gate läuft",
-  "current": true,
-  "description": "Aktuelle v0.9.4 mit Berichtsworkflow V2 und neuen Kernfunktionen. Ziel ist die vollständige Stabilisierung am 07.09.2026; Stable erst nach bestandenem Windows-/Tablet-/Feldtest.",
-  "downloads": [
-    {
-      "name": "Windows-Paket",
-      "format": "RAR",
-      "file": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
-      "primary": true,
-      "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+      "version": "0.9.4.1",
+      "title": "Aktuelle Testversion – V0.9.4.1",
+      "date": "07.09.2026",
+      "status": "testing",
+      "statusLabel": "Aktuelle Testversion · IMPLEMENTIERT + Auto-getestet",
+      "current": true,
+      "description": "Aktueller Entwicklungsstand (pubspec 0.9.4+95, UI 0.9.4.1). Features und kritische Abend-Fixes sind implementiert; automatische Flutter-/Backend-/API-Smokes sind dokumentiert. Manuelle Windows-/Tablet-/Emulator-Tests und der abschließende Feldtest stehen noch aus.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.4.1/JuH Baustellen Hub Release V0.9.4.1.rar",
+          "primary": true,
+          "description": "Aktueller Windows-Testbuild V0.9.4.1 inklusive benötigter Dateien"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.4.1/JuH Baustellen Hub Release V0.9.4.1.apk",
+          "primary": false,
+          "description": "Aktueller Android-/Tablet-Testbuild V0.9.4.1"
+        }
+      ],
+      "changes": [
+        "Wochen- und Tagesberichtswelten inkl. Typwahl und Formular/Sprache/Hybrid",
+        "Geführter DEMO-Einführungskurs mit Korrektur der Rollenwahl auf echte User-Rolle",
+        "Hilfe neu strukturiert und Hilfe-Center mit Suche/Kategorien",
+        "Support App → Backend → GitHub; Support-Repository getrennt vom Update-Repository",
+        "Personalisierte Begrüßung, offene Aufgaben, Stammdaten-Sync und Dateisortierung",
+        "Pläne→PDF-Merge (MVP), Alt→Neu-Freigabe, Benachrichtigungen und Desktop-/Tablet-Konsistenz",
+        "Abend-Fixes: Notification-Empfänger/Toasts, Ghost-Queue, OneDrive Item-ID/Retry, Speech-Permissions, Support-404-Diagnose"
+      ],
+      "notice": "TESTPHASE / UNSTABLE – morgen letzte manuelle Windows-/Tablet-/Emulator-Tests. Stable erst nach anschließend bestandenem realen Feldtest."
     },
     {
-      "name": "Android",
-      "format": "APK",
-      "file": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk",
-      "primary": false,
-      "description": "Android-Testbuild v0.9.4"
-    }
-  ],
-  "changes": [
-    "NEUE Baustellenberichte als Grundlage",
-    "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
-    "Korrektur-/Prüfcenter, Autosave, Queue-APIs",
-    "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
-    "Windows-Intro abgesichert + Dist/Migrationen"
-  ],
-  "notice": "TESTING – Stable-Freigabe erst nach dokumentiert bestandenem vollständigen QA-Gate."
-},
+      "version": "0.9.4",
+      "date": "07.09.2026",
+      "status": "outdated",
+      "statusLabel": "Veraltet",
+      "current": false,
+      "title": "Berichtsworkflow V2 & neue Kernfunktionen",
+      "description": "Aktuelle v0.9.4 mit Berichtsworkflow V2 und neuen Kernfunktionen. Ziel ist die vollständige Stabilisierung am 07.09.2026; Stable erst nach bestandenem Windows-/Tablet-/Feldtest.",
+      "changes": [
+        "NEUE Baustellenberichte als Grundlage",
+        "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
+        "Korrektur-/Prüfcenter, Autosave, Queue-APIs",
+        "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
+        "Windows-Intro abgesichert + Dist/Migrationen"
+      ],
+      "downloads": {
+        "windows": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
+        "android": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk"
+      },
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+    },
     {
       "version": "0.9.3.2",
       "title": "Unstable – Stabilität, Intro-Fix & Performance",
       "date": "31.08.2026",
-      "status": "testing",
-      "statusLabel": "Aktuelle Unstable Testversion",
+      "status": "outdated",
+      "statusLabel": "Veraltet",
       "current": false,
       "description": "Aktueller interner v0.9.3.2-Teststand. Der bereits zuvor umgesetzte Windows-First-Run-Introfix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
       "downloads": [
@@ -63,14 +86,14 @@
         "Roadmap, Changelog und To-dos am 31.08.2026 bereinigt und neu strukturiert",
         "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
       ],
-      "notice": "Unstable – First-Run-QA und vollständige Geräte-/Feldtests stehen noch aus. Windows-Paket und APK nach dem finalen Fix bei Bedarf neu bauen. Geplante V2-/KI-/Hilfe-Funktionen sind noch nicht Bestandteil dieses Builds."
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     },
     {
       "version": "0.9.3.1",
       "title": "Unstable – Stabilität & Performance",
       "date": "27.08.2026",
-      "status": "testing",
-      "statusLabel": "Vorherige Unstable Testversion",
+      "status": "outdated",
+      "statusLabel": "Veraltet",
       "current": false,
       "description": "Aktueller interner Teststand mit stabilisierter Prüfungs-Queue und Dashboard-Feeds, gemeinsamer Inbox-Quelle, OneDrive-Request-Deduplizierung, parallelem Prefetch und Cache-Fallbacks. Geräte-/Feldtests und Einführungskurs stehen noch aus.",
       "downloads": [
@@ -98,14 +121,14 @@
         "Prefetch/Batches und Cache-Fallbacks für Baustellen und Dateien",
         "Testpaket für Windows und Android bereitgestellt"
       ],
-      "notice": "Unstable Testversion – weiterhin im Versionsverlauf verfügbar."
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     },
     {
       "version": "0.9.3",
       "title": "Unstable Büro- & Tablet-Teststand",
       "date": "26.08.2026",
-      "status": "testing",
-      "statusLabel": "Vorherige Unstable Testversion",
+      "status": "outdated",
+      "statusLabel": "Veraltet",
       "current": false,
       "description": "Neuer interner Unstable-Teststand. Windows- und Android-Build sind vorgesehen; der Stand läuft grundsätzlich, ist aber noch nicht vollständig verifiziert.",
       "downloads": [
@@ -133,14 +156,14 @@
         "Vorbereitung weiterer Feld- und Tablet-Tests",
         "Netzwerkproblem im Büronetz wird untersucht; Hotspot-Zugriff auf das Render-Backend erfolgreich verifiziert"
       ],
-      "notice": "Unstable Testversion – nicht als produktive Version freigegeben."
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     },
     {
       "version": "0.9.2",
       "title": "Büro- & Tablet-Testpaket",
       "date": "26.08.2026",
-      "status": "ready_for_test",
-      "statusLabel": "Getesteter vorheriger Teststand",
+      "status": "outdated",
+      "statusLabel": "Veraltet",
       "current": false,
       "description": "Windows- und Android-Teststand v0.9.2. Die Builds sind öffnungsfähig; zentrale neue Funktionen wurden integriert.",
       "downloads": [
@@ -167,14 +190,14 @@
         "Dateinamensschema M.Mustermann_Datum.pdf mit _2, _3 usw. bei Kollisionen",
         "Lokaler Cache für Baustellen- und Dateilisten als Fallback bei Netzfehlern"
       ],
-      "notice": "Interne Testversion – noch nicht als produktive Version freigegeben."
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     },
     {
       "version": "0.9.1",
       "title": "Büro-Modul Phase 1",
       "date": "05.07.2026",
       "status": "outdated",
-      "statusLabel": "Vorheriger Entwicklungsstand",
+      "statusLabel": "Veraltet",
       "current": false,
       "description": "Früherer Entwicklungsstand mit Büro-Dashboard, Navigation, Projektverwaltung, Baustellen-Tabs, Fluent Desktop-Theme und rollenbasiertem Login.",
       "downloads": [],
@@ -185,7 +208,7 @@
         "Favoriten und rollenbasiertes Login",
         "21 Unit-Tests erfolgreich"
       ],
-      "notice": "Für diesen Stand ist auf der Roadmap aktuell kein Download hinterlegt."
+      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     }
   ]
 }

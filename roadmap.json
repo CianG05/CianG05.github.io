@@ -2,74 +2,65 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.4 Unstable",
+    "version": "0.9.4.1 Testphase",
     "updated": "07.09.2026",
-    "summary": "Aktueller Stand ist v0.9.4 Unstable. Ziel für heute: v0.9.4 vollständig testen, Fehler beheben und erst nach bestandenem Windows-/Tablet-/Feldtest als Stable freigeben. Danach wird v0.9.4.1 umgesetzt und ebenfalls noch heute vollständig getestet und stabilisiert."
+    "summary": "V0.9.4.1 ist die einzige aktuelle Testversion. Der Stand ist implementiert und automatisiert getestet, aber noch nicht Stable. Windows-/Tablet-/Emulator- und abschließende Feldtests stehen teilweise noch aus und werden am 08.09.2026 fortgeführt. Alle Versionen bis einschließlich V0.9.4 sind veraltet."
   },
   "milestones": [
     {
-      "id": "v094-stable-today",
-      "title": "v0.9.4 – heute Stable machen",
-      "description": "Aktuellen Funktionsstand vollständig testen, Fehler beheben und erst danach freigeben.",
+      "id": "v0941-current",
+      "title": "V0.9.4.1 – aktuelle Testphase",
+      "description": "Einzige aktuelle Version. Implementiert + Auto-QA, aber noch nicht Stable.",
       "taskIds": [
-        "v094-stable-gate",
-        "device-field-qa"
-      ]
-    },
-    {
-      "id": "v0941-features",
-      "title": "v0.9.4.1 – neue Funktionen & Korrekturen",
-      "description": "v0.9.4.1 fokussiert auf echte Nutzbarkeit, Berichtslogik, Onboarding, Hilfe und saubere Plattform-UX.",
-      "taskIds": [
-        "masterdata-full-load-0941",
-        "file-processing-sort-0941",
+        "v0941-release-current",
+        "v0941-auto-qa",
+        "tablet-emulator-environment",
         "department-report-mode-0941",
         "report-type-selector-0941",
-        "plans-merge-pdf-0941",
-        "voice-report-flow-0941",
-        "voice-intelligence-0941",
         "guided-first-run-0941",
         "help-center-rework-0941",
         "support-issue-routing-0941",
         "personalized-greeting-0941",
-        "help-menu-cleanup-0941",
+        "file-processing-sort-0941",
+        "plans-merge-pdf-0941",
+        "voice-report-flow-0941",
         "desktop-tablet-feature-parity-0941"
       ]
     },
     {
-      "id": "v0941-stable-today",
-      "title": "v0.9.4.1 – heute ebenfalls Stable machen",
-      "description": "Nach Implementierung vollständiges QA-Gate und Release.",
+      "id": "v0941-evening-fixes",
+      "title": "V0.9.4.1 – Abend-Fixes 07.09.",
+      "description": "Kritische Fehler aus den ersten realen Tests wurden technisch adressiert; manuelle Bestätigung steht aus.",
       "taskIds": [
+        "notification-recipient-fix-0941",
+        "ghost-report-queue-fix-0941",
+        "onedrive-link-recovery-0941",
+        "speech-permission-errors-0941",
+        "support-render-config-0941"
+      ]
+    },
+    {
+      "id": "v0941-tomorrow-qa",
+      "title": "08.09. – letzte Tests vor Feldtest",
+      "description": "Manuelle Windows-/Tablet-/Emulator-Regression und Restfehler. Danach erst realer Feldtest.",
+      "taskIds": [
+        "v0941-manual-tests-0809",
         "v0941-full-qa",
         "v0941-release"
       ]
     },
     {
-      "id": "v094-existing",
-      "title": "v0.9.4 – enthaltene neue Funktionen",
-      "description": "Bereits in v0.9.4 implementierter Stand; aktuell noch zu verifizieren.",
+      "id": "future-auth",
+      "title": "Danach – Authentifizierung härten",
+      "description": "Passwort-Login erst wieder aktivieren, wenn der Auth-Flow auf Büro, Tablet und allen Rollen stabil ist.",
       "taskIds": [
-        "report-architecture-decision",
-        "report-approval-v2",
-        "report-queue-apis",
-        "crew-correction-center",
-        "site-manager-review-center",
-        "report-status-notifications",
-        "audit-history",
-        "report-autosave",
-        "help-learning-system",
-        "global-search",
-        "diagnostics-support",
-        "voice-report-assistant",
-        "crew-open-tasks",
-        "build-package-094"
+        "password-login-restore"
       ]
     },
     {
       "id": "deferred",
       "title": "Zurückgestellt",
-      "description": "Nicht Teil des heutigen Stable-Ziels.",
+      "description": "Nicht Teil des aktuellen Testabschlusses.",
       "taskIds": [
         "office-network-backend",
         "toast-polish",
@@ -363,7 +354,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "crew-correction-center",
@@ -374,7 +365,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "site-manager-review-center",
@@ -385,7 +376,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "report-status-notifications",
@@ -396,7 +387,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "audit-history",
@@ -407,7 +398,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "global-search",
@@ -429,7 +420,7 @@
       "status": "in_progress",
       "progress": 85,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "report-queue-apis",
@@ -478,44 +469,44 @@
     {
       "id": "file-processing-sort-0941",
       "title": "Dateien korrekt sortieren & verarbeiten",
-      "description": "Dateien und Ordner zuverlässig laden, sortieren und verarbeiten. Sortierung auf Windows und Tablet prüfen; unterschiedliche Dateitypen, Namen, Datumswerte, Cache und OneDrive-Sync berücksichtigen.",
+      "description": "Dateisortierung/-verarbeitung überarbeitet; manueller Windows-/Tablet-Test noch offen.",
       "area": "Dateien / OneDrive",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "department-report-mode-0941",
       "title": "Abteilung / Berichtsmodus als Einstellung",
-      "description": "Regler bzw. Einstellung hinzufügen: Störungsabteilung nutzt die alten Wochenberichte; Legung nutzt die neuen Tagesberichte. Die App soll anhand der Einstellung standardmäßig die passende Berichtsart, Formulare und Workflows anzeigen.",
+      "description": "Wochen- und Tagesberichtswelt inkl. Abteilungs-/Standardlogik umgesetzt; Störung = alte Wochenberichte, Legung = neue Tagesberichte. Noch manuell zu verifizieren.",
       "area": "Berichte / Einstellungen",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "report-type-selector-0941",
       "title": "Wochenbericht oder Tagesbericht bei Erstellung auswählen",
-      "description": "Zusätzlich zur Abteilungseinstellung bei der Erstellung eines Baustellenberichts explizit auswählen können, ob ein WOCHENBERICHT oder TAGESBERICHT erstellt wird. Auswahl muss zum korrekten Formular, Datenmodell, Speicherpfad und PDF-Workflow führen.",
+      "description": "Auswahl WOCHENBERICHT/TAGESBERICHT bei Erstellung inkl. Persistenz umgesetzt; manueller End-to-End-Test steht aus.",
       "area": "Berichte",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 80,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "plans-merge-pdf-0941",
       "title": "Hochgeladene Pläne zu einer PDF zusammenführen",
-      "description": "Wenn mehrere Pläne hochgeladen werden, daraus eine gemeinsame PDF erzeugen. Reihenfolge kontrollierbar halten, PDF-Seiten korrekt übernehmen, Fehler bei nicht unterstützten Dateien verständlich behandeln und Ergebnis sauber ablegen.",
+      "description": "Pläne→PDF-Merge als MVP umgesetzt; Reihenfolge, Dateitypen und reale OneDrive-Ablage noch zu testen.",
       "area": "Dateien / Pläne",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
@@ -544,11 +535,11 @@
     {
       "id": "voice-report-flow-0941",
       "title": "Sprachdialog direkt in Berichtserstellung",
-      "description": "Sprach-Assistent nicht als separaten Hilfe-Menüpunkt behandeln. Beim Erstellen eines Baustellenberichts als Erfassungsmodus anbieten. Fortlaufendes, kontextabhängiges Gespräch mit sinnvoller Frage-Reihenfolge abhängig von bereits genannten Tätigkeiten. Nur abrechnungsrelevante Informationen übernehmen. Am Ende Bericht vollständig vorausfüllen und Review anzeigen.",
+      "description": "Sprachmodus in Berichtserstellung eingebunden; technische Permission-/Fehlermeldungs-Bugfixes vorhanden. Gesprächstiefe und reale Spracheingabe sind noch nicht ausreichend getestet/fertig.",
       "area": "Berichte / Sprache",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
@@ -566,44 +557,44 @@
     {
       "id": "guided-first-run-0941",
       "title": "Vollständiger interaktiver Einführungskurs",
-      "description": "Erstbenutzer durch die echte App führen, nicht nur kurze Slides. Mit sicherem Demo-Bericht praktisch Baustelle öffnen, Bericht erstellen, Felder ausfüllen, Review, Einreichen, Korrektur, Benachrichtigungen, Dateien/Pläne, Suche und Hilfe kennenlernen. Rollen- und geräteabhängig, jederzeit erneut startbar.",
+      "description": "Geführter DEMO-Einführungskurs umgesetzt; später Rollenzuordnung auf echte User-Rolle korrigiert. Inhalt ist noch nicht vollständig und muss je Rolle weiter ausgebaut und getestet werden.",
       "area": "Onboarding / Hilfe",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "help-center-rework-0941",
       "title": "Hilfe-Center komplett neu strukturieren",
-      "description": "Hilfe-Center klar definieren und neu gestalten. Keine doppelte Navigation mit Einführung, Diagnose, Sprachassistent und offenen Aufgaben. Kategorien, Suche, kontextbezogene Hilfe und konkrete Problemlösungen anbieten. Inhalte müssen echte Schritte erklären.",
+      "description": "Hilfe neu strukturiert; Hilfe-Center mit Kategorien und Suche umgesetzt. Inhalt/UX muss weiter verbessert und manuell getestet werden.",
       "area": "Hilfe / UX",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 80,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "support-issue-routing-0941",
       "title": "Diagnose & Support mit echter Weiterleitung",
-      "description": "Problem melden muss einen verwertbaren Supportfall erzeugen und beim Entwickler ankommen, bevorzugt als GitHub Issue oder über einen sicheren Backend-Endpunkt. App-Version, Plattform, Gerät, Rolle, Route, Sync-/Netzwerkstatus und relevante Fehler mitsenden. Kein GitHub-Token in der App.",
+      "description": "Supportweg App → Backend → GitHub implementiert; Erfolg wird nur bei echtem Issue gemeldet. Support-Repo getrennt vom Update-Repo. Render-Konfiguration und echter Issue-Test noch offen.",
       "area": "Support / GitHub",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 75,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
     {
       "id": "personalized-greeting-0941",
       "title": "Personalisierte Begrüßung mit Schachtmeister",
-      "description": "Statische Begrüßung wie 'Moin, Störung' entfernen. Auf dem Gerät den zugeordneten Schachtmeister/Nutzer anzeigen, z. B. 'Moin, Max'. Name aus Benutzer-/Geräte-/Kolonnenzuordnung laden; Abteilung separat anzeigen, nicht statt Name.",
+      "description": "Begrüßung `Moin, <Name>` plus Abteilung umgesetzt. Zuordnung muss auf allen Rollen/Geräten manuell geprüft werden.",
       "area": "Dashboard / Personalisierung",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 80,
       "owner": "Jeremy",
       "updated": "07.09.2026"
     },
@@ -621,8 +612,118 @@
     {
       "id": "desktop-tablet-feature-parity-0941",
       "title": "Desktop- & Tablet-UX gemeinsam überarbeiten",
-      "description": "Neue UX-/Workflow-Regeln auf beide Plattformen anwenden. Tablet touch-/feldtauglich, Desktop kompakt und schnell, aber identische Fachlogik, Daten und Statusmodelle. Keine getrennten halbfertigen Feature-Silos.",
+      "description": "Desktop-/Tablet-Konsistenz überarbeitet; manueller UI-/Gerätetest steht aus.",
       "area": "UX / Plattformen",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 80,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "v0941-release-current",
+      "title": "V0.9.4.1 aktueller Testbuild",
+      "description": "Aktuelle einzige Testversion. pubspec 0.9.4+95, UI 0.9.4.1. Dist unter `dist/JuH Baustellen Hub Release V0.9.4.1/` mit APK + RAR vorhanden. Implementiert und Auto-QA durchgeführt; noch nicht Stable.",
+      "area": "Release",
+      "priority": "high",
+      "status": "in_progress",
+      "progress": 90,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "v0941-auto-qa",
+      "title": "V0.9.4.1 Auto-QA / Smoke",
+      "description": "Flutter-, Backend- und API-Smoke-Tests dokumentiert. Automatische Tests sind bestanden, ersetzen aber keine Geräte-UI- und Feldtests.",
+      "area": "QA",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "tablet-emulator-environment",
+      "title": "Android-Tablet-Testumgebung",
+      "description": "AVD `BaustellenHub_Tablet_10` eingerichtet. Start-/Run-Skripte unter `tools/` und `docs/TABLET_TESTING.md` vorhanden. Dient für die manuellen Tests am 08.09.2026.",
+      "area": "QA / Android",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 90,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "notification-recipient-fix-0941",
+      "title": "Notification-Empfänger & Toast-Fix",
+      "description": "Empfängerlogik und falsche Erfolgs-Toasts überarbeitet. Zustelllogik auf reale Benutzer/Rollen/Geräte muss morgen noch manuell geprüft werden.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 80,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "ghost-report-queue-fix-0941",
+      "title": "Ghost-Berichte im Prüfcenter bereinigt",
+      "description": "Queue auf stabile reportId/orphaned-Logik umgestellt bzw. ergänzt. Prüfcenter-Kernworkflow bleibt erhalten. Alte/nicht mehr vorhandene Berichte morgen erneut prüfen.",
+      "area": "Prüfcenter / Queue",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "onedrive-link-recovery-0941",
+      "title": "OneDrive-Verknüpfung robuster",
+      "description": "Item-ID, Retry und Büro-Hinweis für defekte Baustellen-Verknüpfungen ergänzt. Reale verschobene/fehlende Ordner morgen prüfen.",
+      "area": "OneDrive",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 80,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "speech-permission-errors-0941",
+      "title": "Speech Permission & Fehlerdiagnose",
+      "description": "Permission-Handling und konkretere Fehlerzustände ergänzt. Reale Spracheingabe auf Windows und Tablet muss morgen weiter getestet werden.",
+      "area": "Sprache",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 70,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "support-render-config-0941",
+      "title": "Render GitHub-Support konfigurieren",
+      "description": "Auf Render `GITHUB_SUPPORT_REPO=CianG05/CianG05.github.io` plus passendes serverseitiges Token setzen, redeployen und danach echtes GitHub Issue aus der App testen. Update-Repository bleibt `JuH-BaustellenHub`.",
+      "area": "Support / Infrastruktur",
+      "priority": "high",
+      "status": "planned",
+      "progress": 25,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "password-login-restore",
+      "title": "Passwort-Anmeldung wieder aktivieren",
+      "description": "Später wieder eine echte Anmeldung mit Passwort einführen. Voraussetzung: Login/Auth muss vorher auf allen relevanten Geräten und Rollen zuverlässig funktionieren – Tablet/Kolonne, Windows/Büro/Bauleiter und Admin. Erst Auth-Flow, Session/Persistenz, Rollenauflösung, Logout, Fehlerfälle und Update/Migration plattformübergreifend stabilisieren; danach Passwortpflicht aktivieren. Nicht vor dem aktuellen V0.9.4.1-Testabschluss erzwingen.",
+      "area": "Auth / Sicherheit",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "v0941-manual-tests-0809",
+      "title": "V0.9.4.1 letzte manuelle Tests am 08.09.",
+      "description": "Morgen die letzten manuellen Windows- und Tablet-/Emulator-Tests durchführen: Rollen/Intro, Speech, Notifications, Ghost-Queue, OneDrive, Support-Issue, Stammdaten, Dateien, Plan-PDF, Wochen-/Tagesberichte, Freigabe/Korrektur und allgemeine Regression. Feldtest bleibt der allerletzte Schritt.",
+      "area": "QA",
       "priority": "high",
       "status": "planned",
       "progress": 0,
@@ -631,6 +732,11 @@
     }
   ],
   "changelog": [
+    {
+      "date": "07.09.2026",
+      "title": "V0.9.4.1 – Tagesabschluss: implementiert + Auto-QA, manuelle Tests offen",
+      "text": "V0.9.4.1 ist die einzige aktuelle Testversion (pubspec 0.9.4+95, UI 0.9.4.1). APK und RAR liegen für die Tests bereit. Umgesetzt wurden u. a. Wochen-/Tagesberichtswelten, Berichtstypwahl, Formular/Sprache/Hybrid, geführter Demo-Einstieg mit Rollenfix, Hilfe-Center, Support über Backend→GitHub, personalisierte Begrüßung, offene Aufgaben, Stammdaten-/Dateiüberarbeitungen, Pläne→PDF-MVP, Alt→Neu-Freigabe und Desktop-/Tablet-Konsistenz. Am Abend wurden Notification-Empfänger/Toasts, Ghost-Berichte, OneDrive-Verknüpfung, Speech-Permissions und Support-Diagnose überarbeitet. V0.9.4.1 bleibt UNSTABLE, bis die letzten manuellen Tests und der abschließende Feldtest bestanden sind."
+    },
     {
       "date": "07.09.2026",
       "title": "v0.9.4.1 UX-/Workflow-Anforderungen konkretisiert",
