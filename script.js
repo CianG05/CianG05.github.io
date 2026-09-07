@@ -2,14 +2,14 @@ const C=window.ROADMAP_CONFIG||{};let D=null,F="all";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const avg=a=>a.length?Math.round(a.reduce((s,v)=>s+Number(v||0),0)/a.length):0;
-const statusText={planned:"Geplant",in_progress:"In Arbeit",done:"Erledigt"};
+const statusText={planned:"Geplant",in_progress:"In Arbeit",implemented:"Implementiert",done:"Erledigt"};
 
 function projectProgress(){return avg(D.items.map(x=>x.progress));}
 function milestoneProgress(m){return avg(m.taskIds.map(id=>D.items.find(x=>x.id===id)?.progress??0));}
 function render(){
  $("summary").textContent=D.project.summary;$("version").textContent=D.project.version;$("updated").textContent=D.project.updated;$("footerDate").textContent=`Stand ${D.project.updated}`;
  const p=projectProgress();$("overall").textContent=`${p}%`;$("overallBig").textContent=`${p}%`;$("overallBar").style.width=`${p}%`;
- $("doneCount").textContent=D.items.filter(x=>x.status==="done").length;$("workCount").textContent=D.items.filter(x=>x.status==="in_progress").length;$("planCount").textContent=D.items.filter(x=>x.status==="planned").length;
+ $("doneCount").textContent=D.items.filter(x=>x.status==="done").length;$("implementedCount").textContent=D.items.filter(x=>x.status==="implemented").length;$("workCount").textContent=D.items.filter(x=>x.status==="in_progress").length;$("planCount").textContent=D.items.filter(x=>x.status==="planned").length;
  $("milestones").innerHTML=D.milestones.map((m,i)=>{const p=milestoneProgress(m);return `<article class="milestone"><div class="num">${String(i+1).padStart(2,"0")}</div><div><h3>${esc(m.title)}</h3><p>${esc(m.description)}</p><small>${m.taskIds.length} zugeordnete Aufgabe${m.taskIds.length===1?"":"n"}</small></div><div class="milestone-progress"><strong>${p}%</strong><div class="bar"><i style="width:${p}%"></i></div></div></article>`}).join("");
  renderTasks();
  $("changelog").innerHTML=D.changelog.map(x=>`<article class="change"><div class="change-date">${esc(x.date)}</div><div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div></article>`).join("");
@@ -28,6 +28,17 @@ const VERSION_STATUS = {
   stable: "Freigegeben"
 };
 
+function normalizeDownloads(downloads) {
+  if (Array.isArray(downloads)) return downloads;
+  if (!downloads || typeof downloads !== "object") return [];
+  return Object.entries(downloads).filter(([,file]) => typeof file === "string" && file.trim()).map(([key,file]) => ({
+    name: key === "windows" ? "Windows-Paket" : key === "android" ? "Android" : key,
+    format: key === "windows" ? "RAR" : key === "android" ? "APK" : key.toUpperCase(),
+    file,
+    primary: key === "windows"
+  }));
+}
+
 function renderDownload(download) {
   const href = encodeURI(download.file);
   return `<a class="version-download ${download.primary ? "primary-download" : ""}" href="${href}" download>
@@ -45,8 +56,9 @@ function renderCurrentVersion(version) {
     return;
   }
 
-  const downloads = (version.downloads || []).length
-    ? version.downloads.map(renderDownload).join("")
+  const normalizedDownloads = normalizeDownloads(version.downloads);
+  const downloads = normalizedDownloads.length
+    ? normalizedDownloads.map(renderDownload).join("")
     : `<div class="download-missing">Für diese Version ist noch kein Download hinterlegt.</div>`;
 
   const changes = (version.changes || []).map(change =>
@@ -92,8 +104,9 @@ function renderVersionHistory(versions, currentVersion) {
   }
 
   container.innerHTML = history.map(version => {
-    const downloads = (version.downloads || []).length
-      ? version.downloads.map(d => `<a class="history-download" href="${encodeURI(d.file)}" download>${esc(d.format || d.name)} <span>↓</span></a>`).join("")
+    const normalizedDownloads = normalizeDownloads(version.downloads);
+    const downloads = normalizedDownloads.length
+      ? normalizedDownloads.map(d => `<a class="history-download" href="${encodeURI(d.file)}" download>${esc(d.format || d.name)} <span>↓</span></a>`).join("")
       : `<span class="history-no-download">Kein Download hinterlegt</span>`;
 
     return `<article class="history-version">

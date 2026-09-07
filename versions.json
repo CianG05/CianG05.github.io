@@ -12,14 +12,14 @@
         {
           "name": "Windows-Paket",
           "format": "RAR",
-          "file": "downloads/v0.9.4.1/JuH Baustellen Hub Release V0.9.4.1.rar",
+          "file": "downloads/v0.9.4.1/JuH Baustellen Hub Release 0.9.4.1.rar",
           "primary": true,
           "description": "Aktueller Windows-Testbuild V0.9.4.1 inklusive benötigter Dateien"
         },
         {
           "name": "Android",
           "format": "APK",
-          "file": "downloads/v0.9.4.1/JuH Baustellen Hub Release V0.9.4.1.apk",
+          "file": "downloads/v0.9.4.1/JuH-BaustellenHub-v0.9.4.1.apk",
           "primary": false,
           "description": "Aktueller Android-/Tablet-Testbuild V0.9.4.1"
         }
@@ -50,10 +50,22 @@
         "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
         "Windows-Intro abgesichert + Dist/Migrationen"
       ],
-      "downloads": {
-        "windows": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
-        "android": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk"
-      },
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
+          "primary": true,
+          "description": "Windows-Testbuild v0.9.4"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk",
+          "primary": false,
+          "description": "Android-Testbuild v0.9.4"
+        }
+      ],
       "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
     },
     {
