@@ -212,7 +212,21 @@
       "statusLabel": "Veraltet",
       "current": false,
       "description": "Früherer Entwicklungsstand mit Büro-Dashboard, Navigation, Projektverwaltung, Baustellen-Tabs, Fluent Desktop-Theme und rollenbasiertem Login.",
-      "downloads": [],
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.1/JuH Baustellen Hub Release 0.9.1.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Programmpaket inklusive benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.1/JuH-BaustellenHub-v0.9.1.apk",
+          "primary": false
+        }
+      ],
       "changes": [
         "Büro-Dashboard und Navigation",
         "Projektverwaltung und Baustellen-Tabs",
