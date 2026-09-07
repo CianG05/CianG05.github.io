@@ -19,15 +19,21 @@
     {
       "id": "v0941-features",
       "title": "v0.9.4.1 – neue Funktionen & Korrekturen",
-      "description": "Nächster Patchstand nach stabiler v0.9.4.",
+      "description": "v0.9.4.1 fokussiert auf echte Nutzbarkeit, Berichtslogik, Onboarding, Hilfe und saubere Plattform-UX.",
       "taskIds": [
         "masterdata-full-load-0941",
-        "intro-course-complete-0941",
         "file-processing-sort-0941",
-        "voice-conversation-0941",
         "department-report-mode-0941",
         "report-type-selector-0941",
-        "plans-merge-pdf-0941"
+        "plans-merge-pdf-0941",
+        "voice-report-flow-0941",
+        "voice-intelligence-0941",
+        "guided-first-run-0941",
+        "help-center-rework-0941",
+        "support-issue-routing-0941",
+        "personalized-greeting-0941",
+        "help-menu-cleanup-0941",
+        "desktop-tablet-feature-parity-0941"
       ]
     },
     {
@@ -338,17 +344,6 @@
       "updated": "31.08.2026"
     },
     {
-      "id": "help-learning-system",
-      "title": "Hilfe- & Lernsystem",
-      "description": "Hilfe-Center umgesetzt; ungetestet. Ausbau zum vollständigen Hilfe- & Lernsystem vorgesehen.",
-      "area": "Hilfe",
-      "priority": "high",
-      "status": "in_progress",
-      "progress": 80,
-      "owner": "Jeremy",
-      "updated": "31.08.2026"
-    },
-    {
       "id": "voice-report-assistant",
       "title": "Sprach-Berichtsassistent – Beta",
       "description": "Voice-Beta umgesetzt; ungetestet. Ausschließlich abrechnungsrelevante Aussagen dürfen übernommen werden.",
@@ -437,28 +432,6 @@
       "updated": "31.08.2026"
     },
     {
-      "id": "diagnostics-support",
-      "title": "Diagnose- & Supportmodus",
-      "description": "Diagnose-/Supportmodus umgesetzt; ungetestet.",
-      "area": "Support",
-      "priority": "medium",
-      "status": "in_progress",
-      "progress": 80,
-      "owner": "Jeremy",
-      "updated": "31.08.2026"
-    },
-    {
-      "id": "crew-open-tasks",
-      "title": "Offene Aufgaben für Kolonnen",
-      "description": "Bereich Offene Aufgaben umgesetzt; ungetestet.",
-      "area": "Kolonne / Dashboard",
-      "priority": "medium",
-      "status": "in_progress",
-      "progress": 80,
-      "owner": "Jeremy",
-      "updated": "31.08.2026"
-    },
-    {
       "id": "report-queue-apis",
       "title": "Queue-APIs für Berichtsworkflow",
       "description": "Queue-APIs für Freigabe-, Prüf- und Korrekturworkflow umgesetzt; ungetestet.",
@@ -503,32 +476,10 @@
       "updated": "07.09.2026"
     },
     {
-      "id": "intro-course-complete-0941",
-      "title": "Perfekter Einführungskurs für Erstbenutzung",
-      "description": "Vollständigen First-Run-Einstieg erstellen, der neue Nutzer durch die echte App führt. Alle relevanten Funktionen, Navigation, Berichte, Dateien, Benachrichtigungen, Hilfe, Suche und Rollenlogik verständlich erklären. Rollen-/Abteilungsabhängig, jederzeit über Hilfe erneut startbar, Skip/Fertig sauber behandeln.",
-      "area": "Hilfe / Onboarding",
-      "priority": "high",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "07.09.2026"
-    },
-    {
       "id": "file-processing-sort-0941",
       "title": "Dateien korrekt sortieren & verarbeiten",
       "description": "Dateien und Ordner zuverlässig laden, sortieren und verarbeiten. Sortierung auf Windows und Tablet prüfen; unterschiedliche Dateitypen, Namen, Datumswerte, Cache und OneDrive-Sync berücksichtigen.",
       "area": "Dateien / OneDrive",
-      "priority": "high",
-      "status": "planned",
-      "progress": 0,
-      "owner": "Jeremy",
-      "updated": "07.09.2026"
-    },
-    {
-      "id": "voice-conversation-0941",
-      "title": "Aktiver Sprachdialog für Baustellenberichte",
-      "description": "Spracherkennung als fortlaufendes Gespräch ähnlich einem Assistenten umsetzen. Nur abrechnungsrelevante Informationen extrahieren. Diese strukturierten Fakten den Berichtsfeldern zuordnen und zusätzlich sinngemäß als verständlichen Berichtssatz formulieren. Irrelevante Aussagen ignorieren, bei Unsicherheit gezielt nachfragen, nichts erfinden und vor Übernahme eine Nutzerkontrolle verlangen.",
-      "area": "Berichte / Sprache",
       "priority": "high",
       "status": "planned",
       "progress": 0,
@@ -589,9 +540,102 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "07.09.2026"
+    },
+    {
+      "id": "voice-report-flow-0941",
+      "title": "Sprachdialog direkt in Berichtserstellung",
+      "description": "Sprach-Assistent nicht als separaten Hilfe-Menüpunkt behandeln. Beim Erstellen eines Baustellenberichts als Erfassungsmodus anbieten. Fortlaufendes, kontextabhängiges Gespräch mit sinnvoller Frage-Reihenfolge abhängig von bereits genannten Tätigkeiten. Nur abrechnungsrelevante Informationen übernehmen. Am Ende Bericht vollständig vorausfüllen und Review anzeigen.",
+      "area": "Berichte / Sprache",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "voice-intelligence-0941",
+      "title": "Sprach-KI mit toleranter Erkennung & Fachlogik",
+      "description": "Fehlerhafte Schreibweisen, Speech-to-Text-Fehler, Umgangssprache, Synonyme und Baustellenbegriffe robust erkennen. Kontext über mehrere Antworten behalten, fehlende Pflichtangaben gezielt nachfragen und Widersprüche klären. Keine irrelevanten Inhalte übernehmen. Erweiterbare Synonym-/Mapping-Logik vorsehen.",
+      "area": "Berichte / KI",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "guided-first-run-0941",
+      "title": "Vollständiger interaktiver Einführungskurs",
+      "description": "Erstbenutzer durch die echte App führen, nicht nur kurze Slides. Mit sicherem Demo-Bericht praktisch Baustelle öffnen, Bericht erstellen, Felder ausfüllen, Review, Einreichen, Korrektur, Benachrichtigungen, Dateien/Pläne, Suche und Hilfe kennenlernen. Rollen- und geräteabhängig, jederzeit erneut startbar.",
+      "area": "Onboarding / Hilfe",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "help-center-rework-0941",
+      "title": "Hilfe-Center komplett neu strukturieren",
+      "description": "Hilfe-Center klar definieren und neu gestalten. Keine doppelte Navigation mit Einführung, Diagnose, Sprachassistent und offenen Aufgaben. Kategorien, Suche, kontextbezogene Hilfe und konkrete Problemlösungen anbieten. Inhalte müssen echte Schritte erklären.",
+      "area": "Hilfe / UX",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "support-issue-routing-0941",
+      "title": "Diagnose & Support mit echter Weiterleitung",
+      "description": "Problem melden muss einen verwertbaren Supportfall erzeugen und beim Entwickler ankommen, bevorzugt als GitHub Issue oder über einen sicheren Backend-Endpunkt. App-Version, Plattform, Gerät, Rolle, Route, Sync-/Netzwerkstatus und relevante Fehler mitsenden. Kein GitHub-Token in der App.",
+      "area": "Support / GitHub",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "personalized-greeting-0941",
+      "title": "Personalisierte Begrüßung mit Schachtmeister",
+      "description": "Statische Begrüßung wie 'Moin, Störung' entfernen. Auf dem Gerät den zugeordneten Schachtmeister/Nutzer anzeigen, z. B. 'Moin, Max'. Name aus Benutzer-/Geräte-/Kolonnenzuordnung laden; Abteilung separat anzeigen, nicht statt Name.",
+      "area": "Dashboard / Personalisierung",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "help-menu-cleanup-0941",
+      "title": "Hilfe-Menü entrümpeln",
+      "description": "Sprach-Assistent in Berichtserstellung verschieben, Offene Aufgaben auf Dashboard/Arbeitsbereich, Diagnose in Support, Einführung in Onboarding. Hilfe selbst enthält nur Hilfe-Center, Touren und Problemlösungen.",
+      "area": "Navigation / UX",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "desktop-tablet-feature-parity-0941",
+      "title": "Desktop- & Tablet-UX gemeinsam überarbeiten",
+      "description": "Neue UX-/Workflow-Regeln auf beide Plattformen anwenden. Tablet touch-/feldtauglich, Desktop kompakt und schnell, aber identische Fachlogik, Daten und Statusmodelle. Keine getrennten halbfertigen Feature-Silos.",
+      "area": "UX / Plattformen",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "07.09.2026",
+      "title": "v0.9.4.1 UX-/Workflow-Anforderungen konkretisiert",
+      "text": "Nach dem ersten realen Start auf Windows und Tablet wurden mehrere Funktionen als technisch vorhanden, aber fachlich bzw. UX-seitig unzureichend bewertet. Für v0.9.4.1 wurden Sprachdialog direkt in der Berichtserstellung, intelligente kontextabhängige Fragen, vollständiger interaktiver Einführungskurs, überarbeitetes Hilfe-Center, echte Support-/Issue-Weiterleitung, personalisierte Begrüßung und gemeinsame Desktop-/Tablet-Überarbeitung aufgenommen."
+    },
     {
       "date": "07.09.2026",
       "title": "v0.9.4 Stabilisierung & v0.9.4.1 Scope festgelegt",
