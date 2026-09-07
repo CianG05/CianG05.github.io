@@ -733,7 +733,7 @@
   ],
   "changelog": [
     {
-      "date": "07.09.2026",
+      "date": "08.09.2026",
       "title": "V0.9.4.1 – Tagesabschluss: implementiert + Auto-QA, manuelle Tests offen",
       "text": "V0.9.4.1 ist die einzige aktuelle Testversion (pubspec 0.9.4+95, UI 0.9.4.1). APK und RAR liegen für die Tests bereit. Umgesetzt wurden u. a. Wochen-/Tagesberichtswelten, Berichtstypwahl, Formular/Sprache/Hybrid, geführter Demo-Einstieg mit Rollenfix, Hilfe-Center, Support über Backend→GitHub, personalisierte Begrüßung, offene Aufgaben, Stammdaten-/Dateiüberarbeitungen, Pläne→PDF-MVP, Alt→Neu-Freigabe und Desktop-/Tablet-Konsistenz. Am Abend wurden Notification-Empfänger/Toasts, Ghost-Berichte, OneDrive-Verknüpfung, Speech-Permissions und Support-Diagnose überarbeitet. V0.9.4.1 bleibt UNSTABLE, bis die letzten manuellen Tests und der abschließende Feldtest bestanden sind."
     },
