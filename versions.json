@@ -1,43 +1,43 @@
 {
   "versions": [
     {
-  "version": "0.9.4",
-  "title": "Berichtsworkflow V2 & neue Kernfunktionen",
-  "date": "07.09.2026",
-  "status": "testing",
-  "statusLabel": "Aktuelle Testversion – Stable-Gate läuft",
-  "current": true,
-  "description": "Aktuelle v0.9.4 mit Berichtsworkflow V2 und neuen Kernfunktionen. Ziel ist die vollständige Stabilisierung am 07.09.2026; Stable erst nach bestandenem Windows-/Tablet-/Feldtest.",
-  "downloads": [
-    {
-      "name": "Windows-Paket",
-      "format": "RAR",
-      "file": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
-      "primary": true,
-      "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+      "version": "0.9.4",
+      "title": "Berichtsworkflow V2 & neue Kernfunktionen",
+      "date": "07.09.2026",
+      "status": "testing",
+      "statusLabel": "Aktuelle Testversion – Stable-Gate läuft",
+      "current": true,
+      "description": "Aktuelle v0.9.4 mit Berichtsworkflow V2 und neuen Kernfunktionen. Ziel ist die vollständige Stabilisierung am 07.09.2026; Stable erst nach bestandenem Windows-/Tablet-/Feldtest.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk",
+          "primary": false,
+          "description": "Android-Testbuild v0.9.4"
+        }
+      ],
+      "changes": [
+        "NEUE Baustellenberichte als Grundlage",
+        "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
+        "Korrektur-/Prüfcenter, Autosave, Queue-APIs",
+        "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
+        "Windows-Intro abgesichert + Dist/Migrationen"
+      ],
+      "notice": "TESTING – Stable-Freigabe erst nach dokumentiert bestandenem vollständigen QA-Gate."
     },
-    {
-      "name": "Android",
-      "format": "APK",
-      "file": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk",
-      "primary": false,
-      "description": "Android-Testbuild v0.9.4"
-    }
-  ],
-  "changes": [
-    "NEUE Baustellenberichte als Grundlage",
-    "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
-    "Korrektur-/Prüfcenter, Autosave, Queue-APIs",
-    "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
-    "Windows-Intro abgesichert + Dist/Migrationen"
-  ],
-  "notice": "TESTING – Stable-Freigabe erst nach dokumentiert bestandenem vollständigen QA-Gate."
-},
     {
       "version": "0.9.3.2",
       "title": "Unstable – Stabilität, Intro-Fix & Performance",
       "date": "31.08.2026",
-      "status": "testing",
+      "status": "outdated",
       "statusLabel": "Aktuelle Unstable Testversion",
       "current": false,
       "description": "Aktueller interner v0.9.3.2-Teststand. Der bereits zuvor umgesetzte Windows-First-Run-Introfix benötigt noch First-Run-QA. Das bisherige Intro wird langfristig durch ein umfassendes Hilfe- & Lernsystem ersetzt. Größere neue Funktionen bleiben zunächst Roadmap/Todo und sind nicht Teil des aktuellen Builds.",
@@ -69,7 +69,7 @@
       "version": "0.9.3.1",
       "title": "Unstable – Stabilität & Performance",
       "date": "27.08.2026",
-      "status": "testing",
+      "status": "outdated",
       "statusLabel": "Vorherige Unstable Testversion",
       "current": false,
       "description": "Aktueller interner Teststand mit stabilisierter Prüfungs-Queue und Dashboard-Feeds, gemeinsamer Inbox-Quelle, OneDrive-Request-Deduplizierung, parallelem Prefetch und Cache-Fallbacks. Geräte-/Feldtests und Einführungskurs stehen noch aus.",
@@ -104,7 +104,7 @@
       "version": "0.9.3",
       "title": "Unstable Büro- & Tablet-Teststand",
       "date": "26.08.2026",
-      "status": "testing",
+      "status": "outdated",
       "statusLabel": "Vorherige Unstable Testversion",
       "current": false,
       "description": "Neuer interner Unstable-Teststand. Windows- und Android-Build sind vorgesehen; der Stand läuft grundsätzlich, ist aber noch nicht vollständig verifiziert.",
@@ -139,7 +139,7 @@
       "version": "0.9.2",
       "title": "Büro- & Tablet-Testpaket",
       "date": "26.08.2026",
-      "status": "ready_for_test",
+      "status": "outdated",
       "statusLabel": "Getesteter vorheriger Teststand",
       "current": false,
       "description": "Windows- und Android-Teststand v0.9.2. Die Builds sind öffnungsfähig; zentrale neue Funktionen wurden integriert.",
@@ -177,7 +177,21 @@
       "statusLabel": "Vorheriger Entwicklungsstand",
       "current": false,
       "description": "Früherer Entwicklungsstand mit Büro-Dashboard, Navigation, Projektverwaltung, Baustellen-Tabs, Fluent Desktop-Theme und rollenbasiertem Login.",
-      "downloads": [],
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "RAR",
+          "file": "downloads/v0.9.1/JuH Baustellen Hub Release 0.9.1.rar",
+          "primary": true,
+          "description": "Komplettes Windows-Programmpaket inklusive benötigter DLLs"
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.1/JuH-BaustellenHub-v0.9.1.apk",
+          "primary": false
+        }
+      ],
       "changes": [
         "Büro-Dashboard und Navigation",
         "Projektverwaltung und Baustellen-Tabs",
