@@ -9,7 +9,7 @@ function milestoneProgress(m){return avg(m.taskIds.map(id=>D.items.find(x=>x.id=
 function render(){
  $("summary").textContent=D.project.summary;$("version").textContent=D.project.version;$("updated").textContent=D.project.updated;$("footerDate").textContent=`Stand ${D.project.updated}`;
  const p=projectProgress();$("overall").textContent=`${p}%`;$("overallBig").textContent=`${p}%`;$("overallBar").style.width=`${p}%`;
- $("doneCount").textContent=D.items.filter(x=>x.status==="done").length;$("implementedCount").textContent=D.items.filter(x=>x.status==="implemented").length;$("workCount").textContent=D.items.filter(x=>x.status==="in_progress").length;$("planCount").textContent=D.items.filter(x=>x.status==="planned").length;
+ if($("doneCount")) $("doneCount").textContent=D.items.filter(x=>x.status==="done").length;if($("implementedCount")) $("implementedCount").textContent=D.items.filter(x=>x.status==="implemented").length;if($("workCount")) $("workCount").textContent=D.items.filter(x=>x.status==="in_progress").length;if($("planCount")) $("planCount").textContent=D.items.filter(x=>x.status==="planned").length;
  $("milestones").innerHTML=D.milestones.map((m,i)=>{const p=milestoneProgress(m);return `<article class="milestone"><div class="num">${String(i+1).padStart(2,"0")}</div><div><h3>${esc(m.title)}</h3><p>${esc(m.description)}</p><small>${m.taskIds.length} zugeordnete Aufgabe${m.taskIds.length===1?"":"n"}</small></div><div class="milestone-progress"><strong>${p}%</strong><div class="bar"><i style="width:${p}%"></i></div></div></article>`}).join("");
  renderTasks();
  $("changelog").innerHTML=D.changelog.map(x=>`<article class="change"><div class="change-date">${esc(x.date)}</div><div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div></article>`).join("");
@@ -31,12 +31,10 @@ const VERSION_STATUS = {
 function normalizeDownloads(downloads) {
   if (Array.isArray(downloads)) return downloads;
   if (!downloads || typeof downloads !== "object") return [];
-  return Object.entries(downloads).filter(([,file]) => typeof file === "string" && file.trim()).map(([key,file]) => ({
-    name: key === "windows" ? "Windows-Paket" : key === "android" ? "Android" : key,
-    format: key === "windows" ? "RAR" : key === "android" ? "APK" : key.toUpperCase(),
-    file,
-    primary: key === "windows"
-  }));
+  const out = [];
+  if (downloads.windows) out.push({name:"Windows-Paket", format:"RAR", file:downloads.windows, primary:true});
+  if (downloads.android) out.push({name:"Android", format:"APK", file:downloads.android, primary:false});
+  return out;
 }
 
 function renderDownload(download) {

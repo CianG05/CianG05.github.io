@@ -56,14 +56,14 @@
           "format": "RAR",
           "file": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
           "primary": true,
-          "description": "Windows-Testbuild v0.9.4"
+          "description": "Windows-Paket"
         },
         {
           "name": "Android",
           "format": "APK",
           "file": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk",
           "primary": false,
-          "description": "Android-Testbuild v0.9.4"
+          "description": "Android-Paket"
         }
       ],
       "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
