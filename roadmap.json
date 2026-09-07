@@ -3,24 +3,46 @@
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
     "version": "0.9.4 Unstable",
-    "updated": "31.08.2026",
-    "summary": "v0.9.4 Unstable liegt unter dist und auf main (Commit 9221fbb). Heute wurden NEUE Baustellenberichte als Grundlage festgelegt, Berichtsworkflow V2 und neue Kernfunktionen umgesetzt. Alles ist noch ungetestet; manuelle Geräte-/Feldtests stehen aus."
+    "updated": "07.09.2026",
+    "summary": "Aktueller Stand ist v0.9.4 Unstable. Ziel für heute: v0.9.4 vollständig testen, Fehler beheben und erst nach bestandenem Windows-/Tablet-/Feldtest als Stable freigeben. Danach wird v0.9.4.1 umgesetzt und ebenfalls noch heute vollständig getestet und stabilisiert."
   },
   "milestones": [
     {
-      "id": "v094-qa",
-      "title": "v0.9.4 – Unstable QA",
-      "description": "Heutiger Stand ist gebaut, aber ungetestet.",
+      "id": "v094-stable-today",
+      "title": "v0.9.4 – heute Stable machen",
+      "description": "Aktuellen Funktionsstand vollständig testen, Fehler beheben und erst danach freigeben.",
       "taskIds": [
-        "build-package-094",
-        "device-field-qa",
-        "bugfix-round-0932"
+        "v094-stable-gate",
+        "device-field-qa"
       ]
     },
     {
-      "id": "reports-v2",
-      "title": "Baustellenberichte V2",
-      "description": "NEU als Grundlage; Workflow V2 umgesetzt, aber ungetestet.",
+      "id": "v0941-features",
+      "title": "v0.9.4.1 – neue Funktionen & Korrekturen",
+      "description": "Nächster Patchstand nach stabiler v0.9.4.",
+      "taskIds": [
+        "masterdata-full-load-0941",
+        "intro-course-complete-0941",
+        "file-processing-sort-0941",
+        "voice-conversation-0941",
+        "department-report-mode-0941",
+        "report-type-selector-0941",
+        "plans-merge-pdf-0941"
+      ]
+    },
+    {
+      "id": "v0941-stable-today",
+      "title": "v0.9.4.1 – heute ebenfalls Stable machen",
+      "description": "Nach Implementierung vollständiges QA-Gate und Release.",
+      "taskIds": [
+        "v0941-full-qa",
+        "v0941-release"
+      ]
+    },
+    {
+      "id": "v094-existing",
+      "title": "v0.9.4 – enthaltene neue Funktionen",
+      "description": "Bereits in v0.9.4 implementierter Stand; aktuell noch zu verifizieren.",
       "taskIds": [
         "report-architecture-decision",
         "report-approval-v2",
@@ -29,51 +51,24 @@
         "site-manager-review-center",
         "report-status-notifications",
         "audit-history",
-        "report-autosave"
-      ]
-    },
-    {
-      "id": "v094-features",
-      "title": "Neue v0.9.4 Funktionen",
-      "description": "Neue Nutzer-/Supportfunktionen, vollständig zu testen.",
-      "taskIds": [
+        "report-autosave",
         "help-learning-system",
         "global-search",
         "diagnostics-support",
         "voice-report-assistant",
-        "crew-open-tasks"
-      ]
-    },
-    {
-      "id": "regression",
-      "title": "Regressionstest",
-      "description": "Bestehende Kernfunktionen erneut prüfen.",
-      "taskIds": [
-        "reports-review-stability",
-        "dashboard-feeds",
-        "notifications-redesign",
-        "onedrive-dedup",
-        "masterdata-complete",
-        "file-sorting",
-        "performance-speed"
-      ]
-    },
-    {
-      "id": "later-polish",
-      "title": "Späterer Feinschliff",
-      "description": "Nach QA.",
-      "taskIds": [
-        "toast-polish",
-        "startup-performance",
-        "stale-while-revalidate"
+        "crew-open-tasks",
+        "build-package-094"
       ]
     },
     {
       "id": "deferred",
       "title": "Zurückgestellt",
-      "description": "Bewusst nicht im Fokus.",
+      "description": "Nicht Teil des heutigen Stable-Ziels.",
       "taskIds": [
-        "office-network-backend"
+        "office-network-backend",
+        "toast-polish",
+        "startup-performance",
+        "stale-while-revalidate"
       ]
     }
   ],
@@ -256,14 +251,14 @@
     },
     {
       "id": "device-field-qa",
-      "title": "First-Run-, Geräte- und Feldtest v0.9.3.2",
-      "description": "Manueller Geräte-/Feldtest des kompletten v0.9.4-Stands auf Windows und Tablet steht aus.",
+      "title": "v0.9.4 vollständiger Stable-Gate-Test",
+      "description": "Kompletten v0.9.4-Stand auf Windows und Tablet testen. Alle neuen Funktionen, Migrationen, Rollen/Rechte, Berichte, Queue, Autosave, Benachrichtigungen, Hilfe, Suche, Diagnose und Voice-Beta prüfen. Stable erst nach bestandenem Test.",
       "area": "QA",
       "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
-      "updated": "31.08.2026"
+      "updated": "07.09.2026"
     },
     {
       "id": "build-package-0931",
@@ -484,9 +479,124 @@
       "progress": 90,
       "owner": "Jeremy",
       "updated": "31.08.2026"
+    },
+    {
+      "id": "v094-stable-gate",
+      "title": "v0.9.4 heute stabil freigeben",
+      "description": "Alle Funktionen der v0.9.4 systematisch testen, Fehler beheben und Regressionen ausschließen. Windows-RAR und Android-APK real testen. Stable nur markieren, wenn die dokumentierten Tests bestanden sind.",
+      "area": "Release / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "masterdata-full-load-0941",
+      "title": "Stammdaten vollständig laden",
+      "description": "Aktueller Stand ist unklar und nicht verifiziert. Sicherstellen, dass Stammdaten vollständig geladen, gespeichert und wiederhergestellt werden. Verhalten bei leerem Cache, bestehendem Cache, Netzwerkfehler und Synchronisierung prüfen.",
+      "area": "Stammdaten",
+      "priority": "high",
+      "status": "planned",
+      "progress": 10,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "intro-course-complete-0941",
+      "title": "Perfekter Einführungskurs für Erstbenutzung",
+      "description": "Vollständigen First-Run-Einstieg erstellen, der neue Nutzer durch die echte App führt. Alle relevanten Funktionen, Navigation, Berichte, Dateien, Benachrichtigungen, Hilfe, Suche und Rollenlogik verständlich erklären. Rollen-/Abteilungsabhängig, jederzeit über Hilfe erneut startbar, Skip/Fertig sauber behandeln.",
+      "area": "Hilfe / Onboarding",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "file-processing-sort-0941",
+      "title": "Dateien korrekt sortieren & verarbeiten",
+      "description": "Dateien und Ordner zuverlässig laden, sortieren und verarbeiten. Sortierung auf Windows und Tablet prüfen; unterschiedliche Dateitypen, Namen, Datumswerte, Cache und OneDrive-Sync berücksichtigen.",
+      "area": "Dateien / OneDrive",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "voice-conversation-0941",
+      "title": "Aktiver Sprachdialog für Baustellenberichte",
+      "description": "Spracherkennung als fortlaufendes Gespräch ähnlich einem Assistenten umsetzen. Nur abrechnungsrelevante Informationen extrahieren. Diese strukturierten Fakten den Berichtsfeldern zuordnen und zusätzlich sinngemäß als verständlichen Berichtssatz formulieren. Irrelevante Aussagen ignorieren, bei Unsicherheit gezielt nachfragen, nichts erfinden und vor Übernahme eine Nutzerkontrolle verlangen.",
+      "area": "Berichte / Sprache",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "department-report-mode-0941",
+      "title": "Abteilung / Berichtsmodus als Einstellung",
+      "description": "Regler bzw. Einstellung hinzufügen: Störungsabteilung nutzt die alten Wochenberichte; Legung nutzt die neuen Tagesberichte. Die App soll anhand der Einstellung standardmäßig die passende Berichtsart, Formulare und Workflows anzeigen.",
+      "area": "Berichte / Einstellungen",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "report-type-selector-0941",
+      "title": "Wochenbericht oder Tagesbericht bei Erstellung auswählen",
+      "description": "Zusätzlich zur Abteilungseinstellung bei der Erstellung eines Baustellenberichts explizit auswählen können, ob ein WOCHENBERICHT oder TAGESBERICHT erstellt wird. Auswahl muss zum korrekten Formular, Datenmodell, Speicherpfad und PDF-Workflow führen.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "plans-merge-pdf-0941",
+      "title": "Hochgeladene Pläne zu einer PDF zusammenführen",
+      "description": "Wenn mehrere Pläne hochgeladen werden, daraus eine gemeinsame PDF erzeugen. Reihenfolge kontrollierbar halten, PDF-Seiten korrekt übernehmen, Fehler bei nicht unterstützten Dateien verständlich behandeln und Ergebnis sauber ablegen.",
+      "area": "Dateien / Pläne",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "v0941-full-qa",
+      "title": "v0.9.4.1 vollständig testen & stabilisieren",
+      "description": "Nach Umsetzung aller v0.9.4.1-Punkte vollständige Windows-/Tablet-/Feldtests, Regressionstest, Migrationstest sowie Berichtstests durchführen. Erst danach v0.9.4.1 als Stable markieren.",
+      "area": "Release / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
+    },
+    {
+      "id": "v0941-release",
+      "title": "v0.9.4.1 Stable Release",
+      "description": "Nach bestandenem QA-Gate Version auf 0.9.4.1 setzen, Windows-RAR und Android-APK bauen, Downloads in versions.json eintragen, Changelog finalisieren und als Stable veröffentlichen.",
+      "area": "Release",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "07.09.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "07.09.2026",
+      "title": "v0.9.4 Stabilisierung & v0.9.4.1 Scope festgelegt",
+      "text": "Tagesziel festgelegt: v0.9.4 vollständig testen und erst nach bestandenem QA-Gate als Stable freigeben. Für v0.9.4.1 wurden Stammdaten-Vollständigkeit, vollständiger Einführungskurs, Datei-Sortierung/-Verarbeitung, aktiver Sprachdialog mit Filterung abrechnungsrelevanter Inhalte, Abteilungs-/Berichtsmodus, Auswahl Wochen-/Tagesbericht sowie das Zusammenführen hochgeladener Pläne in eine PDF aufgenommen. v0.9.4.1 soll anschließend ebenfalls vollständig getestet werden."
+    },
     {
       "date": "31.08.2026",
       "title": "v0.9.4 Unstable – großer neuer Funktionsstand",

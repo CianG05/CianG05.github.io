@@ -2,28 +2,12 @@
   "versions": [
     {
       "version": "0.9.4",
-      "date": "31.08.2026",
-      "status": "unstable",
-      "statusLabel": "Aktuelle Unstable Testversion",
+      "date": "07.09.2026",
+      "status": "testing",
+      "statusLabel": "Aktuelle Testversion – Stable-Gate läuft",
       "current": true,
       "title": "Berichtsworkflow V2 & neue Kernfunktionen",
-      "description": "Großer interner Teststand auf main (9221fbb) und unter dist. Vollständig ungetestet.",
-      "downloads": [
-        {
-          "name": "Windows-Paket",
-          "format": "RAR",
-          "file": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.rar",
-          "primary": true,
-          "description": "Komplettes Windows-Paket inklusive EXE und benötigter DLLs"
-        },
-        {
-          "name": "Android",
-          "format": "APK",
-          "file": "downloads/v0.9.4/JuH Baustellen Hub Release V0.9.4.apk",
-          "primary": false,
-          "description": "Android-Testbuild v0.9.4"
-        }
-      ],
+      "description": "Aktuelle v0.9.4 mit Berichtsworkflow V2 und neuen Kernfunktionen. Ziel ist die vollständige Stabilisierung am 07.09.2026; Stable erst nach bestandenem Windows-/Tablet-/Feldtest.",
       "changes": [
         "NEUE Baustellenberichte als Grundlage",
         "Freigabe V2, Vermerke, Audit, Benachrichtigungen",
@@ -31,7 +15,11 @@
         "Hilfe-Center, globale Suche, Diagnose, Voice-Beta, offene Aufgaben",
         "Windows-Intro abgesichert + Dist/Migrationen"
       ],
-      "notice": "UNGETESTET / UNSTABLE – manueller Windows-/Tablet-/Feldtest steht vollständig aus."
+      "downloads": {
+        "windows": "downloads/v0.9.4/JuH Baustellen Hub Release 0.9.4.rar",
+        "android": "downloads/v0.9.4/JuH-BaustellenHub-v0.9.4.apk"
+      },
+      "notice": "TESTING – Stable-Freigabe erst nach dokumentiert bestandenem vollständigen QA-Gate."
     },
     {
       "version": "0.9.3.2",
