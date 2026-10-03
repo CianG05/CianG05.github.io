@@ -3,8 +3,8 @@
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
     "version": "0.9.4.1 Testphase",
-    "updated": "07.09.2026",
-    "summary": "V0.9.4.1 ist die einzige aktuelle Testversion. Der Stand ist implementiert und automatisiert getestet, aber noch nicht Stable. Windows-/Tablet-/Emulator- und abschließende Feldtests stehen teilweise noch aus und werden am 08.09.2026 fortgeführt. Alle Versionen bis einschließlich V0.9.4 sind veraltet."
+    "updated": "03.10.2026",
+    "summary": "V0.9.4.1 ist die aktuelle Entwicklungs- und Testversion. Seit 28.09.2026 liegt der Schwerpunkt auf der Fertigstellung für das erstmalige vollständige Deployment und Release. Der Stand bleibt bis zum Abschluss der manuellen Geräte-, Regressions- und Feldtests in der Testphase und wird nicht vorzeitig als Stable markiert."
   },
   "milestones": [
     {
@@ -776,6 +776,378 @@
       "date": "05.08.2026",
       "title": "v0.9.2 – erster interner Teststand",
       "text": "Erster interner Windows-/Tablet-Teststand mit grundlegender Berichts- und Dateifunktionalität sowie lokalem Cache-Fallback."
+    }
+  ],
+  "worklog": [
+    {
+      "date": "03.10.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Release-Stand nachbearbeitet, letzte technische Fehler korrigiert und aktuellen Build für die weiteren Abschluss- und Veröffentlichungstests vorbereitet."
+    },
+    {
+      "date": "02.10.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Release-Arbeiten durchgeführt: Gesamtanwendung getestet und nachgebessert, verbleibende Funktions- und Integrationsfehler behoben sowie Builds und Deployment vorbereitet."
+    },
+    {
+      "date": "01.10.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Neueste Release-Version weiter stabilisiert; Fehler aus den vorherigen Integrationen behoben und Desktop-/Tablet-Funktionen für das vollständige Deployment vorbereitet."
+    },
+    {
+      "date": "30.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Release-Version umfassend fertiggestellt und stabilisiert; Berichts-, Datei-, Rollen- und Synchronisationsfunktionen integriert sowie Build-, Deployment- und Release-Vorbereitung durchgeführt."
+    },
+    {
+      "date": "29.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Neueste Version umfangreich weiterentwickelt; offene Funktionen integriert, Desktop-/Tablet-Abläufe vereinheitlicht und Release-/Deployment-Prozess vorbereitet."
+    },
+    {
+      "date": "28.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Arbeiten an der neuesten Release-Version begonnen; Projektstand geprüft und vollständiges Deployment sowie erstmalige Veröffentlichung der App vorbereitet."
+    },
+    {
+      "date": "24.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserstellung, Dateiablage und plattformübergreifende Funktionen weiterentwickelt und getestet."
+    },
+    {
+      "date": "23.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Benutzeroberfläche, Arbeitsabläufe und bestehende Funktionen der BaustellenHub-Anwendung optimiert."
+    },
+    {
+      "date": "21.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Anwendung weiter stabilisiert, Datei-/OneDrive-Verarbeitung und Berichtsfunktionen überarbeitet."
+    },
+    {
+      "date": "20.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Desktop- und Tablet-Funktionen überarbeitet, Berichtsabläufe verbessert und technische Fehler behoben."
+    },
+    {
+      "date": "15.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datei-, Berichts- und Synchronisationsfunktionen weiterentwickelt und bestehende Fehler behoben."
+    },
+    {
+      "date": "14.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserstellung und zugehörige Datenverarbeitung weiterentwickelt sowie Benutzeroberfläche optimiert."
+    },
+    {
+      "date": "13.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Kernfunktionen umfangreich überarbeitet, integriert und getestet; Fehler in Berichts-, Datei- und Bedienabläufen behoben."
+    },
+    {
+      "date": "12.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Weiterentwicklung der App mit Fokus auf Berichte, Benutzerführung, Desktop-/Tablet-Bedienung und Stabilität."
+    },
+    {
+      "date": "11.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserstellung, PDF-Ausgabe, Dateiablage und Synchronisationsabläufe weiterentwickelt."
+    },
+    {
+      "date": "08.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Änderungen des vorherigen Entwicklungstages geprüft, Fehler behoben und Teststand aktualisiert."
+    },
+    {
+      "date": "07.09.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtsworkflow, Rollenfunktionen, Prüf- und Freigabeprozesse weiterentwickelt sowie App-Funktionen für Desktop und Tablet zusammengeführt."
+    },
+    {
+      "date": "31.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "App-Funktionen zusammengeführt, getestet und für die weitere Testphase vorbereitet."
+    },
+    {
+      "date": "27.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtsworkflow, Dateiablage und Synchronisationsfunktionen umfangreich überarbeitet."
+    },
+    {
+      "date": "26.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Anwendung für Desktop- und Tablet-Nutzung weiterentwickelt und bestehende Funktionen stabilisiert."
+    },
+    {
+      "date": "05.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datenverarbeitung, PDF-Erstellung und bestehende Arbeitsabläufe überarbeitet."
+    },
+    {
+      "date": "03.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichts- und Dateifunktionen weiterentwickelt und Benutzeroberfläche optimiert."
+    },
+    {
+      "date": "01.08.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Weiterentwicklung und Integration der BaustellenHub-Kernfunktionen sowie Fehlerbehebung."
+    },
+    {
+      "date": "27.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Anwendung weiterentwickelt, bestehende Funktionen überarbeitet und technische Fehler behoben."
+    },
+    {
+      "date": "18.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Vorherige Änderungen getestet, Fehler behoben und Benutzerführung verbessert."
+    },
+    {
+      "date": "17.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Arbeiten an Baustellenverwaltung, Dokumentenablage und Berichtserstellung durchgeführt."
+    },
+    {
+      "date": "16.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtsfunktionen und PDF-Verarbeitung weiterentwickelt und optimiert."
+    },
+    {
+      "date": "06.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Entwicklungsstand gesichert und letzte technische Korrekturen durchgeführt."
+    },
+    {
+      "date": "05.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "App-Funktionen umfangreich integriert, Benutzeroberfläche überarbeitet und Fehler behoben."
+    },
+    {
+      "date": "04.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Änderungen des vorherigen Entwicklungstages getestet und nachgebessert."
+    },
+    {
+      "date": "03.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Weiterentwicklung der Baustellen-, Datei- und Berichtsfunktionen."
+    },
+    {
+      "date": "01.07.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserfassung und PDF-Ausgabe weiterentwickelt sowie bestehende Fehler behoben."
+    },
+    {
+      "date": "29.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Entwicklungsstand abgeschlossen und Änderungen gesichert."
+    },
+    {
+      "date": "28.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Kernfunktionen weiter integriert, getestet und technisch stabilisiert."
+    },
+    {
+      "date": "27.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Weiterentwicklung der Kernanwendung, Berichtslogik, Dateiablage und Benutzeroberfläche."
+    },
+    {
+      "date": "26.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Bestehende Funktionen integriert und Fehler in den Arbeitsabläufen behoben."
+    },
+    {
+      "date": "25.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Dokumentenverwaltung, Berichtserstellung und Datenverarbeitung umfangreich erweitert."
+    },
+    {
+      "date": "22.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Baustellen- und Berichtsfunktionen weiterentwickelt sowie Benutzeroberfläche überarbeitet."
+    },
+    {
+      "date": "08.06.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Bestehende App-Funktionen geprüft und kleinere technische Anpassungen vorgenommen."
+    },
+    {
+      "date": "28.05.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Vorherige Änderungen abgeschlossen und Entwicklungsstand gesichert."
+    },
+    {
+      "date": "27.05.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserstellung, PDF-Ausgabe und Datenverarbeitung umfangreich weiterentwickelt."
+    },
+    {
+      "date": "22.05.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Kleinere Fehler behoben und Bedienabläufe optimiert."
+    },
+    {
+      "date": "21.05.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "BaustellenHub weiterentwickelt und bestehende Berichtsfunktionen an den praktischen Arbeitsablauf angepasst."
+    },
+    {
+      "date": "31.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Entwicklungsstand bereinigt, getestet und für die weitere Entwicklung vorbereitet."
+    },
+    {
+      "date": "30.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Dokumenten- und Berichtsfunktionen weiterentwickelt sowie Datenflüsse optimiert."
+    },
+    {
+      "date": "29.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Bestehende Kernfunktionen zusammengeführt, getestet und Fehler behoben."
+    },
+    {
+      "date": "28.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Umfangreiche Weiterentwicklung der Baustellenverwaltung, Berichtserstellung und Benutzeroberfläche."
+    },
+    {
+      "date": "24.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtsdaten und Ausgabeformate überarbeitet und getestet."
+    },
+    {
+      "date": "22.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Entwicklungsstand stabilisiert und Fehler aus den vorherigen Änderungen behoben."
+    },
+    {
+      "date": "21.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datei-, Berichts- und Baustellenfunktionen umfangreich weiterentwickelt."
+    },
+    {
+      "date": "20.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Benutzeroberfläche und Navigation überarbeitet."
+    },
+    {
+      "date": "17.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "PDF-Berichte und Formularlogik weiterentwickelt sowie bestehende Fehler behoben."
+    },
+    {
+      "date": "16.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserstellung umfangreich erweitert und Datenverarbeitung angepasst."
+    },
+    {
+      "date": "15.03.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Weiterentwicklung der BaustellenHub-Kernfunktionen und Überarbeitung bestehender Abläufe."
+    },
+    {
+      "date": "28.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Entwicklungsstand getestet und bestehende Funktionen nachgebessert."
+    },
+    {
+      "date": "27.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datenverarbeitung und Speicherung überarbeitet sowie Fehlerfälle behandelt."
+    },
+    {
+      "date": "23.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Baustellen- und Berichtsverwaltung funktional erweitert und stabilisiert."
+    },
+    {
+      "date": "22.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Bestehende Funktionen geprüft und kleinere Fehler in Bedienabläufen behoben."
+    },
+    {
+      "date": "19.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datei- und Dokumentenverarbeitung innerhalb der Anwendung weiterentwickelt."
+    },
+    {
+      "date": "17.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Formular- und Validierungslogik der Berichtserfassung erweitert."
+    },
+    {
+      "date": "16.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "PDF-Erstellung weiterentwickelt und Berichtsdaten korrekt in die Ausgabe integriert."
+    },
+    {
+      "date": "15.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "PDF-Ausgabe für Baustellenberichte entwickelt und Layout angepasst."
+    },
+    {
+      "date": "09.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Benutzeroberfläche überarbeitet und bestehende Darstellungsfehler behoben."
+    },
+    {
+      "date": "08.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Speicherung und Verarbeitung von Baustellen- und Berichtsdaten weiterentwickelt."
+    },
+    {
+      "date": "05.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Navigation und Bedienabläufe der Anwendung optimiert."
+    },
+    {
+      "date": "02.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserfassung erweitert und Eingabefelder technisch überarbeitet."
+    },
+    {
+      "date": "01.02.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Baustellenverwaltung und zugehörige Datenverarbeitung weiterentwickelt."
+    },
+    {
+      "date": "30.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Projektstruktur bereinigt, Funktionen zusammengeführt und Entwicklungsstand getestet."
+    },
+    {
+      "date": "29.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtsfunktionen erweitert sowie bestehende Abläufe und Benutzeroberflächen überarbeitet."
+    },
+    {
+      "date": "28.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Berichtserfassung technisch weiterentwickelt und erste Eingabeabläufe umgesetzt."
+    },
+    {
+      "date": "27.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Benutzeroberfläche der ersten Anwendungsbereiche aufgebaut und vereinheitlicht."
+    },
+    {
+      "date": "26.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Datenstrukturen und grundlegende Abläufe für Baustellen und Berichte entwickelt."
+    },
+    {
+      "date": "25.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Grundlegende Navigation und Aufbau der zentralen Anwendungsbereiche weiterentwickelt."
+    },
+    {
+      "date": "24.01.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Projektgrundlage der BaustellenHub-Anwendung aufgebaut und grundlegende App-Struktur vorbereitet."
     }
   ]
 }
