@@ -62,7 +62,6 @@
       "title": "Zurückgestellt",
       "description": "Nicht Teil des aktuellen Testabschlusses.",
       "taskIds": [
-        "office-network-backend",
         "toast-polish",
         "startup-performance",
         "stale-while-revalidate"
@@ -73,6 +72,9 @@
       "title": "Erster vollständiger Deployment- & Releaseabschluss",
       "description": "Alle noch nötigen Produktiv-, QA-, Security-, Build- und Feldtest-Schritte bis zur ersten vollständig deployten und freigegebenen Version.",
       "taskIds": [
+        "crew-report-delete-restriction",
+        "remove-report-review-center",
+        "office-network-backend",
         "release-blocker-audit",
         "auth-cross-platform",
         "role-permission-audit",
@@ -301,14 +303,14 @@
     },
     {
       "id": "office-network-backend",
-      "title": "Backend-Erreichbarkeit im Büronetz prüfen",
-      "description": "Bekanntes Problem ausschließlich im Büronetz. Externe Verbindung und Handy-Hotspot funktionieren. Bewusst zurückgestellt.",
+      "title": "Büronetz inkl. Proxy vollständig unterstützen",
+      "description": "Die Windows-/Büro-App muss im Firmennetz trotz Proxy zuverlässig funktionieren. Backend, Microsoft/Graph, OneDrive, Support, Updateprüfung und alle sonstigen externen Requests müssen mit und ohne Proxy funktionieren. System-/Umgebungsproxy berücksichtigen, TLS/HTTPS-Fehler sauber behandeln, Timeouts/Retry/Fallbacks prüfen und den kompletten Büro-Workflow im realen Firmennetz testen. Kein Release, solange zentrale Funktionen nur per Hotspot funktionieren.",
       "area": "Backend / Netzwerk",
-      "priority": "low",
+      "priority": "high",
       "status": "planned",
       "progress": 0,
       "owner": "Jeremy",
-      "updated": "27.08.2026"
+      "updated": "03.10.2026"
     },
     {
       "id": "bugfix-round-0932",
@@ -1024,9 +1026,38 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "03.10.2026"
+    },
+    {
+      "id": "remove-report-review-center",
+      "title": "Baustellenbericht-Prüfcenter entfernen",
+      "description": "Gemäß GitHub-Issue #4 das Baustellenbericht-Prüfcenter aus der Windows-App entfernen. Navigation, Buttons, Routen und nicht mehr benötigte UI-Einstiege bereinigen. Dabei sicherstellen, dass Berichtsstatus, Freigaben und andere weiterhin benötigte Prozesse nicht versehentlich beschädigt werden.",
+      "area": "Windows / Berichte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026",
+      "issue": 4
+    },
+    {
+      "id": "crew-report-delete-restriction",
+      "title": "Kolonnen dürfen Baustellenberichte nicht löschen",
+      "description": "Gemäß GitHub-Issue #3 dürfen Kolonnen keine Baustellenberichte löschen und nur ihre eigenen Berichte bearbeiten. Berechtigungen müssen nicht nur in der UI, sondern auch serverseitig/API-seitig durchgesetzt werden. Fremde Berichte dürfen für Kolonnen weder editierbar noch löschbar sein.",
+      "area": "Kolonne / Berichte / Rechte",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026",
+      "issue": 3
     }
   ],
   "changelog": [
+    {
+      "date": "03.10.2026",
+      "title": "Büronetz/Proxy und offene GitHub-Issues als Release-Blocker ergänzt",
+      "text": "Das Firmennetz mit Proxy ist ab sofort ein Release-Blocker: Die Büro-/Windows-App muss mit und ohne Proxy vollständig funktionieren. Zusätzlich wurden Issue #4 (Baustellenbericht-Prüfcenter entfernen) und Issue #3 (Kolonnen dürfen Berichte nicht löschen und nur eigene Berichte bearbeiten) als konkrete offene Aufgaben in die Roadmap übernommen."
+    },
     {
       "date": "03.10.2026",
       "title": "Release-Roadmap bis zum ersten vollständigen Deployment erweitert",
