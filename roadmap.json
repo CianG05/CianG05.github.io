@@ -67,6 +67,37 @@
         "startup-performance",
         "stale-while-revalidate"
       ]
+    },
+    {
+      "id": "first-full-release",
+      "title": "Erster vollständiger Deployment- & Releaseabschluss",
+      "description": "Alle noch nötigen Produktiv-, QA-, Security-, Build- und Feldtest-Schritte bis zur ersten vollständig deployten und freigegebenen Version.",
+      "taskIds": [
+        "release-blocker-audit",
+        "auth-cross-platform",
+        "role-permission-audit",
+        "backend-production-hardening",
+        "database-migration-release",
+        "onedrive-e2e-release",
+        "offline-sync-conflicts",
+        "report-e2e-weekly-daily",
+        "pdf-release-qa",
+        "voice-assistant-release",
+        "onboarding-role-complete",
+        "notification-routing-e2e",
+        "support-production-test",
+        "error-logging-observability",
+        "update-system-release",
+        "windows-package-final",
+        "android-package-final",
+        "responsive-accessibility-qa",
+        "performance-release-benchmark",
+        "security-release-review",
+        "fresh-install-upgrade-test",
+        "field-test-final",
+        "release-documentation",
+        "stable-release-gate"
+      ]
     }
   ],
   "items": [
@@ -729,9 +760,278 @@
       "progress": 0,
       "owner": "Jeremy",
       "updated": "07.09.2026"
+    },
+    {
+      "id": "release-blocker-audit",
+      "title": "Release-Blocker vollständig erfassen",
+      "description": "Gesamte Anwendung systematisch auf offene Fehler, Platzhalter, Mock-Daten, TODOs, nicht angebundene Buttons, tote Navigationen und unvollständige Workflows prüfen. Jeden Fund beheben oder nachvollziehbar als späteren Punkt dokumentieren.",
+      "area": "Release / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "auth-cross-platform",
+      "title": "Authentifizierung plattformübergreifend stabilisieren",
+      "description": "Login, Session-Persistenz, Logout, Rollenauflösung, Benutzerwechsel, Gerätewechsel, Token-Refresh, Offline-/Reconnect-Verhalten und Fehlerzustände unter Windows und Android zuverlässig machen. Keine Passwortpflicht aktivieren, bevor dieser Flow stabil ist.",
+      "area": "Auth / Sicherheit",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "role-permission-audit",
+      "title": "Rollen & Berechtigungen vollständig prüfen",
+      "description": "Kolonne/Schachtmeister, Bauleiter/Büro und Admin auf allen relevanten Ansichten und APIs prüfen. Unberechtigte Aktionen serverseitig blockieren und UI passend zur Rolle darstellen.",
+      "area": "Auth / Rollen",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "backend-production-hardening",
+      "title": "Backend für Produktivbetrieb härten",
+      "description": "Produktionskonfiguration, Umgebungsvariablen, CORS, Fehlerbehandlung, Timeouts, Retry-Verhalten, Healthcheck und sichere Secret-Verwendung prüfen. Keine Tokens oder Secrets im Client ausliefern.",
+      "area": "Backend / Deployment",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "database-migration-release",
+      "title": "Datenbank & Migrationen releasefest machen",
+      "description": "Prisma-/Datenbankmigrationen prüfen, reproduzierbaren Deployment-Ablauf herstellen und sicherstellen, dass bestehende Daten bei Updates erhalten bleiben. Backup-/Restore-Weg dokumentieren.",
+      "area": "Backend / Datenbank",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "onedrive-e2e-release",
+      "title": "OneDrive End-to-End absichern",
+      "description": "Lesen, Schreiben, Upload, Download, Umbenennen, Ordnerauflösung, Cache, Retry, fehlende/verschobene Ordner und Synchronisation unter realen Konten und Rollen testen und stabilisieren.",
+      "area": "OneDrive / Dateien",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "offline-sync-conflicts",
+      "title": "Offline- und Reconnect-Synchronisation absichern",
+      "description": "Offline-Caches, nachträgliche Synchronisation, doppelte Änderungen, Konflikte und Netzwerkwechsel so behandeln, dass keine Berichte oder Dateien verloren gehen oder doppelt entstehen.",
+      "area": "Sync / Offline",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "report-e2e-weekly-daily",
+      "title": "Tages- & Wochenberichte vollständig End-to-End testen",
+      "description": "Beide Berichtswelten von Erstellung über Formular/Sprache/Hybrid, Entwurf, PDF, Einreichung, Prüfung, Korrektur, erneute Einreichung, Freigabe, Historie und OneDrive-Ablage vollständig prüfen.",
+      "area": "Berichte / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "pdf-release-qa",
+      "title": "PDF-Ausgaben final prüfen",
+      "description": "Tagesbericht, Wochenbericht, Teilaufmaß und zusammengeführte Pläne auf Inhalt, Seitenumbrüche, Unterschriften, Sonderzeichen, Dateinamen, Datum/Zeit und Darstellung unter realen Daten prüfen.",
+      "area": "PDF / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "voice-assistant-release",
+      "title": "Sprachassistent fachlich fertigstellen",
+      "description": "Reale Spracheingabe auf Windows und Android stabilisieren. Kontext über mehrere Antworten halten, bekannte Angaben nicht erneut fragen, nur abrechnungsrelevante Fakten übernehmen, STT-Fehler/Synonyme tolerieren und unsichere Angaben gezielt klären.",
+      "area": "Berichte / Sprache",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "onboarding-role-complete",
+      "title": "Onboarding je Rolle vollständig fertigstellen",
+      "description": "Geführten Praxiskurs für Kolonne/Schachtmeister, Bauleiter/Büro und Admin vollständig ausbauen. Kurs ausschließlich anhand echter Benutzerrolle wählen; Demo-Daten strikt von Produktivdaten trennen.",
+      "area": "Onboarding",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "notification-routing-e2e",
+      "title": "Benachrichtigungen End-to-End absichern",
+      "description": "Empfänger anhand Benutzer, Rolle und Kolonnen-/Baustellenzuordnung bestimmen. Deep-Links, Statuswechsel, fehlende Empfänger und Zustellung auf Desktop/Tablet vollständig testen; keine falschen Erfolgsanzeigen.",
+      "area": "Benachrichtigungen",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "support-production-test",
+      "title": "Support → GitHub produktiv testen",
+      "description": "Render-Konfiguration und serverseitiges GitHub-Token fertig einrichten, echtes Support-Issue aus der App erzeugen, Ticketnummer zurückgeben und sensible Daten aus Diagnoseinformationen ausschließen.",
+      "area": "Support / Deployment",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "error-logging-observability",
+      "title": "Fehlerdiagnose & Logging releasefest machen",
+      "description": "Strukturiertes Logging für Client und Backend, aussagekräftige Fehlercodes sowie nachvollziehbare Diagnoseinformationen einführen. Keine Passwörter, Tokens oder personenbezogenen Inhalte unnötig protokollieren.",
+      "area": "Diagnose",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "update-system-release",
+      "title": "Update- und Versionsprüfung finalisieren",
+      "description": "Versionsprüfung, Downloadpfade, Updatehinweise und Verhalten bei veralteten Clients unter Windows und Android prüfen. Update-Repository und Support-Repository sauber getrennt halten.",
+      "area": "Release / Updates",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "windows-package-final",
+      "title": "Windows-Releasepaket finalisieren",
+      "description": "Produktionsfähigen Windows-Build inklusive benötigter DLLs/Assets erstellen, auf sauberem Windows-System testen und als versioniertes RAR-Paket bereitstellen.",
+      "area": "Build / Windows",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "android-package-final",
+      "title": "Android-Releasepaket finalisieren",
+      "description": "Produktionsfähige APK erstellen, Installation/Update auf realem Tablet testen, Berechtigungen und Dateizugriffe prüfen und versioniertes APK bereitstellen.",
+      "area": "Build / Android",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "responsive-accessibility-qa",
+      "title": "UI/UX auf Desktop & Tablet final prüfen",
+      "description": "Overflow, Skalierung, Touch-Ziele, Tastaturbedienung, Landscape/Portrait, Lade-/Empty-/Error-States und verständliche Rückmeldungen auf beiden Plattformen prüfen und korrigieren.",
+      "area": "UX / QA",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "performance-release-benchmark",
+      "title": "Performance vor Release prüfen",
+      "description": "App-Start, Dashboard, Baustellen, Dateien, Berichte und OneDrive-Zugriffe auf realistischen Datenmengen messen. Unnötige Requests und Blockaden beseitigen, ohne Datenaktualität zu verlieren.",
+      "area": "Performance",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "security-release-review",
+      "title": "Security-Review vor Veröffentlichung",
+      "description": "Secrets, Tokens, lokale Speicherung, API-Berechtigungen, Rollenprüfungen, Eingabevalidierung, Dateioperationen und Diagnose-/Supportdaten vor Release überprüfen und offensichtliche Schwachstellen beheben.",
+      "area": "Sicherheit",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "fresh-install-upgrade-test",
+      "title": "Neuinstallation & Upgrade testen",
+      "description": "Saubere Erstinstallation sowie Update von bestehendem Teststand auf den Release-Build auf Windows und Android prüfen. Cache, lokale Daten, Sessions und Migrationen müssen kontrolliert weiter funktionieren.",
+      "area": "Release / QA",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "field-test-final",
+      "title": "Abschließenden realen Feldtest durchführen",
+      "description": "Nach bestandener Windows-/Emulator-Regression die App auf realem Tablet und im tatsächlichen Baustellen-/Büroablauf testen. Gefundene Fehler beheben und Regression erneut durchführen.",
+      "area": "Feldtest",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "release-documentation",
+      "title": "Release-Dokumentation finalisieren",
+      "description": "Changelog, Roadmap, Installations-/Updatehinweise, bekannte Einschränkungen, Testnachweise und Versionsinformationen auf den tatsächlichen Release-Stand bringen.",
+      "area": "Dokumentation",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
+    },
+    {
+      "id": "stable-release-gate",
+      "title": "Stable-Gate & erstmaligen vollständigen Release durchführen",
+      "description": "Stable ausschließlich setzen, wenn alle Release-Blocker geschlossen, Builds getestet, Deployment produktiv erreichbar und der reale Feldtest bestanden ist. Danach Downloads veröffentlichen und Release nachvollziehbar dokumentieren.",
+      "area": "Release",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "03.10.2026"
     }
   ],
   "changelog": [
+    {
+      "date": "03.10.2026",
+      "title": "Release-Roadmap bis zum ersten vollständigen Deployment erweitert",
+      "text": "Roadmap um konkrete Release-Blocker für Auth/Rollen, Backend, Datenbank/Migrationen, OneDrive/Offline-Sync, Berichte/PDF, Sprache, Onboarding, Benachrichtigungen, Support, Logging, Updates, Windows-/Android-Builds, UX, Performance, Security, Neuinstallation/Upgrade, Feldtest und Stable-Gate erweitert. Diese Punkte sind geplant und gelten nicht als erledigt, bis sie technisch umgesetzt und geprüft wurden."
+    },
     {
       "date": "08.09.2026",
       "title": "V0.9.4.1 – Tagesabschluss: implementiert + Auto-QA, manuelle Tests offen",
