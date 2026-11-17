@@ -2,11 +2,25 @@
   "project": {
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
-    "version": "0.9.4.1 Testphase",
-    "updated": "03.10.2026",
-    "summary": "V0.9.4.1 ist die aktuelle Entwicklungs- und Testversion. Seit 28.09.2026 liegt der Schwerpunkt auf der Fertigstellung für das erstmalige vollständige Deployment und Release. Der Stand bleibt bis zum Abschluss der manuellen Geräte-, Regressions- und Feldtests in der Testphase und wird nicht vorzeitig als Stable markiert."
+    "version": "0.9.5-rc.1 Beta",
+    "updated": "17.11.2026",
+    "summary": "0.9.5-rc.1 ist die aktuelle Beta und liegt auf dieser Seite zum Testen. Windows kommt als Zip mit dem kompletten Programmordner, Android als APK. Das ist kein Stable. Als Nächstes prüfe ich die Beta selbst auf dem PC."
   },
   "milestones": [
+    {
+      "id": "beta-095-rc1",
+      "title": "Beta 0.9.5-rc.1 – zum Testen",
+      "description": "Aktueller Teststand. Code und Download sind da. Die fachliche Abnahme auf dem PC und dem Tablet steht noch aus.",
+      "taskIds": [
+        "beta-095-published",
+        "weekly-same-kw-update",
+        "ui-login-tablet-office",
+        "beta-pc-clicktest",
+        "beta-tablet-clicktest",
+        "graph-delta-sync",
+        "friday-mengenerfassung-job"
+      ]
+    },
     {
       "id": "v0941-current",
       "title": "V0.9.4.1 – aktuelle Testphase",
@@ -103,6 +117,83 @@
     }
   ],
   "items": [
+    {
+      "id": "beta-095-published",
+      "title": "Beta 0.9.5-rc.1 auf der Roadmap-Seite bereitstellen",
+      "description": "Windows-Zip und Android-APK liegen unter Testversionen. Das Zip enthält den kompletten Programmordner. Seite und Datei sind erreichbar.",
+      "area": "Release",
+      "priority": "high",
+      "status": "done",
+      "progress": 100,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "weekly-same-kw-update",
+      "title": "Wochenbericht derselben Kalenderwoche aktualisieren",
+      "description": "Gleicher Schachtmeister und gleiche KW ergänzen die vorhandene PDF, wenn Formulardaten gespeichert sind. Ohne Formulardaten bricht das Speichern ab. Auf dem Tablet noch nicht geprüft.",
+      "area": "Berichte",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 85,
+      "owner": "Jeremy",
+      "updated": "16.11.2026"
+    },
+    {
+      "id": "ui-login-tablet-office",
+      "title": "Anmeldung, Tablet-Start und Büroleiste staffeln",
+      "description": "Breite Anmeldung mit Markenfläche, Neuer Bericht als Hauptaktion, Online nur noch ein kleiner Status, Büroleiste mit Logo. In der Beta enthalten, noch nicht durchgeklickt.",
+      "area": "UX",
+      "priority": "medium",
+      "status": "implemented",
+      "progress": 70,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "beta-pc-clicktest",
+      "title": "Beta auf dem PC durchklicken",
+      "description": "Zip entpacken, juh_baustellenhub.exe aus dem Ordner starten, mit Microsoft anmelden und Büro, Bericht und Proxy prüfen.",
+      "area": "QA / Windows",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "beta-tablet-clicktest",
+      "title": "Beta auf dem Tablet durchklicken",
+      "description": "APK installieren und die fünf Bereiche, den Wochenbericht über mehrere Tage und den Offline-Upload prüfen.",
+      "area": "QA / Android",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "graph-delta-sync",
+      "title": "OneDrive per Delta statt Vollabgleich synchronisieren",
+      "description": "Webhook und Fünf-Minuten-Takt holen heute den ganzen Bestand. Ein gespeicherter Graph-Delta-Link fehlt.",
+      "area": "OneDrive / Sync",
+      "priority": "high",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "friday-mengenerfassung-job",
+      "title": "Freitags die Mengenerfassung automatisch anstoßen",
+      "description": "Im Büro lege ich die Mengenerfassung noch von Hand an und gebe sie mit Unterschrift frei. Uhrzeit, Vertretung und Unterschrift, wenn niemand da ist, sind noch nicht entschieden.",
+      "area": "Berichte / Büro",
+      "priority": "medium",
+      "status": "planned",
+      "progress": 0,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
     {
       "id": "backup",
       "title": "Aktuellen Projektstand vollständig sichern",
@@ -304,13 +395,13 @@
     {
       "id": "office-network-backend",
       "title": "Büronetz inkl. Proxy vollständig unterstützen",
-      "description": "Die Windows-/Büro-App muss im Firmennetz trotz Proxy zuverlässig funktionieren. Backend, Microsoft/Graph, OneDrive, Support, Updateprüfung und alle sonstigen externen Requests müssen mit und ohne Proxy funktionieren. System-/Umgebungsproxy berücksichtigen, TLS/HTTPS-Fehler sauber behandeln, Timeouts/Retry/Fallbacks prüfen und den kompletten Büro-Workflow im realen Firmennetz testen. Kein Release, solange zentrale Funktionen nur per Hotspot funktionieren.",
+      "description": "Die Windows-App nutzt den Systemproxy, HTTP(S)_PROXY und PAC/WPAD. TLS bleibt an. Ein lokaler Proxy-Test ist gelaufen. Der Test im echten Firmennetz fehlt noch. Kein Release, solange das Büro nur über Hotspot geht.",
       "area": "Backend / Netzwerk",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 60,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "bugfix-round-0932",
@@ -645,24 +736,24 @@
     {
       "id": "desktop-tablet-feature-parity-0941",
       "title": "Desktop- & Tablet-UX gemeinsam überarbeiten",
-      "description": "Desktop-/Tablet-Konsistenz überarbeitet; manueller UI-/Gerätetest steht aus.",
+      "description": "Startflächen von Anmeldung, Tablet und Büro am 17.11. nachgezogen. Der Klickpfad auf beiden Geräten steht noch aus.",
       "area": "UX / Plattformen",
       "priority": "high",
       "status": "implemented",
       "progress": 80,
       "owner": "Jeremy",
-      "updated": "07.09.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "v0941-release-current",
       "title": "V0.9.4.1 aktueller Testbuild",
-      "description": "Aktuelle einzige Testversion. pubspec 0.9.4+95, UI 0.9.4.1. Dist unter `dist/JuH Baustellen Hub Release V0.9.4.1/` mit APK + RAR vorhanden. Implementiert und Auto-QA durchgeführt; noch nicht Stable.",
+      "description": "Frühere Testversion 0.9.4.1. Abgelöst durch die Beta 0.9.5-rc.1 auf dieser Seite. Bleibt im Versionsverlauf.",
       "area": "Release",
       "priority": "high",
-      "status": "in_progress",
+      "status": "implemented",
       "progress": 90,
       "owner": "Jeremy",
-      "updated": "07.09.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "v0941-auto-qa",
@@ -843,24 +934,24 @@
     {
       "id": "report-e2e-weekly-daily",
       "title": "Tages- & Wochenberichte vollständig End-to-End testen",
-      "description": "Beide Berichtswelten von Erstellung über Formular/Sprache/Hybrid, Entwurf, PDF, Einreichung, Prüfung, Korrektur, erneute Einreichung, Freigabe, Historie und OneDrive-Ablage vollständig prüfen.",
+      "description": "Ein zweiter Wochenbericht derselben Kalenderwoche ergänzt die vorhandene Datei, wenn Formulardaten da sind. Sonst bricht das Speichern ab. Der Ablauf ist im Code, auf dem Tablet noch nicht durchgeklickt. Tagesbericht, Prüfung und Freigabe bleiben offen.",
       "area": "Berichte / QA",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 40,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "16.11.2026"
     },
     {
       "id": "pdf-release-qa",
       "title": "PDF-Ausgaben final prüfen",
-      "description": "Tagesbericht, Wochenbericht, Teilaufmaß und zusammengeführte Pläne auf Inhalt, Seitenumbrüche, Unterschriften, Sonderzeichen, Dateinamen, Datum/Zeit und Darstellung unter realen Daten prüfen.",
+      "description": "Im Wochen-PDF steht das Datum ohne Jahr, leere Tage werden nicht geschrieben, Pumpen als Anzahl mal Stunden, Sträucher und Büsche als eine Position. Ausdruck, Raster, Schrift und Koordinaten muss ich noch auf Papier prüfen.",
       "area": "PDF / QA",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 45,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "16.11.2026"
     },
     {
       "id": "voice-assistant-release",
@@ -920,46 +1011,46 @@
     {
       "id": "update-system-release",
       "title": "Update- und Versionsprüfung finalisieren",
-      "description": "Versionsprüfung, Downloadpfade, Updatehinweise und Verhalten bei veralteten Clients unter Windows und Android prüfen. Update-Repository und Support-Repository sauber getrennt halten.",
+      "description": "Die Beta steht im Downloadbereich dieser Seite. Ein GitHub-Release konnte nicht angelegt werden. Die schon installierte App holt sich dadurch kein automatisches Update.",
       "area": "Release / Updates",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 40,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "windows-package-final",
       "title": "Windows-Releasepaket finalisieren",
-      "description": "Produktionsfähigen Windows-Build inklusive benötigter DLLs/Assets erstellen, auf sauberem Windows-System testen und als versioniertes RAR-Paket bereitstellen.",
+      "description": "Beta-Zip 0.9.5-rc.1 liegt auf dieser Seite und enthält den ganzen Windows-Ordner, nicht nur die EXE. Auf einem sauberen PC habe ich es noch nicht gestartet. Das ist kein finales Stable-Paket.",
       "area": "Build / Windows",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 70,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "android-package-final",
       "title": "Android-Releasepaket finalisieren",
-      "description": "Produktionsfähige APK erstellen, Installation/Update auf realem Tablet testen, Berechtigungen und Dateizugriffe prüfen und versioniertes APK bereitstellen.",
+      "description": "Die APK 0.9.5-rc.1 liegt neben dem Windows-Zip. Auf einem Tablet ist sie noch nicht installiert.",
       "area": "Build / Android",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 55,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "responsive-accessibility-qa",
       "title": "UI/UX auf Desktop & Tablet final prüfen",
-      "description": "Overflow, Skalierung, Touch-Ziele, Tastaturbedienung, Landscape/Portrait, Lade-/Empty-/Error-States und verständliche Rückmeldungen auf beiden Plattformen prüfen und korrigieren.",
+      "description": "Anmeldung auf dem breiten PC, Tablet-Start und Büroleiste sind überarbeitet. Durchgeklickt ist das noch nicht.",
       "area": "UX / QA",
       "priority": "medium",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 35,
       "owner": "Jeremy",
-      "updated": "03.10.2026"
+      "updated": "17.11.2026"
     },
     {
       "id": "performance-release-benchmark",
@@ -1042,17 +1133,37 @@
     {
       "id": "crew-report-delete-restriction",
       "title": "Kolonnen dürfen Baustellenberichte nicht löschen",
-      "description": "Gemäß GitHub-Issue #3 dürfen Kolonnen keine Baustellenberichte löschen und nur ihre eigenen Berichte bearbeiten. Berechtigungen müssen nicht nur in der UI, sondern auch serverseitig/API-seitig durchgesetzt werden. Fremde Berichte dürfen für Kolonnen weder editierbar noch löschbar sein.",
+      "description": "Im Code darf die Kolonne keine Berichte löschen, keine Ordner anlegen, umbenennen oder löschen, keine Freigabelinks setzen und keine Berichts-PDFs verschieben. Auf Render gilt das erst nach einem Deploy. Am Gerät noch nicht geprüft.",
       "area": "Kolonne / Berichte / Rechte",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "implemented",
+      "progress": 80,
       "owner": "Jeremy",
-      "updated": "03.10.2026",
+      "updated": "17.11.2026",
       "issue": 3
     }
   ],
   "changelog": [
+    {
+      "date": "17.11.2026",
+      "title": "Beta 0.9.5-rc.1 zum Testen auf die Seite gelegt",
+      "text": "Windows-Zip mit dem kompletten Programmordner und Android-APK stehen unter Testversionen. Anmeldung, Tablet-Start und Büroleiste sind in diesem Stand überarbeitet. Ein GitHub-Release gibt es nicht, der Download läuft über diese Seite. Stable ist das nicht."
+    },
+    {
+      "date": "16.11.2026",
+      "title": "Wochenbericht derselben Kalenderwoche wird ergänzt",
+      "text": "Ein zweites Speichern für denselben Schachtmeister und dieselbe KW aktualisiert die vorhandene Datei, wenn Formulardaten vorliegen. Ohne Formulardaten bricht das Speichern ab, damit die anderen Tage nicht verloren gehen. Die Aufgabenliste hier war zu diesem Zeitpunkt noch nicht nachgezogen."
+    },
+    {
+      "date": "31.10.2026",
+      "title": "Kolonne darf die Ablage nicht umbauen",
+      "text": "Im Code sind Ordneraktionen, Freigabelinks und das Verschieben von Berichts-PDFs für die Kolonne gesperrt. Auf Render gilt das erst nach einem Deploy."
+    },
+    {
+      "date": "30.10.2026",
+      "title": "Release Candidate 0.9.5-rc.1 vorbereitet",
+      "text": "Versionsstand auf 0.9.5-rc.1 gehoben. Die Windows-App nutzt den Systemproxy, ohne die Zertifikatsprüfung abzuschalten. Der Test im Firmennetz fehlt."
+    },
     {
       "date": "03.10.2026",
       "title": "Büronetz/Proxy und offene GitHub-Issues als Release-Blocker ergänzt",
@@ -1110,6 +1221,26 @@
     }
   ],
   "worklog": [
+    {
+      "date": "17.11.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Beta 0.9.5-rc.1 gebaut und auf diese Seite gelegt. Windows als Zip mit EXE und den nötigen Dateien, Android als APK. Anmeldung, Tablet-Start und Büroleiste überarbeitet. Aufgaben und Arbeitsprotokoll nachgezogen."
+    },
+    {
+      "date": "16.11.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Wochenbericht derselben Kalenderwoche ergänzt statt als zweite Datei abgelegt. Backend-Tests erneut laufen lassen. Den Stand der offenen Punkte festgehalten."
+    },
+    {
+      "date": "31.10.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Rechte der Kolonne an der Dateiablage nachgezogen: keine Ordneraktionen, keine Freigabelinks, keine Berichts-PDFs verschieben."
+    },
+    {
+      "date": "30.10.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "Release Candidate 0.9.5-rc.1 vorbereitet, Systemproxy fürs Büro eingebaut und Windows- sowie Android-Build erzeugt. Firmennetz und Geräteabnahme blieben offen."
+    },
     {
       "date": "03.10.2026",
       "title": "Entwicklung BaustellenHub",
