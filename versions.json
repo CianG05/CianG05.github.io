@@ -1,12 +1,44 @@
 {
   "versions": [
     {
+      "version": "0.9.5-rc.1",
+      "title": "Beta zum Testen auf dem PC",
+      "date": "17.11.2026",
+      "status": "testing",
+      "statusLabel": "Beta · zum Testen",
+      "current": true,
+      "description": "Beta 0.9.5-rc.1 zum Durchklicken. Windows ist ein Zip mit dem kompletten Programmordner, Android ein APK. Noch kein Stable.",
+      "downloads": [
+        {
+          "name": "Windows-Paket",
+          "format": "ZIP",
+          "file": "downloads/v0.9.5-rc.1/JuH-BaustellenHub-0.9.5-rc.1-windows.zip",
+          "primary": true,
+          "description": "Zip entpacken und juh_baustellenhub.exe starten. Die übrigen Dateien im Ordner müssen mit."
+        },
+        {
+          "name": "Android",
+          "format": "APK",
+          "file": "downloads/v0.9.5-rc.1/JuH-BaustellenHub-v0.9.5-rc.1.apk",
+          "primary": false,
+          "description": "Android-Beta fürs Tablet"
+        }
+      ],
+      "changes": [
+        "Wochenbericht derselben Kalenderwoche wird ergänzt statt als zweite Datei abgelegt",
+        "Anmeldung auf dem breiten PC mit Markenfläche und Button „Mit Microsoft anmelden“",
+        "Tablet-Start: Neuer Bericht als Hauptaktion, Online nur noch ein kleiner Status",
+        "Büroleiste mit Logo"
+      ],
+      "notice": "Beta, kein Stable. Auf dem PC das Zip entpacken und juh_baustellenhub.exe aus diesem Ordner starten, nicht nur die EXE irgendwohin kopieren. Anmeldung über Microsoft, Backend bleibt Render."
+    },
+    {
       "version": "0.9.4.1",
       "title": "Aktuelle Testversion – V0.9.4.1",
       "date": "07.09.2026",
-      "status": "testing",
-      "statusLabel": "Aktuelle Testversion · IMPLEMENTIERT + Auto-getestet",
-      "current": true,
+      "status": "outdated",
+      "statusLabel": "Veraltet",
+      "current": false,
       "description": "Aktueller Entwicklungsstand (pubspec 0.9.4+95, UI 0.9.4.1). Features und kritische Abend-Fixes sind implementiert; automatische Flutter-/Backend-/API-Smokes sind dokumentiert. Manuelle Windows-/Tablet-/Emulator-Tests und der abschließende Feldtest stehen noch aus.",
       "downloads": [
         {
@@ -66,7 +98,7 @@
           "description": "Android-Paket"
         }
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     },
     {
       "version": "0.9.3.2",
@@ -98,7 +130,7 @@
         "Roadmap, Changelog und To-dos am 31.08.2026 bereinigt und neu strukturiert",
         "Vorherige Stabilitäts-, Inbox- und OneDrive-Optimierungen aus v0.9.3.1 enthalten"
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     },
     {
       "version": "0.9.3.1",
@@ -133,7 +165,7 @@
         "Prefetch/Batches und Cache-Fallbacks für Baustellen und Dateien",
         "Testpaket für Windows und Android bereitgestellt"
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     },
     {
       "version": "0.9.3",
@@ -168,7 +200,7 @@
         "Vorbereitung weiterer Feld- und Tablet-Tests",
         "Netzwerkproblem im Büronetz wird untersucht; Hotspot-Zugriff auf das Render-Backend erfolgreich verifiziert"
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     },
     {
       "version": "0.9.2",
@@ -202,7 +234,7 @@
         "Dateinamensschema M.Mustermann_Datum.pdf mit _2, _3 usw. bei Kollisionen",
         "Lokaler Cache für Baustellen- und Dateilisten als Fallback bei Netzfehlern"
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     },
     {
       "version": "0.9.1",
@@ -234,7 +266,7 @@
         "Favoriten und rollenbasiertes Login",
         "21 Unit-Tests erfolgreich"
       ],
-      "notice": "Veralteter Entwicklungsstand – V0.9.4.1 ist die aktuelle Testversion."
+      "notice": "Veralteter Entwicklungsstand – 0.9.5-rc.1 ist die aktuelle Beta."
     }
   ]
 }
