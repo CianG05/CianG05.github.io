@@ -4,7 +4,7 @@
     "company": "JuH Burmeister",
     "version": "0.9.5-rc.1 Beta",
     "updated": "17.11.2026",
-    "summary": "0.9.5-rc.1 ist die aktuelle Beta und liegt auf dieser Seite zum Testen. Windows kommt als Zip mit dem kompletten Programmordner, Android als APK. Das ist kein Stable. Als Nächstes prüfe ich die Beta selbst auf dem PC."
+    "summary": "0.9.5-rc.1 ist die aktuelle Beta und liegt auf dieser Seite zum Testen. Windows kommt als Zip mit dem kompletten Programmordner, Android als APK. Das ist kein Stable. Die PDF-Vorschau in den Dateilisten ist im Code, aber noch nicht in diesem Download."
   },
   "milestones": [
     {
@@ -15,6 +15,7 @@
         "beta-095-published",
         "weekly-same-kw-update",
         "ui-login-tablet-office",
+        "pdf-file-preview",
         "beta-pc-clicktest",
         "beta-tablet-clicktest",
         "graph-delta-sync",
@@ -145,6 +146,17 @@
       "description": "Breite Anmeldung mit Markenfläche, Neuer Bericht als Hauptaktion, Online nur noch ein kleiner Status, Büroleiste mit Logo. In der Beta enthalten, noch nicht durchgeklickt.",
       "area": "UX",
       "priority": "medium",
+      "status": "implemented",
+      "progress": 70,
+      "owner": "Jeremy",
+      "updated": "17.11.2026"
+    },
+    {
+      "id": "pdf-file-preview",
+      "title": "PDF-Vorschau in den Dateilisten",
+      "description": "Büro, Baustellenansicht und Berichtslisten zeigen die erste Seite als kleines Blatt. Die Vorschau liegt im lokalen Cache. Die veröffentlichte Beta 0.9.5-rc.1 enthält das noch nicht. Auf PC und Tablet noch nicht angesehen.",
+      "area": "Dateien",
+      "priority": "high",
       "status": "implemented",
       "progress": 70,
       "owner": "Jeremy",
@@ -1146,6 +1158,11 @@
   "changelog": [
     {
       "date": "17.11.2026",
+      "title": "PDF-Vorschau für die Dateilisten gebaut",
+      "text": "Jede PDF in der Büro-Dateiliste und in der Baustellen-Dateiliste soll die erste Seite als kleines Blatt zeigen. Berichtslisten nutzen dieselbe Vorschau, sobald die Datei bekannt ist. Das ist im Code, nicht in der schon hochgeladenen Beta, und auf dem Gerät noch nicht geprüft."
+    },
+    {
+      "date": "17.11.2026",
       "title": "Beta 0.9.5-rc.1 zum Testen auf die Seite gelegt",
       "text": "Windows-Zip mit dem kompletten Programmordner und Android-APK stehen unter Testversionen. Anmeldung, Tablet-Start und Büroleiste sind in diesem Stand überarbeitet. Ein GitHub-Release gibt es nicht, der Download läuft über diese Seite. Stable ist das nicht."
     },
@@ -1221,6 +1238,11 @@
     }
   ],
   "worklog": [
+    {
+      "date": "17.11.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "PDF-Vorschau der ersten Seite in die Dateilisten von Büro und Tablet eingebaut, plus die Berichtslisten. Die schon veröffentlichte Beta enthält das noch nicht. Auf dem PC und dem Tablet nicht angesehen."
+    },
     {
       "date": "17.11.2026",
       "title": "Entwicklung BaustellenHub",
