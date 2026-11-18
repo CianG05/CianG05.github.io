@@ -3,8 +3,8 @@
     "name": "BaustellenHub",
     "company": "JuH Burmeister",
     "version": "0.9.5-rc.1 Beta",
-    "updated": "17.11.2026",
-    "summary": "0.9.5-rc.1 ist die aktuelle Beta und liegt auf dieser Seite zum Testen. Windows kommt als Zip mit dem kompletten Programmordner, Android als APK. Das ist kein Stable. Die PDF-Vorschau in den Dateilisten ist im Code, aber noch nicht in diesem Download."
+    "updated": "18.11.2026",
+    "summary": "0.9.5-rc.1 ist die aktuelle Beta auf dieser Seite. Das ist kein Stable. Die PDF-Vorschau zeigt im neuen Code die erste Seite der echten Datei, das Logo steht einmal in der Leiste, und die Administration kann auf Hetzner umschalten. Dieser Download enthält das noch nicht."
   },
   "milestones": [
     {
@@ -19,7 +19,9 @@
         "beta-pc-clicktest",
         "beta-tablet-clicktest",
         "graph-delta-sync",
-        "friday-mengenerfassung-job"
+        "friday-mengenerfassung-job",
+        "header-one-logo",
+        "hetzner-api-switch"
       ]
     },
     {
@@ -143,24 +145,46 @@
     {
       "id": "ui-login-tablet-office",
       "title": "Anmeldung, Tablet-Start und Büroleiste staffeln",
-      "description": "Breite Anmeldung mit Markenfläche, Neuer Bericht als Hauptaktion, Online nur noch ein kleiner Status, Büroleiste mit Logo. In der Beta enthalten, noch nicht durchgeklickt.",
+      "description": "Anmeldung mit einem Logo, Tablet-Start mit einer Hauptaktion, Büroleiste mit einem unverzerrten Logo. Die Seitenleiste wiederholt das Bild nicht. Noch nicht durchgeklickt.",
       "area": "UX",
       "priority": "medium",
       "status": "implemented",
-      "progress": 70,
+      "progress": 75,
       "owner": "Jeremy",
-      "updated": "17.11.2026"
+      "updated": "18.11.2026"
+    },
+    {
+      "id": "header-one-logo",
+      "title": "Ein sauberes Burmeister-Logo in der Leiste",
+      "description": "Das Logo steht einmal, im Originalformat. Büroleiste, Anmeldung und Administration zeigen es nicht doppelt. Auf dem PC noch nicht angesehen.",
+      "area": "UX",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 75,
+      "owner": "Jeremy",
+      "updated": "18.11.2026"
+    },
+    {
+      "id": "hetzner-api-switch",
+      "title": "API per Knopf auf Hetzner oder Render stellen",
+      "description": "In der Administration schaltet ein Knopf diese Installation auf api.jundhburmeister.de und ein zweiter zurück auf Render. Der Standard bleibt Render. Server, DNS und die Mail an CP sind nicht erledigt. Nicht umgeschaltet.",
+      "area": "Infra",
+      "priority": "high",
+      "status": "implemented",
+      "progress": 55,
+      "owner": "Jeremy",
+      "updated": "18.11.2026"
     },
     {
       "id": "pdf-file-preview",
-      "title": "PDF-Vorschau in den Dateilisten",
-      "description": "Büro, Baustellenansicht und Berichtslisten zeigen die erste Seite als kleines Blatt. Die Vorschau liegt im lokalen Cache. Die veröffentlichte Beta 0.9.5-rc.1 enthält das noch nicht. Auf PC und Tablet noch nicht angesehen.",
+      "title": "PDF-Vorschau als echte erste Seite",
+      "description": "Büro, Baustelle und Berichtslisten laden die PDF und zeigen Seite 1. Ein Symbol ersetzt die Seite nicht. Auf PC und Tablet noch nicht angesehen. Die veröffentlichte Beta enthält das noch nicht.",
       "area": "Dateien",
       "priority": "high",
       "status": "implemented",
-      "progress": 70,
+      "progress": 80,
       "owner": "Jeremy",
-      "updated": "17.11.2026"
+      "updated": "18.11.2026"
     },
     {
       "id": "beta-pc-clicktest",
@@ -737,13 +761,13 @@
     {
       "id": "help-menu-cleanup-0941",
       "title": "Hilfe-Menü entrümpeln",
-      "description": "Sprach-Assistent in Berichtserstellung verschieben, Offene Aufgaben auf Dashboard/Arbeitsbereich, Diagnose in Support, Einführung in Onboarding. Hilfe selbst enthält nur Hilfe-Center, Touren und Problemlösungen.",
+      "description": "Das zusätzliche Hilfe-Symbol in der Büroleiste ist weg. Hilfe, Tour und Problemlösungen bleiben im Menü. Der Rest des Menüs ist noch nicht neu geordnet.",
       "area": "Navigation / UX",
       "priority": "high",
-      "status": "planned",
-      "progress": 0,
+      "status": "in_progress",
+      "progress": 25,
       "owner": "Jeremy",
-      "updated": "07.09.2026"
+      "updated": "18.11.2026"
     },
     {
       "id": "desktop-tablet-feature-parity-0941",
@@ -1157,6 +1181,11 @@
   ],
   "changelog": [
     {
+      "date": "18.11.2026",
+      "title": "Echte PDF-Seite, ein Logo, API-Schalter",
+      "text": "Die Vorschau ist die erste Seite der geladenen PDF. Das Burmeister-Logo steht einmal in der Leiste. Die Administration kann diese Installation auf Hetzner stellen und wieder auf Render zurück. Der Umzug ist nicht gelaufen. Geräteprüfung und die übrigen Release-Punkte bleiben offen."
+    },
+    {
       "date": "17.11.2026",
       "title": "PDF-Vorschau für die Dateilisten gebaut",
       "text": "Jede PDF in der Büro-Dateiliste und in der Baustellen-Dateiliste soll die erste Seite als kleines Blatt zeigen. Berichtslisten nutzen dieselbe Vorschau, sobald die Datei bekannt ist. Das ist im Code, nicht in der schon hochgeladenen Beta, und auf dem Gerät noch nicht geprüft."
@@ -1238,6 +1267,11 @@
     }
   ],
   "worklog": [
+    {
+      "date": "18.11.2026",
+      "title": "Entwicklung BaustellenHub",
+      "description": "PDF-Vorschau auf die echte erste Seite umgestellt, das doppelte Logo aus der Leiste genommen und den API-Schalter in die Administration gelegt. Fortschritt der offenen Punkte geschätzt. Klicktests, Firmennetz, Graph-Delta, Freitagsjob, Stable und der Hetzner-Server bleiben offen."
+    },
     {
       "date": "17.11.2026",
       "title": "Entwicklung BaustellenHub",
